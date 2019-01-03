@@ -1,7 +1,8 @@
 {
   "name": "terryupton/boilerplate-craft",
   "description": "A starting boilerplate for Craft Projects",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "type": "project",
   "require": {
     "craftcms/cms": "^3.0.0",
     "yiisoft/yii2-redis": "^2.0.6",
