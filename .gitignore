@@ -1,0 +1,56 @@
+# Craft 3 .gitignore
+#
+# Example .gitignore file for Craft 3 CMS projects
+#
+
+# CRAFT ENVIRONMENT
+.env.php
+.env.sh
+.env
+
+# COMPOSER
+/vendor
+
+# CRAFT STORAGE
+/storage/*
+!/storage/.gitkeep
+
+# ASSETS
+/web/assets/*
+/web/imager/*
+/web/cp-resources/*
+
+# BUILD FILES
+/bower_components/*
+/node_modules/*
+/build/*
+/yarn-error.log
+/npm-debug.log
+
+# MISC FILES
+.cache
+.DS_Store
+Thumbs.db
+.idea
+.project
+.settings
+*.esproj
+*.sublime-workspace
+*.sublime-project
+*.tmproj
+*.tmproject
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+config.codekit3
+prepros-6.config
+
+#Sitemaps
+ror.xml
+sitemap.xml
+urllist.txt
+
+#BPROJECT SPECIFIC
+# /assets/img/tmp/*
