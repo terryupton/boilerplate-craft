@@ -11,5 +11,3 @@ A starting boilerplate for [Craft 3](https://craftcms.com/) projects using [Gulp
 - Gulp
 - Tailwind CSS
 - Craft CMS
-- PHP < 7.1
-
