@@ -1,0 +1,76 @@
+dateModified: 1548092333
+email:
+  fromEmail: terry@amasci.co.uk
+  fromName: craftbp
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  9ace1fad-7441-439d-9f5f-40620d68b63c:
+    name: Common
+plugins:
+  field-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  image-resizer:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  imager:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  minify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  seomatic:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.6
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.4
+  typogrify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+siteGroups:
+  13a10389-f66f-49d3-bbfe-5a5918ca298f:
+    name: craftbp
+sites:
+  e9b5ffaf-2fae-43e5-8160-4a0bc36dadd0:
+    baseUrl: $SITE_URL
+    handle: default
+    hasUrls: true
+    language: en-US
+    name: craftbp
+    primary: true
+    siteGroup: 13a10389-f66f-49d3-bbfe-5a5918ca298f
+    sortOrder: 1
+system:
+  edition: solo
+  live: true
+  name: craftbp
+  schemaVersion: 3.1.21
+  timeZone: Europe/London
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true
+volumes:
+  2704582f-5c82-44da-9552-cddd0a262a82:
+    handle: images
+    hasUrls: true
+    name: Images
+    settings:
+      path: '@webroot/uploads/images'
+    sortOrder: null
+    type: craft\volumes\Local
+    url: '@web/uploads/images'
