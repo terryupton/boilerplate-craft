@@ -12,19 +12,31 @@ return [
     // Global settings
     '*' => [
         // Default Week Start Day (0 = Sunday, 1 = Monday...)
-        'defaultWeekStartDay' => 0,
+        'defaultWeekStartDay' => 1,
 
         // Enable CSRF Protection (recommended)
         'enableCsrfProtection' => true,
 
-        // Whether generated URLs should omit "index.php"
+        // Whether generated URLs should omit "index.php" and have trailing slashes
         'omitScriptNameInUrls' => true,
+        'addTrailingSlashesToUrls'         => true,
 
         // Control Panel trigger word
-        'cpTrigger' => 'admin',
+        'cpTrigger' => 'cms',
 
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => getenv('SECURITY_KEY'),
+
+        // Use Project Config File for best practice in data migration
+        'useProjectConfigFile' => true,
+
+        // Set fuzzy search by default
+        'defaultSearchTermOptions' => array(
+            'subLeft' => true,
+            'subRight' => true,
+        ),
+
+        'generateTransformsBeforePageLoad' => true,
     ],
 
     // Dev environment settings
