@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.4] - 2019-01-23
+### Changed
+- Adding base craft config and base setup using new Craft 3.1 environment yaml file
+
 ## [1.0.3] - 2019-01-03
 ### Changed
 - Added storage folder as a base folder with gitkeep
