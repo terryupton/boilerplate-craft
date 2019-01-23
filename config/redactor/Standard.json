@@ -1,6 +1,9 @@
 {
-  "buttons": ["formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "image", "video"],
-  "plugins": ["fullscreen", "video"],
+  "buttons": ["html", "formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "file", "video", "redo", "undo"],
+  "plugins": ["video", "counter"],
+  "toolbarFixed": true,
   "linkNewTab": true,
-  "toolbarFixed": true
+  "pastePlainText": true,
+  "linkSize": 300,
+  "formatting": ["p", "blockquote", "h2", "h3"]
 }
