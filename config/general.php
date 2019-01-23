@@ -55,6 +55,7 @@ return [
         'isSystemLive' => true,
         'allowUpdates' => true,
         'allowAdminChanges' => true,
+        'backupOnUpdate' => true,
         'enableTemplateCaching' => false,
         'testToEmailAddress' => 'terry@amasci.co.uk',
     ],
