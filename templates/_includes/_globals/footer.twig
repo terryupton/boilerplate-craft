@@ -1,0 +1,32 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{% import '_macros' as macro %}
+
+<footer id="footer" role="contentinfo">
+  <div class="container">
+
+  </div>
+</footer>
+
+
+{# COMMON ELEMENTS THAT WILL BE USED #}
+{# TODO: Legals into include #}
+{# TODO: Copyright into include #}
+<p>
+  {{ companyInformation.companyName }} is registered at Companies House England and Wales<br />
+  {%- if companyInformation.companyNumber|length -%}<span class="whitespace-no-wrap mr-4">Company Number. {{ companyInformation.companyNumber }}</span>{%- endif -%}
+  {%- if companyInformation.vatNumber|length -%}<span class="whitespace-no-wrap">{{ companyInformation.vatNumber }}</span>{%- endif -%}
+</p>
+
+<p>
+  All Content &copy; {{ companyInformation.companyName }} | Website &copy; <a href="https://www.amasci.co.uk" target="_blank" rel="noopener noreferrer" class="text-white-50 hover:text-white">Amasci Creative Limited, website design Milton Keynes {{ macro.autoCopyright(2018) }}</a>
+</p>
+
+<nav role="navigation">
+  <ul class="list-reset flex flex-wrap text-sm">
+    <li class="mb-3 mr-6"><a href="{{ url('terms/privacy') }}">Privacy</a></li>
+    <li class="mb-3 mr-6"><a href="{{ url('terms/cookies') }}">Cookies</a></li>
+    <li class="mb-3 mr-6"><a href="{{ url('terms/terms-of-use') }}">Terms of Use</a></li>
+    <li class="mb-3 mr-6"><a href="{{ url('terms/terms-and-conditions') }}">Terms &amp; Conditions</a></li>
+    <li class="mb-3"><a href="{{ url('contact') }}">Contact</a></li>
+  </ul>
+</nav>

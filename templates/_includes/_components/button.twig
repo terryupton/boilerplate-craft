@@ -1,0 +1,30 @@
+{% spaceless %}
+
+{% set baseClasses = '' %}
+
+{% set url = url %}
+{% set buttonText = buttonText|default('Read More') %}
+{% set classes = classes|default('') %}
+
+{% set classes = classes|merge(baseClasses) %}
+
+
+<a href="" class="{{ classes }}">
+  <span class="py-3 px-4">{{ buttonText }}</span>
+  <div class="bg-white-35 p-3">
+    <div class="w-5 h-5 fill-current text-white">
+    {{ svg('@webroot/src/svg/' ~ icon|default() ~ '.svg' ) }}
+    </div>
+  </div>
+</a>
+
+
+
+
+
+{%- set classes = [
+  sectionColor is not null ? 'group-hover:bg-gradient-' ~ sectionColor : 'group-hover:bg-brand-darkest',
+  craft.request.lastSegment == "" ? 'group-hover:bg-gradient-' ~ entry.uri : 'group-hover:bg-brand-darkest',
+  craft.request.lastSegment == "" ? 'md:border-' ~ entry.uri ~' bg-' ~ entry.uri : 'md:border-' ~ sectionColor|default('brand'),
+  'flex flex-col justify-center //// h-auto w-full //// absolute pin-x pin-b z-20 //// md:mb-4 p-2 /// bg-'~ sectionColor|default('brand') ~ ' border-t border-white // md:border-b-6 md:border-0 md:bg-black-75 //// text-white // text-center md:text-lg  //// transition-slow transition-property-bg //// group-hover:h-full group-hover:mb-0 group-hover:text-xl group-hover:absolute // fadeInUp',
+]|join(' ') -%}

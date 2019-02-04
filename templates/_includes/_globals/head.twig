@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ lang }}" class="no-js">
+<head>
+  <link rel="dns-prefetch" href="{{ siteUrl }}">
+  <link rel="preconnect" href="{{ siteUrl }}" crossorigin>
+  <link rel="home" href="{{ siteUrl }}" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  
+  <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+  {% hook 'seomaticRender' %}
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  
+  <!-- Mobile Specific Meta Data
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  
+  <!-- TODO: Complete the HUMANS File -->
+  <!-- HUMANS
+  ================================================== -->
+  <link type="text/plain" rel="author" href="{{ siteUrl }}/humans.txt" />
+  <!-- CSS
+  ================================================== -->
+  
+  <!-- Main Styles -->
+  <link href="{{ siteUrl }}/assets/css/style.css" rel="stylesheet" type="text/css" media="screen, projection, print">
+  {# <link href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700, 700i" rel="stylesheet"> #}
+  
+  <!-- JAVASCRIPTS
+  ================================================== -->
+  <script>
+      (function (H) {
+          H.className = H.className.replace(/\bno-js\b/, 'js')
+      })(document.documentElement);
+  </script>
+  
+  <!-- Favicons
+    ================================================== -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/touch/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/touch/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/touch/favicon-16x16.png">
+  <link rel="manifest" href="/assets/img/touch/site.webmanifest">
+  <link rel="mask-icon" href="/assets/img/touch/safari-pinned-tab.svg" color="#094fa3">
+  <link rel="shortcut icon" href="/assets/img/touch/favicon.ico">
+  <meta name="msapplication-TileColor" content="#094fa3">
+  <meta name="msapplication-config" content="/assets/img/touch/browserconfig.xml">
+  <meta name="theme-color" content="#094fa3">
+  <!--Get the fav icons for the project - http://realfavicongenerator.net -->
+
+</head>

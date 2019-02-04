@@ -1,0 +1,68 @@
+{% spaceless %}
+
+  {#
+    @param page :: {string} (the type of item for the heading of share block. e.g Share this page/product/article/story etc)
+    @param classes :: {array} (optional) (the classes for the heading)
+  #}
+
+  {% set page = page|default('Page') %}
+  {% set classes = classes|default('') %}
+
+  {% import _self as macro %}
+    {# SETUP THE NETWORKS #}
+    {% set networks = {
+        facebook: {
+          name: "Facebook",
+          shareUrl: "https://www.facebook.com/sharer/sharer.php?u=" ~ craft.app.request.absoluteUrl|url_encode
+        },
+        twitter: {
+          name: "Twitter",
+          shareUrl: "https://twitter.com/intent/tweet?text=" ~ entry.title ~ "&amp;url=" ~ craft.app.request.absoluteUrl|url_encode ~ "&amp;via=" ~ socialMedia.twitterHandle
+        },
+        google: {
+          name: "Google +",
+          shareUrl: "https://plus.google.com/share?url=" ~ craft.app.request.absoluteUrl|url_encode
+        },
+        pinterest: {
+          name: "Pinterest",
+          shareUrl: "http://pinterest.com/pin/create/button/?url=" ~ craft.app.request.absoluteUrl|url_encode ~ "&amp;description=" ~ entry.title
+        },
+        tumblr: {
+          name: "Tumblr",
+          shareUrl: "https://www.tumblr.com/share/link?url=" ~ craft.app.request.absoluteUrl|url_encode ~ "&amp;description=" ~ entry.title
+        },
+        email: {
+          name: "Email",
+          shareUrl: "mailto:?Subject=" ~ entry.title ~ "&amp;Body=I%20saw%20this%20and%20thought%20it%20might%20be%20of%20interest!" ~ craft.app.request.absoluteUrl|url_encode
+        },
+      }
+    %}
+
+  {# BUILD THE MACRO - Manually update the classes for the <li> and <a> tags as required in the macro code #}
+    {% macro socialShare(networks, classes) %}
+        <ul {% if classes %}class="{{ classes }}"{% endif %}>
+        {% for network in networks %}
+            <li class="mr-1 // animate-grow-on-hover">
+              <a
+                href="{{ network.shareUrl }}"
+                target="_blank" rel="noopener noreferrer"
+                title="Share on {{ network.name }}"
+                class="js-social-share // js-track-social-share // text-social-{{ network.name|lower }} hover:text-social-{{ network.name|lower }}"
+                data-url="{{ url(craft.app.request.pathInfo) }}"
+              >
+                <span class="fill-current block w-8 h-8">
+                  {{ svg('@webroot/assets/svg/share-' ~ network.name|lower ~ '.svg') }}
+                </span>
+                <span class="alt">Share via {{ network.name }}</span>
+              </a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endmacro %}
+{% endspaceless %}
+
+
+
+{# OUTPUT #}
+<h3 class="{{ classes }}">Share this {{ page }}</h3>
+{{ macro.socialShare(networks, "list-reset // flex") }}

@@ -1,0 +1,37 @@
+{% spaceless %}
+  {% import _self as macro %}
+  
+  {# SETUP THE NETWORKS FROM THE CMS #}
+  {% set networks = {
+    facebook:    { name: "Facebook", url: "http://facebook.com/", handle:socialMedia.facebookUsername,  },
+    twitter:     { name: "Twitter",  url: "http://twitter.com/", handle:socialMedia.twitterHandle },
+    instagram:   { name: "Instagram", url: "http://instagram.com/", handle:socialMedia.instagramUsername },
+    linkedin:    { name: "LinkedIn", url: "https://www.linkedin.com/company/", handle:socialMedia.linkedinCompanyName },
+    youtube:     { name: "YouTube", url:"", handle:socialMedia.youtubeUrl }
+  } %}
+  
+  {# BUILD THE MACRO - Manually update the classes for the <li> and <a> tags as required in the macro code #}
+  {% macro socialFollow(networks, classes) %}
+    <ul {% if classes %}class="{{ classes }}"{% endif %}>
+      {% for network in networks %}
+        {%- if network.handle|length -%}
+          <li class="mr-4 // animate-icon {{ network.name|lower }}">
+            <a href="{{ network.url ~ network.handle }}"
+               title="{{ network.name }}"
+               target="_blank" rel="noopener noreferrer"
+               class="js-track-social-follow // "
+               data-url="{{ url(craft.app.request.pathInfo) }}"
+            >
+              <span class="fill-current block w-6 h-6">{{ svg('@webroot/assets/svg/icon-' ~ network.name|lower ~ '.svg') }}</span>
+              <span class="">{{ network.name }}</span>
+            </a>
+          </li>
+        {%- endif -%}
+      {% endfor %}
+    </ul>
+  {% endmacro %}
+{% endspaceless %}
+
+{# OUTPUT #}
+{{ macro.socialFollow(networks, "list-reset // flex") }}
+

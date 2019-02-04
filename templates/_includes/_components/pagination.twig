@@ -1,0 +1,39 @@
+{% set query = query ?? null %}
+
+{% if craft.request.getQueryStringWithoutPath() %}
+  {% set queryString = "?" ~ craft.request.getQueryStringWithoutPath() %}
+{% else %}
+  {% set queryString = query ?? null %}
+{% endif %}
+
+{% set stylesNumber = 'bg-blue text-white hover:bg-teal hover:text-white ' %}
+{% set stylesNumberCurrent = 'bg-teal text-white w-7 h-7 block flex flex-col justify-center items-center ' %}
+{% set stylesNumberBullet = 'mr-2 text-sm ' %}
+{% set stylesNumberBox = 'w-7 h-7 block flex flex-col justify-center items-center  ' %}
+
+
+{% if pageInfo.totalPages > 1 %}
+<nav class="mx-auto max-w-4xl  // text-center">
+  <ul class="list-reset flex items-center justify-center mb-2">
+  {% for page, url in pageInfo.getPrevUrls(4) %}
+    <li class="{{ stylesNumberBullet }}"><a href="{{ url }}{{ queryString|length ? queryString }}" class="{{ stylesNumberBox ~ stylesNumber }}">{{ page }}</a></li>
+  {% endfor %}
+
+  <li class="{{ stylesNumberBullet ~ stylesNumberBox ~ stylesNumberCurrent }}">{{ pageInfo.currentPage }}</li>
+
+  {% for page, url in pageInfo.getNextUrls(4) %}
+    <li class="{{ stylesNumberBullet }}"><a href="{{ url }}{{ queryString|length ? queryString }}" class="{{ stylesNumberBox ~ stylesNumber }}">{{ page }}</a></li>
+  {% endfor %}
+  </ul>
+
+  <p class="text-sm">
+    <a href="{{ pageInfo.firstUrl }}{{ queryString|length ? queryString }}" class="arrow arrow-prev">
+      First Page
+    </a>
+    <span class="mx-2">Page {{ pageInfo.currentPage }} of {{ totalPages|default(pageInfo.totalPages) }}</span>
+    <a href="{{ pageInfo.lastUrl }}{{ queryString|length ? queryString }}" class="arrow arrow-next">
+      Last Page
+    </a>
+  </p>
+</nav>
+{% endif %}
