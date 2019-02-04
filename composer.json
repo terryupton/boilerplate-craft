@@ -1,7 +1,7 @@
 {
   "name": "terryupton/boilerplate-craft",
   "description": "A starting boilerplate for Craft Projects",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "project",
   "require": {
     "craftcms/cms": "^3.1.3",
