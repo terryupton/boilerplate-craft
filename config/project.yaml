@@ -1,4 +1,4 @@
-dateModified: 1549293627
+dateModified: 1549297172
 email:
   fromEmail: $EMAIL_FROM_ADDRESS
   fromName: $EMAIL_FROM_NAME
@@ -316,6 +316,34 @@ matrixBlockTypes:
     handle: termsBlock
     name: 'Terms Block'
     sortOrder: 1
+plugins:
+  field-manager:
+    edition: standard
+    enabled: true
+  image-resizer:
+    edition: standard
+    enabled: true
+  imager:
+    edition: standard
+    enabled: true
+  minify:
+    edition: standard
+    enabled: true
+  redactor:
+    edition: standard
+    enabled: true
+  relabel:
+    edition: standard
+    enabled: true
+  seomatic:
+    edition: standard
+    enabled: true
+  super-table:
+    edition: standard
+    enabled: true
+  typogrify:
+    edition: standard
+    enabled: true
 sections:
   46b46ed4-a0ea-40e9-8ebf-41874babf122:
     enableVersioning: false
@@ -408,17 +436,17 @@ sections:
     type: structure
 siteGroups:
   13a10389-f66f-49d3-bbfe-5a5918ca298f:
-    name: craftbp
+    name: default
 sites:
   e9b5ffaf-2fae-43e5-8160-4a0bc36dadd0:
     baseUrl: $DEFAULT_SITE_URL
     handle: default
     hasUrls: true
     language: en-GB
-    name: craftbp
-    primary: '1'
+    name: ''
+    primary: true
     siteGroup: 13a10389-f66f-49d3-bbfe-5a5918ca298f
-    sortOrder: '1'
+    sortOrder: 1
 system:
   edition: solo
   live: true
