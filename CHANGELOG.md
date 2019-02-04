@@ -1,8 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.5] - 2019-02-04
+### Added
+- Adding base translations file
+- Adding base templates and includes
+
+
 ## [1.0.4] - 2019-01-23
-### Changed
+### Added
 - Adding base craft config and base setup using new Craft 3.1 environment yaml file
 
 ## [1.0.3] - 2019-01-03
