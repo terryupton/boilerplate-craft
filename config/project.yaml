@@ -1,7 +1,7 @@
 dateModified: 1548254612
 email:
   fromEmail: terry@amasci.co.uk
-  fromName: craftbp
+  fromName:
   transportType: craft\mail\transportadapters\Sendmail
 fieldGroups:
   27aea6ee-8df1-4c97-8fe9-c956a049eb03:
@@ -311,39 +311,39 @@ plugins:
   field-manager:
     edition: standard
     enabled: true
-    schemaVersion: 1.0.0
+    schemaVersion:
   image-resizer:
     edition: standard
     enabled: true
-    schemaVersion: 2.0.0
+    schemaVersion:
   imager:
     edition: standard
     enabled: true
-    schemaVersion: 2.0.0
+    schemaVersion:
   minify:
     edition: standard
     enabled: true
-    schemaVersion: 1.0.0
+    schemaVersion:
   redactor:
     edition: standard
     enabled: true
-    schemaVersion: 2.2.1
+    schemaVersion:
   relabel:
     edition: standard
     enabled: true
-    schemaVersion: 1.0.0
+    schemaVersion:
   seomatic:
     edition: standard
     enabled: true
-    schemaVersion: 3.0.6
+    schemaVersion:
   super-table:
     edition: standard
     enabled: true
-    schemaVersion: 2.0.7
+    schemaVersion:
   typogrify:
     edition: standard
     enabled: true
-    schemaVersion: 1.0.0
+    schemaVersion:
 sections:
   46b46ed4-a0ea-40e9-8ebf-41874babf122:
     enableVersioning: false
@@ -436,22 +436,22 @@ sections:
     type: structure
 siteGroups:
   13a10389-f66f-49d3-bbfe-5a5918ca298f:
-    name: craftbp
+    name:
 sites:
   e9b5ffaf-2fae-43e5-8160-4a0bc36dadd0:
-    baseUrl: 'https://craftbp.loc'
+    baseUrl: $DEFAULT_SITE_URL
     handle: default
     hasUrls: true
     language: en-GB
-    name: craftbp
+    name:
     primary: true
     siteGroup: 13a10389-f66f-49d3-bbfe-5a5918ca298f
     sortOrder: 1
 system:
   edition: solo
   live: true
-  name: craftbp
-  schemaVersion: 3.1.22
+  name:
+  schemaVersion:
   timeZone: Europe/London
 users:
   allowPublicRegistration: false
