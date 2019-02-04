@@ -1,0 +1,19 @@
+{% set download = download|default(entry.download) %}
+{% set ext = download.extension|lower|trim('x', 'right') %}
+{% switch ext %}
+  {% case ext %}
+  {% set fileTypeClasses = 'text-' ~ ext %}
+{% endswitch %}
+
+<a href="{{ download.url() }}" target="_blank" class="inline-flex flex-wrap // items-starts {{ linkClasses|default(fileTypeClasses) }} {{ hoverClasses|default('hover:text-brand-darkest') }}">
+  <div class="w-8 // h-8 mb-1 // fill-current // mr-2 // flex-no-shrink">
+    {% include '_includes/svg/icon-file-' ~ download.extension|default('doc')|lower|trim('x', 'right') ~ '.svg' %}
+  </div>
+  <div class="flex-1">
+  {{ download.title }}
+  <br />
+  <span class="text-grey-light text-xs leading-none italic">Updated {{ download.dateModified|date('jS F Y') }}</span>
+  <span class="px-2 text-grey-light text-xs leading-none">|</span>
+  <span class="text-grey-light text-xs leading-none">{{ download.extension|upper }} -  {% include '_includes/helpers/filesize' with { file: download.size } %}</span>
+  </div>
+</a>

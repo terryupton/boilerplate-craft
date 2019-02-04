@@ -1,0 +1,19 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{%- minify -%}
+  {% include '_layouts/globals/head' %}
+  
+  <body>
+  {% include '_layouts/globals/header' %}
+  {% block content %}
+    <div class="mx-auto max-w-4xl px-6">
+      <p>If you see me, you haven’t set your <code>{% verbatim %}{% block main %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+      <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+      <p>terry</p>
+    </div>
+  {% endblock %}
+  {% include '_layouts/globals/footer' %}
+  
+  {% block footerJs %}{% endblock %}
+  </body>
+  </html>
+{%- endminify -%}
