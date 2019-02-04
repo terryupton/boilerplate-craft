@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.7] - 2019-02-04
+### Changed
+- included a var for sitename in project config
+
 ## [1.0.6] - 2019-02-04
 ### Changed
 - Cleaning up project config
