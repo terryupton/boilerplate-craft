@@ -1,7 +1,7 @@
 dateModified: 1548254612
 email:
   fromEmail: terry@amasci.co.uk
-  fromName:
+  fromName: $DEFAULT_SITE_NAME
   transportType: craft\mail\transportadapters\Sendmail
 fieldGroups:
   27aea6ee-8df1-4c97-8fe9-c956a049eb03:
@@ -434,23 +434,20 @@ sections:
       maxLevels: '1'
       uid: 111b38c3-19b6-43b7-9a77-ff1db8326f75
     type: structure
-siteGroups:
-  13a10389-f66f-49d3-bbfe-5a5918ca298f:
-    name:
 sites:
   e9b5ffaf-2fae-43e5-8160-4a0bc36dadd0:
     baseUrl: $DEFAULT_SITE_URL
     handle: default
     hasUrls: true
     language: en-GB
-    name:
+    name: $DEFAULT_SITE_NAME
     primary: true
     siteGroup: 13a10389-f66f-49d3-bbfe-5a5918ca298f
     sortOrder: 1
 system:
   edition: solo
   live: true
-  name:
+  name: $DEFAULT_SITE_NAME
   schemaVersion:
   timeZone: Europe/London
 users:
