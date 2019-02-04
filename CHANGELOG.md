@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.8] - 2019-02-04
+### Changed
+- updated project config.yaml to work and extended environmental vars
+
+
 ## [1.0.7] - 2019-02-04
 ### Changed
 - included a var for sitename in project config
