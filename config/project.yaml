@@ -1,8 +1,17 @@
-dateModified: 1548254612
+dateModified: 1549293627
 email:
-  fromEmail: terry@amasci.co.uk
-  fromName: $DEFAULT_SITE_NAME
-  transportType: craft\mail\transportadapters\Sendmail
+  fromEmail: $EMAIL_FROM_ADDRESS
+  fromName: $EMAIL_FROM_NAME
+  template: null
+  transportSettings:
+    encryptionMethod: ssl
+    host: $EMAIL_HOST_NAME
+    password: $EMAIL_HOST_PASSWORD
+    port: '465'
+    timeout: '10'
+    useAuthentication: '1'
+    username: $EMAIL_HOST_USERNAME
+  transportType: craft\mail\transportadapters\Smtp
 fieldGroups:
   27aea6ee-8df1-4c97-8fe9-c956a049eb03:
     name: Assets
@@ -307,43 +316,6 @@ matrixBlockTypes:
     handle: termsBlock
     name: 'Terms Block'
     sortOrder: 1
-plugins:
-  field-manager:
-    edition: standard
-    enabled: true
-    schemaVersion:
-  image-resizer:
-    edition: standard
-    enabled: true
-    schemaVersion:
-  imager:
-    edition: standard
-    enabled: true
-    schemaVersion:
-  minify:
-    edition: standard
-    enabled: true
-    schemaVersion:
-  redactor:
-    edition: standard
-    enabled: true
-    schemaVersion:
-  relabel:
-    edition: standard
-    enabled: true
-    schemaVersion:
-  seomatic:
-    edition: standard
-    enabled: true
-    schemaVersion:
-  super-table:
-    edition: standard
-    enabled: true
-    schemaVersion:
-  typogrify:
-    edition: standard
-    enabled: true
-    schemaVersion:
 sections:
   46b46ed4-a0ea-40e9-8ebf-41874babf122:
     enableVersioning: false
@@ -434,21 +406,24 @@ sections:
       maxLevels: '1'
       uid: 111b38c3-19b6-43b7-9a77-ff1db8326f75
     type: structure
+siteGroups:
+  13a10389-f66f-49d3-bbfe-5a5918ca298f:
+    name: craftbp
 sites:
   e9b5ffaf-2fae-43e5-8160-4a0bc36dadd0:
     baseUrl: $DEFAULT_SITE_URL
     handle: default
     hasUrls: true
     language: en-GB
-    name: $DEFAULT_SITE_NAME
-    primary: true
+    name: craftbp
+    primary: '1'
     siteGroup: 13a10389-f66f-49d3-bbfe-5a5918ca298f
-    sortOrder: 1
+    sortOrder: '1'
 system:
   edition: solo
   live: true
   name: $DEFAULT_SITE_NAME
-  schemaVersion:
+  schemaVersion: 3.1.22
   timeZone: Europe/London
 users:
   allowPublicRegistration: false
