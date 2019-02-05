@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2019-02-05
+### Changed
+- update to project config 
+- update to project environmental vars and general config
+
+
 ## [1.0.9] - 2019-02-04
 ### Changed
 - update to project config 
