@@ -1,4 +1,4 @@
-dateModified: 1549387919
+dateModified: 1549388509
 email:
   fromEmail: $EMAIL_FROM_ADDRESS
   fromName: $EMAIL_FROM_NAME
@@ -592,6 +592,22 @@ users:
   requireEmailVerification: true
 volumes:
   2704582f-5c82-44da-9552-cddd0a262a82:
+    fieldLayouts:
+      fc3c2174-735f-42b1-8ed7-73f02694ab13:
+        tabs:
+          -
+            fields:
+              1daffcc0-78ad-4066-934f-57421e0bd5ef:
+                required: false
+                sortOrder: 1
+              2d81e303-5711-4abe-bad0-d7bb9cb25068:
+                required: false
+                sortOrder: 3
+              52e82fa9-0507-4677-9f2b-f34dbc5aeddb:
+                required: false
+                sortOrder: 2
+            name: Content
+            sortOrder: 1
     handle: images
     hasUrls: true
     name: Images
@@ -599,4 +615,4 @@ volumes:
       path: '@webroot/uploads/images'
     sortOrder: null
     type: craft\volumes\Local
-    url: '@web/uploads/images'
+    url: '@assetUrl/uploads/images'
