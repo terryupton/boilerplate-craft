@@ -40,11 +40,11 @@ return [
         'useEmailAsUsername' => true,
         'timezone' => 'Europe/London',
       
-      // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
-      //        'aliases' => [
-      //            '@basePath' => getenv('BASE_PATH'),
-      //            '@baseUrl' => getenv('BASE_URL'),
-      //        ],
+       //Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
+      'aliases' => [
+          '@assetPath' => getenv('ASSETS_PATH'),
+          '@assetUrl' => getenv('ASSETS_URL'),
+      ],
     
     ],
   
