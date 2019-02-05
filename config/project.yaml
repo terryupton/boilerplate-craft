@@ -1,4 +1,4 @@
-dateModified: 1549297172
+dateModified: 1549388509
 email:
   fromEmail: $EMAIL_FROM_ADDRESS
   fromName: $EMAIL_FROM_NAME
@@ -13,6 +13,8 @@ email:
     username: $EMAIL_HOST_USERNAME
   transportType: craft\mail\transportadapters\Smtp
 fieldGroups:
+  1a4759d6-7c57-4fc3-86d1-ce3c62ed948b:
+    name: 'Social Media'
   27aea6ee-8df1-4c97-8fe9-c956a049eb03:
     name: Assets
   3fbdb43a-29d7-4c3e-b657-7031ab65ccb4:
@@ -22,6 +24,23 @@ fieldGroups:
   9ace1fad-7441-439d-9f5f-40620d68b63c:
     name: Common
 fields:
+  0008c3e1-4c0f-4701-b80e-bfcb74b38674:
+    contentColumnType: text
+    fieldGroup: 1a4759d6-7c57-4fc3-86d1-ce3c62ed948b
+    handle: twitterHandle
+    instructions: 'Twitter username for the website - without the preceding @. '
+    name: 'Twitter Handle'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: 4
+      multiline: ''
+      placeholder: handle
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   0efcb020-757f-48f5-a3ad-c5db918a5079:
     contentColumnType: string
     fieldGroup: 3fbdb43a-29d7-4c3e-b657-7031ab65ccb4
@@ -48,6 +67,40 @@ fields:
       initialRows: 4
       multiline: 1
       placeholder: 'Please enter an image description | e.g BIM scan of Westminster Hall'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  1faa1946-3247-4cb5-be13-18257f85d5a3:
+    contentColumnType: text
+    fieldGroup: 1a4759d6-7c57-4fc3-86d1-ce3c62ed948b
+    handle: linkedinCompanyName
+    instructions: 'To find or update your LinkedIn Company Name please see [this LinkedIn help article](https://www.linkedin.com/help/linkedin/answer/62467/updating-the-url-of-your-company-page?lang=en)'
+    name: 'Linkedin Company Name'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: 4
+      multiline: ''
+      placeholder: username
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2c286930-21e6-47b4-940e-071e1c977fed:
+    contentColumnType: text
+    fieldGroup: 74a9b2c3-f924-4c3a-9e27-f2c45b24f1d9
+    handle: fullCompanyName
+    instructions: 'Please enter the full company name as registered with companies house or the full trading name of the business. '
+    name: 'Full Company Name'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -152,6 +205,23 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
+  97bb093c-dee5-44c1-99aa-f0cd77c4d7e0:
+    contentColumnType: text
+    fieldGroup: 1a4759d6-7c57-4fc3-86d1-ce3c62ed948b
+    handle: instagramUsername
+    instructions: 'Instagram Username. Usually the part after _www.instgram.com/_. Click on the ''Settings'' tab on your Instagram company/fan page and find your ''Username''.'
+    name: 'Instagram Username'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: 4
+      multiline: ''
+      placeholder: username
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   b300f039-a202-4d80-93cf-cdcafcfbb5d9:
     contentColumnType: string
     fieldGroup: 9ace1fad-7441-439d-9f5f-40620d68b63c
@@ -228,7 +298,66 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  d18100aa-55bf-40cf-b1c3-90aaf38e7bdd:
+    contentColumnType: text
+    fieldGroup: 1a4759d6-7c57-4fc3-86d1-ce3c62ed948b
+    handle: youtubeUrl
+    instructions: 'The URL for your YouTube channel, account or playlist. To find your YouTube url or to create one please read this [YouTube help article](https://support.google.com/youtube/answer/2657968?hl=en-GB)'
+    name: 'YouTube URL'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: 4
+      multiline: ''
+      placeholder: handle
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f71b834e-adae-4e0e-95ec-d4736c74cfa2:
+    contentColumnType: text
+    fieldGroup: 1a4759d6-7c57-4fc3-86d1-ce3c62ed948b
+    handle: facebookUsername
+    instructions: 'Facebook Username. Click on the ''About'' tab on your Facebook company/fan page, scroll to the Username.'
+    name: 'Facebook Username'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: 4
+      multiline: ''
+      placeholder: username
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
 globalSets:
+  25031c1d-296c-4f89-a356-86ccfb0b1c5e:
+    fieldLayouts:
+      06e266e4-b842-4757-b257-c0bf5c5c1055:
+        tabs:
+          -
+            fields:
+              0008c3e1-4c0f-4701-b80e-bfcb74b38674:
+                required: false
+                sortOrder: 2
+              1faa1946-3247-4cb5-be13-18257f85d5a3:
+                required: false
+                sortOrder: 4
+              97bb093c-dee5-44c1-99aa-f0cd77c4d7e0:
+                required: false
+                sortOrder: 3
+              d18100aa-55bf-40cf-b1c3-90aaf38e7bdd:
+                required: false
+                sortOrder: 5
+              f71b834e-adae-4e0e-95ec-d4736c74cfa2:
+                required: false
+                sortOrder: 1
+            name: 'Scoial Accounts'
+            sortOrder: 1
+    handle: socialMedia
+    name: 'Social Media'
   5a6a5511-e946-4be0-9b5c-c0b840f9f464:
     fieldLayouts:
       05ea6d16-e7ec-461d-92d9-0968b91bcb66:
@@ -248,12 +377,15 @@ globalSets:
             sortOrder: 1
           -
             fields:
-              443dd37f-c495-4014-b43a-8ed2fc0f85a3:
+              2c286930-21e6-47b4-940e-071e1c977fed:
                 required: false
                 sortOrder: 1
-              b798f838-613c-4876-bc1b-df4b7278fc70:
+              443dd37f-c495-4014-b43a-8ed2fc0f85a3:
                 required: false
                 sortOrder: 2
+              b798f838-613c-4876-bc1b-df4b7278fc70:
+                required: false
+                sortOrder: 3
             name: Legals
             sortOrder: 2
     handle: companyInformation
@@ -443,15 +575,14 @@ sites:
     handle: default
     hasUrls: true
     language: en-GB
-    name: ''
-    primary: true
+    name: 'Craft Boilerplate'
+    primary: '1'
     siteGroup: 13a10389-f66f-49d3-bbfe-5a5918ca298f
-    sortOrder: 1
+    sortOrder: '1'
 system:
   edition: solo
   live: true
   name: $DEFAULT_SITE_NAME
-  schemaVersion: 3.1.22
   timeZone: Europe/London
 users:
   allowPublicRegistration: false
@@ -461,6 +592,22 @@ users:
   requireEmailVerification: true
 volumes:
   2704582f-5c82-44da-9552-cddd0a262a82:
+    fieldLayouts:
+      fc3c2174-735f-42b1-8ed7-73f02694ab13:
+        tabs:
+          -
+            fields:
+              1daffcc0-78ad-4066-934f-57421e0bd5ef:
+                required: false
+                sortOrder: 1
+              2d81e303-5711-4abe-bad0-d7bb9cb25068:
+                required: false
+                sortOrder: 3
+              52e82fa9-0507-4677-9f2b-f34dbc5aeddb:
+                required: false
+                sortOrder: 2
+            name: Content
+            sortOrder: 1
     handle: images
     hasUrls: true
     name: Images
@@ -468,4 +615,4 @@ volumes:
       path: '@webroot/uploads/images'
     sortOrder: null
     type: craft\volumes\Local
-    url: '@web/uploads/images'
+    url: '@assetUrl/uploads/images'
