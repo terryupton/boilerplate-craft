@@ -1,6 +1,4 @@
 {# @var craft \craft\web\twig\variables\CraftVariable #}
-{% spaceless %}
-
   {#
     dateFormatted
     Format Date for consistency.
@@ -45,7 +43,7 @@
     {% else %}
       {{ (bytes / terabyte)|number_format(2, '.') ~ 'TB' }}
     {% endif %}
-
+  {%- endmacro -%}
 
   {#
     dateRange
@@ -142,6 +140,3 @@
       {{- text -}}
     {%- endif -%}
   {%- endmacro -%}
-
-
-{% endspaceless %}

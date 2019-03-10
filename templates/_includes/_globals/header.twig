@@ -1,6 +1,16 @@
 {# @var craft \craft\web\twig\variables\CraftVariable #}
-<header role="banner">
-
+{# @var entry \craft\elements\Entry #}
+<header role="banner" class="border-b brand-grey-lighter">
+  <div class="flex justify-between">
+    <div class="flex-1">
+      <img src="/assets/img/logo.svg" alt={{ siteName }} Logo"" style="max-width:220px;">
+    </div>
+    <div class="">
+      {% include '_includes/_globals/nav.twig' %}
+    </div>
+  </div>
+  
+  
 </header>
 
 
