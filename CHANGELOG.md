@@ -1,6 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2019-03-10
+### Added
+- base templates and base includes 
+- deployignore file for excluding files for deployment
+- composer scripts for deployment
+### Changed
+- update to readme
+- update to php version is composer
+
+
 ## [1.1.0] - 2019-02-05
 ### Changed
 - update to project config 
