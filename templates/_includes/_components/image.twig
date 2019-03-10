@@ -31,14 +31,14 @@
 
   ##########################################################################################
   #}
-
+  
   {# Parameters #}
   {% set alt = image.alt|default(image.title) %}
-  {% set focalPoint = image.focalPoint %}
+  {% set focalPoint = image.getFocalPoint() %}
   {% set sizes = sizes|default(image.width ~ 'px') %}
   {% set classes = classes|default('') %}
   {% set effects = effects ?? {} %}
-
+  
   {# Notes
     #########
     Setting the images for the fill transforms. This allows us to pass in the smallest image to start from and the largest image to transform up to.
@@ -51,17 +51,17 @@
     'largestImage     checks the integrity of the image width for the transforms and sets this correctly.
     '#########
   #}
-
+  
   {% set widthStart = widthStart|default(300) %}
   {% set widthEnd = widthEnd|default(2600) %}
   {% set srcWidth = srcWidth|default(widthStart) %}
-
+  
   {% set largestImage = (image.width < widthEnd ? image.width : widthEnd) %}
   {% set imageSizes = [
-    { width: widthStart },
     { width: largestImage },
+    { width: widthStart }
   ] %}
-
+  
   {# Notes
     #########
     The 'placeholder' image is used for the blur-up technique in lazysizes.
@@ -71,8 +71,8 @@
     width: 50,
     quality: 15,
   } %}
-
-
+  
+  
   {% set transforms = {
     'base': {
       mode: 'crop',
@@ -105,11 +105,10 @@
       effects: effects,
     }
   } %}
-
+  
   {% set transform = attribute(transforms, transform) %}
 {% endspaceless %}
 
-terry
 {# OUTPUT #}
 <picture id="pictureEl">
   {% if image.extension == 'svg' %}
@@ -125,12 +124,13 @@ terry
     {% if craft.imager.serverSupportsWebp() %}
       <source sizes="{{ sizes }}" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
     {% endif %}
-    <img class="lazyload {{ classes }}"
-         src="{{ placeholder.url }}"
-         data-src="{{ srcImage.url }}"
-         data-srcset="{{ craft.imager.srcset(transformedImages) }}"
-         sizes="{{ sizes }}"
-         alt="{{ alt }}"
+    <img
+      class="lazyload {{ classes }}"
+      src="{{ placeholder.url }}"
+      data-src="{{ srcImage.url }}"
+      data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+      sizes="{{ sizes }}"
+      alt="{{ alt }}"
     >
   {% endif %}
 </picture>
