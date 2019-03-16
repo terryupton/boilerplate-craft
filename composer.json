@@ -16,7 +16,8 @@
     "nystudio107/craft-minify": "^1.2.5",
     "nystudio107/craft-seomatic": "^3.1.36",
     "nystudio107/craft-typogrify": "^1.1.1",
-    "anubarak/craft-relabel": "^1.1"
+    "anubarak/craft-relabel": "^1.1",
+    "mmikkel/cp-field-inspect": "^1.0.5"
   },
   "autoload": {
     "psr-4": {
