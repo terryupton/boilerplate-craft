@@ -30,6 +30,7 @@
     email: {
       name: "Email",
       shareUrl: "mailto:?Subject=" ~ entry.title ~ "&amp;Body=I%20saw%20this%20and%20thought%20it%20might%20be%20of%20interest!" ~ craft.app.request.absoluteUrl|url_encode
+      classes: 'text-grey hover:text-grey'
     },
   } %}
   
@@ -42,7 +43,7 @@
             href="{{ network.shareUrl }}"
             target="_blank" rel="noopener noreferrer"
             title="Share on {{ network.name }}"
-            class="js-social-share // js-track-social-share // block // text-social-{{ network.name|lower }} hover:text-social-{{ network.name|lower }}"
+            class="js-social-share // js-track-social-share // block // text-social-{{ network.name|lower }} hover:text-social-{{ network.name|lower }} {{ network.classes|default('') }}"
             data-url="{{ url(craft.app.request.pathInfo) }}"
           >
             {{ svg('@webroot/assets/svg/share-' ~ network.name|lower ~ '.svg', class="fill-current block w-8 h-8 ") }}
