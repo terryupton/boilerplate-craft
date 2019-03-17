@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2019-03-17
+### Added
+- more base templates and base includes 
+- craft plugins
+### Changed
+- improvements to templates
+- gitignore
+
 ## [1.2.0] - 2019-03-10
 ### Added
 - base templates and base includes 
