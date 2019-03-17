@@ -337,8 +337,7 @@ globalSets:
     fieldLayouts:
       06e266e4-b842-4757-b257-c0bf5c5c1055:
         tabs:
-          -
-            fields:
+          - fields:
               0008c3e1-4c0f-4701-b80e-bfcb74b38674:
                 required: false
                 sortOrder: 2
@@ -362,8 +361,7 @@ globalSets:
     fieldLayouts:
       05ea6d16-e7ec-461d-92d9-0968b91bcb66:
         tabs:
-          -
-            fields:
+          - fields:
               0efcb020-757f-48f5-a3ad-c5db918a5079:
                 required: true
                 sortOrder: 1
@@ -375,8 +373,7 @@ globalSets:
                 sortOrder: 2
             name: Contact
             sortOrder: 1
-          -
-            fields:
+          - fields:
               2c286930-21e6-47b4-940e-071e1c977fed:
                 required: false
                 sortOrder: 1
@@ -396,8 +393,7 @@ matrixBlockTypes:
     fieldLayouts:
       20dc58dd-92c8-4d68-8987-64903452f0ae:
         tabs:
-          -
-            fields:
+          - fields:
               26f79cf2-503e-4c50-aa72-f671e2b629f2:
                 required: true
                 sortOrder: 2
@@ -484,8 +480,7 @@ sections:
         fieldLayouts:
           bfef7f63-3c26-4e33-ac93-8eac679b5547:
             tabs:
-              -
-                fields:
+              - fields:
                   4205fd33-eccc-4ede-90f4-4e26f1e2e1dc:
                     required: false
                     sortOrder: 2
@@ -537,8 +532,7 @@ sections:
         fieldLayouts:
           14c7eed1-9cdb-4620-b3e5-259ac351ce76:
             tabs:
-              -
-                fields:
+              - fields:
                   66a6808a-8c39-46ae-a30c-eb8758c059e5:
                     required: false
                     sortOrder: 2
@@ -582,7 +576,6 @@ sites:
 system:
   edition: solo
   live: true
-  name: $DEFAULT_SITE_NAME
   timeZone: Europe/London
 users:
   allowPublicRegistration: false
@@ -595,8 +588,7 @@ volumes:
     fieldLayouts:
       fc3c2174-735f-42b1-8ed7-73f02694ab13:
         tabs:
-          -
-            fields:
+          - fields:
               1daffcc0-78ad-4066-934f-57421e0bd5ef:
                 required: false
                 sortOrder: 1
