@@ -22,7 +22,7 @@
   #}
   
   {# Parameters #}
-  {% set email = tel|default(.email) %}
+  {% set email = tel|default(contact.email) %}
   {% set classes = classes|default('') %}
   {% set emailQueryString = emailQueryString|default('') %}
 

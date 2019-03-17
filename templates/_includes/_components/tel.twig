@@ -20,7 +20,7 @@
   #}
   
   {# Parameters #}
-  {% set tel = tel|default(.telephone) %}
+  {% set tel = tel|default(contact.telephone) %}
   {% set classes = classes|default('') %}
 
 {% endspaceless %}
