@@ -1,4 +1,4 @@
-dateModified: 1552833906
+dateModified: 1552834196
 email:
   fromEmail: $EMAIL_FROM_ADDRESS
   fromName: $EMAIL_FROM_NAME
@@ -451,6 +451,25 @@ plugins:
   image-resizer:
     edition: standard
     enabled: true
+    settings:
+      enabled: '1'
+      imageWidth: '2400'
+      imageHeight: '2400'
+      imageQuality: '100'
+      assetSourceSettings:
+        1:
+          enabled: '1'
+          imageWidth: ''
+          imageHeight: ''
+          imageQuality: ''
+        2:
+          enabled: '1'
+          imageWidth: ''
+          imageHeight: ''
+          imageQuality: ''
+      skipLarger: '1'
+      nonDestructiveResize: ''
+      nonDestructiveCrop: false
   imager:
     edition: standard
     enabled: true
