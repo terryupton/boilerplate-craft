@@ -9,46 +9,50 @@
  */
 
 return [
-  // Global settings
+    // Global settings
     '*' => [
-      // Default Week Start Day (0 = Sunday, 1 = Monday...)
+        // Default Week Start Day (0 = Sunday, 1 = Monday...)
         'defaultWeekStartDay' => 1,
-      
-      // Enable CSRF Protection (recommended)
+
+        // Enable CSRF Protection (recommended)
         'enableCsrfProtection' => true,
-      
-      // URL
+
+        // URL
         'omitScriptNameInUrls' => true,
         'addTrailingSlashesToUrls' => true,
-      
-      // Control Panel trigger word
+
+        // Control Panel trigger word
         'cpTrigger' => 'cms',
-      
-      // The secure key Craft will use for hashing and encrypting data
+
+        // The secure key Craft will use for hashing and encrypting data
         'securityKey' => getenv('SECURITY_KEY'),
-      
-      // Use Project Config File for best practice in data migration
+
+        // Use Project Config File for best practice in data migration
         'useProjectConfigFile' => true,
-      
-      // Set fuzzy search by default
+
+        // Set fuzzy search by default
         'defaultSearchTermOptions' => array(
             'subLeft' => true,
             'subRight' => true,
         ),
-        
+
         'generateTransformsBeforePageLoad' => true,
         'useEmailAsUsername' => true,
         'timezone' => 'Europe/London',
-      
-       //Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
-      'aliases' => [
-          '@assetPath' => getenv('ASSETS_PATH'),
-          '@assetUrl' => getenv('ASSETS_URL'),
-      ],
-    
+
+        //Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
+        //Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
+        'aliases' => [
+            '@webroot' => "@root/web",
+            '@siteUrl' => getenv('DEFAULT_SITE_URL'),
+            '@assetUrl' => getenv('DEFAULT_SITE_URL') . getenv('ASSETS_PATH'),
+            '@assetPath' => '@webroot' . getenv('ASSETS_PATH'),
+            '@icons' => '@webroot/assets/svg',
+        ],
+
     ],
-  
-  // Dev environment settings
+
+    // Dev environment settings
     'local' => [
         'siteUrl' => null,
         'devMode' => true,
@@ -59,8 +63,8 @@ return [
         'enableTemplateCaching' => false,
         'testToEmailAddress' => 'terry@amasci.co.uk',
     ],
-  
-  // Staging environment settings
+
+    // Staging environment settings
     'staging' => [
         'siteUrl' => null,
         'allowUpdates' => false,
@@ -71,8 +75,8 @@ return [
         'enableTemplateCaching' => false,
         'testToEmailAddress' => 'terry@amasci.co.uk',
     ],
-  
-  // Production environment settings
+
+    // Production environment settings
     'production' => [
         'siteUrl' => null,
         'allowUpdates' => false,
