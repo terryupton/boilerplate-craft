@@ -1,4 +1,4 @@
-dateModified: 1549388509
+dateModified: 1552833906
 email:
   fromEmail: $EMAIL_FROM_ADDRESS
   fromName: $EMAIL_FROM_NAME
@@ -585,26 +585,44 @@ users:
   requireEmailVerification: true
 volumes:
   2704582f-5c82-44da-9552-cddd0a262a82:
+    name: Images
+    handle: images
+    type: craft\volumes\Local
+    hasUrls: true
+    url: '@assetUrl/images'
+    settings:
+      path: '@assetPath/images'
+    sortOrder: null
     fieldLayouts:
       fc3c2174-735f-42b1-8ed7-73f02694ab13:
         tabs:
-          - fields:
+          - name: Content
+            sortOrder: 1
+            fields:
               1daffcc0-78ad-4066-934f-57421e0bd5ef:
                 required: false
                 sortOrder: 1
-              2d81e303-5711-4abe-bad0-d7bb9cb25068:
-                required: false
-                sortOrder: 3
               52e82fa9-0507-4677-9f2b-f34dbc5aeddb:
                 required: false
                 sortOrder: 2
-            name: Content
-            sortOrder: 1
-    handle: images
-    hasUrls: true
-    name: Images
-    settings:
-      path: '@webroot/uploads/images'
-    sortOrder: null
+              2d81e303-5711-4abe-bad0-d7bb9cb25068:
+                required: false
+                sortOrder: 3
+  df54fe7f-5058-4ae8-91b8-0f2b0db5e400:
+    name: Documents
+    handle: documents
     type: craft\volumes\Local
-    url: '@assetUrl/uploads/images'
+    hasUrls: true
+    url: '@assetUrl/documents'
+    settings:
+      path: '@assetPath/documents'
+    sortOrder: '1'
+    fieldLayouts:
+      2c8ce468-bcdd-44b0-9cd2-069a5b72da81:
+        tabs:
+          - name: Content
+            sortOrder: 1
+            fields:
+              52e82fa9-0507-4677-9f2b-f34dbc5aeddb:
+                required: false
+                sortOrder: 1
