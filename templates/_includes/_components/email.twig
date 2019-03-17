@@ -1,0 +1,39 @@
+{% spaceless %}
+  {#
+  ##########################################################################################
+    ###Image
+    Description for module
+
+    @param email :: {object} (the email object to use)
+    @param classes :: {array} (optional)
+    @param emailQueryString "" {string} (passing in query strings to tag on to the email link. E.G Setting the subject and body)
+    
+
+    #USAGE:
+    {% include
+      '_includes/components/tel' with {
+        tel:entry.email.,
+        classes:'text-lg text-blue hover:text-greener',
+        emailQueryString: 'subject=Website Enquiy&amp;body=I was browsing your website and I want to make an enquiry."
+      }
+    %}
+
+  ##########################################################################################
+  #}
+  
+  {# Parameters #}
+  {% set email = tel|default(contact.email) %}
+  {% set classes = classes|default('') %}
+  {% set emailQueryString = emailQueryString|default('') %}
+
+{% endspaceless %}
+
+{# OUTPUT #}
+<a
+  href="mailto:{{ email }}{{ emailQueryString }}"
+  class="js-track-cta {{ classes }}"
+  data-title="{{ email }}"
+  data-url="{{ url(craft.app.request.pathInfo) }}"
+>
+  {{ email }}
+</a>

@@ -11,7 +11,7 @@
 
   {# Create Auto Copyright Year Range #}
   {%- macro autoCopyright(startYear) -%}
-    {% set currentYear = now.year %}
+    {% set currentYear = now|date('Y') %}
     {% set startYear = startYear|default(currentYear) %}
     {% set copyrightYears = ((startYear < currentYear) ? (startYear ~ ' - ' ~ currentYear) : startYear) %}
     {{ copyrightYears }}
@@ -31,7 +31,7 @@
     {% set megabyte = kilobyte * 1024 %}
     {% set gigabyte = megabyte * 1024 %}
     {% set terabyte = gigabyte * 1024 %}
-
+  
     {% if bytes < kilobyte %}
       {{ bytes ~ ' B' }}
     {% elseif bytes < megabyte %}
@@ -140,3 +140,16 @@
       {{- text -}}
     {%- endif -%}
   {%- endmacro -%}
+
+  {#
+    Is Active
+   Checks the URL segment to see if the current page is active and highlight in the menu
+   @param {string} segment (The segment of the URL to check against))
+   @param {string} classes (The classes to use to highlight)
+  #}
+{%- macro is_active(slug, currentCategory) -%}
+  {% set defaultClasses = '' %}
+  {% set currentClasses = '' %}
+  {{ (slug in craft.app.request.segments) ? currentClasses : defaultClasses }}
+{%- endmacro -%}
+

@@ -1,0 +1,36 @@
+{% spaceless %}
+  {#
+  ##########################################################################################
+    ###Image
+    Description for module
+
+    @param tel :: {object} (the telephone object to use)
+    @param classes :: {array} (optional)
+    
+
+    #USAGE:
+    {% include
+      '_includes/components/tel' with {
+        tel:entry.telephone.,
+        classes:'text-lg text-blue hover:text-greener',
+      }
+    %}
+
+  ##########################################################################################
+  #}
+  
+  {# Parameters #}
+  {% set tel = tel|default(contact.telephone) %}
+  {% set classes = classes|default('') %}
+
+{% endspaceless %}
+
+{# OUTPUT #}
+<a
+  href="tel:{{ tel }}"
+  class="js-track-cta {{ classes }}"
+  data-title="{{ tel }}"
+  data-url="{{ url(craft.app.request.pathInfo) }}"
+>
+  {{ tel }}
+</a>

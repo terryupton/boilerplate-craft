@@ -54,3 +54,7 @@ urllist.txt
 
 #BPROJECT SPECIFIC
 # /assets/img/tmp/*
+
+#consider removing these?
+amasci-setup
+/scripts

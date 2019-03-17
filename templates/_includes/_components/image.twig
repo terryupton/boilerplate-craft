@@ -5,13 +5,14 @@
     This generates webp with jpeg fallbacks and use picture to deliver the correct images.
     Uses Srcset and Sizes for delivering suitable images based on screen resolution and uses lazysizes for performance.
 
-    @param image :: {string} (the image to apply the transform to)
+    @param image :: {object} (the image to apply the transform to)
     @param transform :: {string} (set a transform from the array of transforms below. e.g transform:'16x9')
-    @param alt :: {string}
-    @param focalPoint :: {bool}
+    @param alt :: {string or object}
+    @param focalPoint :: {}
+    @param lazyLoad :: {bool}
     @param classes :: {array} (optional)
-    @param widthStart :: {bool} (optional) (is the starting transform size for the srcset. e.g widthStart:300)
-    @param widthEnd :: {bool} (optional) (is the ending transform size for the srcset. e.g widthEnd:2000)
+    @param widthStart :: {int} (optional) (is the starting transform size for the srcset. e.g widthStart:300)
+    @param widthEnd :: {int} (optional) (is the ending transform size for the srcset. e.g widthEnd:2000)
     @param sizes :: {string} (what sizes to set for the image. e.g sizes:'(min-width:992px) 10rem, (min-width:576px) 50vw, 100vw' ?? 'auto' for lazysizes auto sizing ?? falls back to natural image width.)
     @param effects :: {array} (optional) (any effects to apply to the image e.g effects:{modulate: [100, 40, 100], colorBlend: ['rgb(255, 153, 51)', 0.5]} )
 
@@ -20,25 +21,28 @@
       '_includes/components/image' with {
         image:image,
         transform: 'portrait',
+        alt: 'entry.title',
+        lazyLoad: 0
         classes:'w-1/4 border',
         srcWidth:600,
         widthStart:200,
         widthEnd:800,
-        sizes:'25vw',
+        sizes:'(min-width:992px) 10rem, (min-width:576px) 50vw, 100vw',
         effects:{modulate: [100, 40, 100], colorBlend: ['rgb(255, 153, 51)', 0.5]}
       }
     %}
 
   ##########################################################################################
   #}
-
+  
   {# Parameters #}
-  {% set alt = image.alt|default(image.title) %}
-  {% set focalPoint = image.focalPoint %}
+  {% set alt = alt|default(image.alt|default(image.title)) %}
+  {% set focalPoint = image.getFocalPoint() %}
+  {% set lazyLoad = lazyLoad|default(1) %}
   {% set sizes = sizes|default(image.width ~ 'px') %}
   {% set classes = classes|default('') %}
   {% set effects = effects ?? {} %}
-
+  
   {# Notes
     #########
     Setting the images for the fill transforms. This allows us to pass in the smallest image to start from and the largest image to transform up to.
@@ -51,17 +55,17 @@
     'largestImage     checks the integrity of the image width for the transforms and sets this correctly.
     '#########
   #}
-
+  
   {% set widthStart = widthStart|default(300) %}
   {% set widthEnd = widthEnd|default(2600) %}
   {% set srcWidth = srcWidth|default(widthStart) %}
-
+  
   {% set largestImage = (image.width < widthEnd ? image.width : widthEnd) %}
   {% set imageSizes = [
-    { width: widthStart },
     { width: largestImage },
+    { width: widthStart }
   ] %}
-
+  
   {# Notes
     #########
     The 'placeholder' image is used for the blur-up technique in lazysizes.
@@ -71,8 +75,8 @@
     width: 50,
     quality: 15,
   } %}
-
-
+  
+  
   {% set transforms = {
     'base': {
       mode: 'crop',
@@ -105,13 +109,12 @@
       effects: effects,
     }
   } %}
-
+  
   {% set transform = attribute(transforms, transform) %}
 {% endspaceless %}
 
-terry
 {# OUTPUT #}
-<picture id="pictureEl">
+<picture>
   {% if image.extension == 'svg' %}
     {{ svg(image) }}
   {% else %}
@@ -125,12 +128,18 @@ terry
     {% if craft.imager.serverSupportsWebp() %}
       <source sizes="{{ sizes }}" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
     {% endif %}
-    <img class="lazyload {{ classes }}"
-         src="{{ placeholder.url }}"
-         data-src="{{ srcImage.url }}"
-         data-srcset="{{ craft.imager.srcset(transformedImages) }}"
-         sizes="{{ sizes }}"
-         alt="{{ alt }}"
+    <img
+      class="lazyload {{ classes }}"
+      src="{{ placeholder.url }}"
+      data-src="{{ srcImage.url }}"
+      data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+      sizes="{{ sizes }}"
+      alt="{{ alt }}"
     >
   {% endif %}
 </picture>
+
+{# TODO: Finish off LazyLoad Checks and alternative code #}
+
+{# https://nystudio107.com/blog/creating-optimized-images-in-craft-cms #}
+{# https://voices.basedesign.com/dry-templating-with-twig-and-craft-cms-543292d114aa #}
