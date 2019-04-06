@@ -18,11 +18,11 @@
 
     #USAGE:
     {% include
-      '_includes/components/image' with {
+      '_includes/_components/image.twig' with {
         image:image,
         transform: 'portrait',
         alt: 'entry.title',
-        lazyLoad: 0
+        lazyLoad: 0,
         classes:'w-1/4 border',
         srcWidth:600,
         widthStart:200,
@@ -81,31 +81,31 @@
     'base': {
       mode: 'crop',
       ratio: image.width / image.height,
-      focalPoint:focalPoint,
+      position:focalPoint,
       effects: effects,
     },
     'square': {
       mode: 'crop',
       ratio: 1,
-      focalPoint:focalPoint,
+      position:focalPoint,
       effects: effects,
     },
     '16x9': {
       mode: 'crop',
       ratio: 16/9,
-      focalPoint:focalPoint,
+      position:focalPoint,
       effects: effects,
     },
-    'landscape-3/2': {
+    '16x10': {
       mode: 'crop',
-      ratio: 16/9,
-      focalPoint:focalPoint,
+      ratio: 16/10,
+      position:focalPoint,
       effects: effects,
     },
     'portrait': {
       mode: 'crop',
       ratio: 4/5,
-      focalPoint:focalPoint,
+      position:focalPoint,
       effects: effects,
     }
   } %}
@@ -125,17 +125,30 @@
       {% set transform = transform|merge({format: 'webp'}) %}
       {% set transformedImagesWebp = craft.imager.transformImage(image, imageSizes, transform, { fillTransforms: true }) %}
     {% endif %}
-    {% if craft.imager.serverSupportsWebp() %}
-      <source sizes="{{ sizes }}" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+    {% if lazyLoad != 0 %}
+      {% if craft.imager.serverSupportsWebp() %}
+        <source sizes="{{ sizes }}" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+      {% endif %}
+      <img
+        class="lazyload {{ classes }}"
+        src="{{ placeholder.url }}"
+        data-src="{{ srcImage.url }}"
+        data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+        data-sizes="{{ sizes }}"
+        alt="{{ alt }}"
+      />
+    {% else %}
+      {% if craft.imager.serverSupportsWebp() %}
+        <source sizes="{{ sizes }}" srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+      {% endif %}
+      <img
+        class="{{ classes }}"
+        src="{{ srcImage.url }}"
+        srcset="{{ craft.imager.srcset(transformedImages) }}"
+        sizes="{{ sizes }}"
+        alt="{{ alt }}"
+      />
     {% endif %}
-    <img
-      class="lazyload {{ classes }}"
-      src="{{ placeholder.url }}"
-      data-src="{{ srcImage.url }}"
-      data-srcset="{{ craft.imager.srcset(transformedImages) }}"
-      sizes="{{ sizes }}"
-      alt="{{ alt }}"
-    >
   {% endif %}
 </picture>
 
