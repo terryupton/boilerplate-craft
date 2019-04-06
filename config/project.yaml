@@ -264,23 +264,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  be0acf2a-68de-4d25-a4a0-dbd1e614ef7a:
-    contentColumnType: text
-    fieldGroup: 3fbdb43a-29d7-4c3e-b657-7031ab65ccb4
-    handle: address
-    instructions: ''
-    name: Address
-    searchable: true
-    settings:
-      charLimit: ''
-      code: ''
-      columnType: text
-      initialRows: 5
-      multiline: 1
-      placeholder: ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
   c8a96201-891a-43e4-89e9-3263caa261e5:
     contentColumnType: text
     fieldGroup: 3fbdb43a-29d7-4c3e-b657-7031ab65ccb4
@@ -332,6 +315,36 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  9da9e5b9-e131-4bde-9799-6a28ebdd215e:
+    name: Address
+    handle: address
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: verbb\supertable\fields\SuperTableField
+    settings:
+      minRows: ''
+      maxRows: ''
+      contentTable: '{{%stc_address}}'
+      localizeBlocks: false
+      staticField: '1'
+      columns:
+        22:
+          width: ''
+        23:
+          width: ''
+        24:
+          width: ''
+        25:
+          width: ''
+        26:
+          width: ''
+      fieldLayout: row
+      selectionLabel: ''
+    contentColumnType: string
+    fieldGroup: 3fbdb43a-29d7-4c3e-b657-7031ab65ccb4
+  63b677fc-5b4e-4b9e-afed-681184de614e:
 globalSets:
   25031c1d-296c-4f89-a356-86ccfb0b1c5e:
     fieldLayouts:
@@ -358,22 +371,26 @@ globalSets:
     handle: socialMedia
     name: 'Social Media'
   5a6a5511-e946-4be0-9b5c-c0b840f9f464:
+    name: 'Company Information'
+    handle: companyInformation
     fieldLayouts:
       05ea6d16-e7ec-461d-92d9-0968b91bcb66:
         tabs:
-          - fields:
+          - name: Contact
+            sortOrder: 1
+            fields:
               0efcb020-757f-48f5-a3ad-c5db918a5079:
                 required: true
                 sortOrder: 1
-              be0acf2a-68de-4d25-a4a0-dbd1e614ef7a:
-                required: true
-                sortOrder: 3
               c8a96201-891a-43e4-89e9-3263caa261e5:
                 required: true
                 sortOrder: 2
-            name: Contact
-            sortOrder: 1
-          - fields:
+              9da9e5b9-e131-4bde-9799-6a28ebdd215e:
+                required: true
+                sortOrder: 3
+          - name: Legals
+            sortOrder: 2
+            fields:
               2c286930-21e6-47b4-940e-071e1c977fed:
                 required: false
                 sortOrder: 1
@@ -383,10 +400,6 @@ globalSets:
               b798f838-613c-4876-bc1b-df4b7278fc70:
                 required: false
                 sortOrder: 3
-            name: Legals
-            sortOrder: 2
-    handle: companyInformation
-    name: 'Company Information'
 matrixBlockTypes:
   7cd0b9ad-8198-4647-aa5a-62c7032541d8:
     field: 66a6808a-8c39-46ae-a30c-eb8758c059e5
@@ -592,6 +605,136 @@ sites:
     primary: '1'
     siteGroup: 13a10389-f66f-49d3-bbfe-5a5918ca298f
     sortOrder: '1'
+superTableBlockTypes:
+  005e724b-8b34-4f29-8129-3cd4c60db482:
+    field: 9da9e5b9-e131-4bde-9799-6a28ebdd215e
+    fields:
+      d41e4e73-5fc9-4c39-a936-99c54496698b:
+        name: 'Building Name'
+        handle: buildingName
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      e1b38fd9-22fa-4a5a-9c3f-549f8a61c386:
+        name: 'Address 1'
+        handle: address1
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      25d996e3-3a74-4fbc-be90-1fd0bfb940b3:
+        name: 'Address 2'
+        handle: address2
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      9854c5b5-08cc-485f-915d-2c1c91f9e2a9:
+        name: City/Town
+        handle: city
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      0e1b0bd1-cfea-4fb9-ad3e-75f702da2c3f:
+        name: County
+        handle: county
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      6a9797e9-902d-4572-adbb-b4f2ac5d5893:
+        name: 'Post Code'
+        handle: postCode
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      b19d8c31-0dc0-4cfe-9c7d-3e1d9be51ad5:
+        tabs:
+          - name: Content
+            sortOrder: 1
+            fields:
+              d41e4e73-5fc9-4c39-a936-99c54496698b:
+                required: false
+                sortOrder: 1
+              e1b38fd9-22fa-4a5a-9c3f-549f8a61c386:
+                required: true
+                sortOrder: 2
+              25d996e3-3a74-4fbc-be90-1fd0bfb940b3:
+                required: false
+                sortOrder: 3
+              9854c5b5-08cc-485f-915d-2c1c91f9e2a9:
+                required: true
+                sortOrder: 4
+              0e1b0bd1-cfea-4fb9-ad3e-75f702da2c3f:
+                required: false
+                sortOrder: 5
+              6a9797e9-902d-4572-adbb-b4f2ac5d5893:
+                required: true
+                sortOrder: 6
 system:
   edition: solo
   live: true
