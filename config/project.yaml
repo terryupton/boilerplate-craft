@@ -556,6 +556,7 @@ plugins:
   super-table:
     edition: standard
     enabled: true
+  cp-field-inspect:
     edition: standard
     enabled: true
 sections:
