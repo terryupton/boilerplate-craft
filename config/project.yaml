@@ -345,6 +345,31 @@ fields:
     contentColumnType: string
     fieldGroup: 3fbdb43a-29d7-4c3e-b657-7031ab65ccb4
   63b677fc-5b4e-4b9e-afed-681184de614e:
+    name: Image
+    handle: image
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: ''
+      defaultUploadLocationSource: 'volume:2704582f-5c82-44da-9552-cddd0a262a82'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:2704582f-5c82-44da-9552-cddd0a262a82'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: large
+      limit: '1'
+      selectionLabel: 'Add Image'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 9ace1fad-7441-439d-9f5f-40620d68b63c
 globalSets:
   25031c1d-296c-4f89-a356-86ccfb0b1c5e:
     fieldLayouts:
