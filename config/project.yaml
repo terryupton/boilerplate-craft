@@ -370,6 +370,36 @@ fields:
       localizeRelations: false
     contentColumnType: string
     fieldGroup: 9ace1fad-7441-439d-9f5f-40620d68b63c
+  fd7aea35-41ba-4ef9-baf1-b829c39b5932:
+    name: Downloads
+    handle: downloads
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:2704582f-5c82-44da-9552-cddd0a262a82'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:df54fe7f-5058-4ae8-91b8-0f2b0db5e400'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - excel
+        - pdf
+        - powerpoint
+        - word
+      sources:
+        - 'volume:df54fe7f-5058-4ae8-91b8-0f2b0db5e400'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: ''
+      selectionLabel: 'Add a document'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 9ace1fad-7441-439d-9f5f-40620d68b63c
 globalSets:
   25031c1d-296c-4f89-a356-86ccfb0b1c5e:
     fieldLayouts:
