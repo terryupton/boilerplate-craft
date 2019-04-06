@@ -556,7 +556,6 @@ plugins:
   super-table:
     edition: standard
     enabled: true
-  typogrify:
     edition: standard
     enabled: true
 sections:
