@@ -1,0 +1,13 @@
+{% include '_includes/_components/tel.twig' %}<br />
+{% include '_includes/_components/email.twig' %}
+
+<div class="pt-12">
+  {% for row in companyInformation.address %}
+    {% if row.buildingName|length %}{{ row.buildingName }}<br />{% endif %}
+    {% if row.address1|length %}{{ row.address1 }}<br />{% endif %}
+    {% if row.address2|length %}{{ row.address2 }}<br />{% endif %}
+    {% if row.city|length %}{{ row.city }}<br />{% endif %}
+    {% if row.county|length %}{{ row.county }}<br />{% endif %}
+    {% if row.postCode|length %}{{ row.postCode }}{% endif %}
+  {% endfor %}
+</div>
