@@ -561,9 +561,25 @@ plugins:
     enabled: true
 sections:
   46b46ed4-a0ea-40e9-8ebf-41874babf122:
+    name: Contact
+    handle: contact
+    type: single
     enableVersioning: false
+    propagateEntries: true
+    siteSettings:
+      e9b5ffaf-2fae-43e5-8160-4a0bc36dadd0:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: contact
+        template: contact
     entryTypes:
       aad9c1a9-a657-4829-96ac-3485bf61f374:
+        name: Contact
+        handle: contact
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
         fieldLayouts:
           bfef7f63-3c26-4e33-ac93-8eac679b5547:
             tabs:
