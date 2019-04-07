@@ -1,0 +1,175 @@
+{{ form.renderTag }}
+
+{########################################################################################### #}
+{# SETUP STYLES #}
+{########################################################################################### #}
+
+{# ERRORS #}
+{% set errorIcon = svg('@icons/alert-circle.svg', class="w-6 h-6 flex-no-shrink stroke-current mr-1") %}
+{% set errorInputClass = "text-brand-red  bg-brand-red-lightest  border-brand-red  focus:border-brand-red  focus:outline-none" %}
+
+
+{# LABELS AND INSTRUCTIONS #}
+{% set labelClass = "block font-medium mb-1 text-sm" %}
+{% set instructionsClass = "text-xs pt-2 italic text-grey leading-normal" %}
+
+{# INPUTS #}
+{% set inputClass = "text-grey-darker w-full appearance-none bg-white p-2 border border-grey" %}
+{% set radioClass = "w-4 h-4 inline-block mr-1 rounded-full border border-grey" %}
+{% set checkboxClass = "w-4 h-4 inline-block mr-1 border border-grey" %}
+
+
+{% set submitClass = "bg-blue p-4 text-white" %}
+
+{# LAYOUTS #}
+{% set rowClass = '-mx-4' %}
+{% set columnClass = 'relative flex-1 mx-4 py-4 mb-2' %}
+
+{########################################################################################### #}
+
+
+
+{########################################################################################### #}
+{#FORM ERRORS#}
+{########################################################################################### #}
+{% if form.hasErrors %}
+  <div class="mb-8 text-brand-red">
+    <div class="flex item-start mb-4">
+      {{ errorIcon }}
+      <p class="mb-0"><strong class="font-semibold">Whoops!</strong><br />
+        <span class="text-sm">There was an error submitting this form, please check the fields below.</span>
+      </p>
+    </div>
+    {% for row in form %}
+      {% for field in row %}
+        {% for error in field.getErrors %}
+          {% if loop.first %}<ul class="text-sm font-normal mb-2 ml-12">{% endif %}
+          <li>
+            <strong>{{ field.label }}</strong> - {{ error|lower }}
+          </li>
+          {% if loop.last %}</ul>{% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+
+{########################################################################################### #}
+{#FORM CODE#}
+{########################################################################################### #}
+{% for row in form %}
+<div class="{{ rowClass }} {{ form.customAttributes.rowClass }}">
+  {% for field in row %}
+    
+    {% set columnClass = columnClass ~ " " ~ form.customAttributes.columnClass %}
+    {% if field.type == "submit" %}
+      {% set columnClass = columnClass ~ "flex freeform-column-content-align-" ~ field.position %}
+    {% endif %}
+    {% set fieldType = field.type %}
+  
+  <div class="{{ columnClass }}">
+    {% switch fieldType %}
+    {% case "text" or "email" or "number" or "textarea" or "password" %}
+      {{ field.renderInput({
+        class:inputClass ~ " " ~ (field.hasErrors ? errorInputClass),
+      }) }}
+    
+    {% case "radio_group" %}
+      <div class="mx-auto {% if field.oneLine %}flex flex-wrap {% endif %}">
+        {% for option in field.options %}
+          <div class="flex items-center mr-4 mb-4">
+            <input id="{{ option.value }}"
+                   type="radio"
+                   name="{{ field.handle }}"
+                   value="{{ option.value }}"
+                   class="appearance-none hidden"
+              {{ option.checked ? "checked" : "" }} />
+            <label for="{{ option.value }}" class="flex items-center cursor-pointer">
+              <span class="{{ radioClass }}"></span>
+              {{ option.label|t|raw }}</label>
+          </div>
+        {% endfor %}
+      </div>
+    
+    {% case "checkbox_group" %}
+      <div class="mx-auto {% if field.oneLine %}flex flex-wrap {% endif %}">
+        {% for option in field.options %}
+          <div class="flex items-center mr-4 mb-4">
+            <input id="{{ option.value }}"
+                   type="checkbox"
+                   name="{{ field.handle }}[]"
+                   value="{{ option.value }}"
+                   class="appearance-none hidden"
+              {{ option.checked ? "checked" : "" }} />
+            <label for="{{ option.value }}" class="flex items-center cursor-pointer">
+              <span class="{{ checkboxClass }}"></span>
+              {{ option.label|t|raw }}</label>
+          </div>
+        {% endfor %}
+      </div>
+    
+    {% case "checkbox" or "mailing_list" %}
+      <div class="mx-auto"">
+      <div class="flex items-center mr-4 mb-4">
+        {{ field.renderSingleInput({
+          class:"appearance-none hidden",
+          id: field.handle
+        }) }}
+        <label for="{{ field.handle }}" class="flex items-center cursor-pointer">
+          <span class="{{ checkboxClass }}"></span>
+          {{ field.label|t|raw }}</label>
+      </div>
+      </div>
+    
+    {% case "select" %}
+      <div class="relative">
+        {{ field.renderInput({
+          class:inputClass ~ " " ~ (field.hasErrors ? errorInputClass)
+        }) }}
+        <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+          </svg>
+        </div>
+      </div>
+    
+    {% case "submit" %}
+      {{ field.render({
+        class: submitClass,
+      }) }}
+    
+    {% case "html" %}
+      {{ field.render() }}
+    
+    
+    {% default %}
+      
+      {% if currentUser and currentUser.admin %}
+        <div class="{{ errorInputClass }} p-3 italic text-sm">
+          This field is has not been developed. Please contact Amasci Creative Limited to discuss this requirement.
+        </div>
+      {% endif %}
+    {% endswitch %}
+    
+    
+    {{ field.renderInstructions({
+      instructionsClass: instructionsClass,
+    }) }}
+    
+    
+    {% if field.hasErrors %}
+      {% for errorString in field.errors %}
+        <div class="flex items-center text-brand-red text-xs font-medium p-2">
+          {{ errorIcon }} {{ errorString }}
+        </div>
+      {% endfor %}
+    {% endif %}
+    
+    
+    <div class="text-xs text-grey-light">{{ fieldType }}</div>
+    </div>
+  {% endfor %}
+  </div>
+{% endfor %}
+  {{ form.renderClosingTag }}
