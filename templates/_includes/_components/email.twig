@@ -1,13 +1,9 @@
 {% spaceless %}
-  {#
-  ##########################################################################################
-    ###Image
-    Description for module
-
+  {# ##########################################################################################
+    ###Email
     @param email :: {object} (the email object to use)
     @param classes :: {array} (optional)
     @param emailQueryString "" {string} (passing in query strings to tag on to the email link. E.G Setting the subject and body)
-    
 
     #USAGE:
     {% include
@@ -18,11 +14,10 @@
       }
     %}
 
-  ##########################################################################################
-  #}
+  ########################################################################################## #}
   
   {# Parameters #}
-  {% set email = tel|default(contact.email) %}
+  {% set email = tel|default(companyInformation.email) %}
   {% set classes = classes|default('') %}
   {% set emailQueryString = emailQueryString|default('') %}
 
@@ -33,7 +28,7 @@
   href="mailto:{{ email }}{{ emailQueryString }}"
   class="js-track-cta {{ classes }}"
   data-title="{{ email }}"
-  data-url="{{ url(craft.app.request.pathInfo) }}"
+  data-url="{{ craft.app.request.absoluteUrl }}"
 >
   {{ email }}
 </a>

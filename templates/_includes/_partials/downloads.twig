@@ -1,0 +1,9 @@
+{% set downloads = downloads|default(entry.downloads) %}
+{% set fileListClasses = fileListClasses|default('') %}
+<ul class="list-reset // last-child">
+  {% for file in downloads %}
+    <li class="{{ fileListClasses }}">
+      {% include "_includes/_components/download.twig" %}
+    </li>
+  {% endfor %}
+</ul>

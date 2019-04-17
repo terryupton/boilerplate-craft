@@ -1,0 +1,27 @@
+{% import '_macros' as macro %}
+
+{#{% set file = download %}#}
+
+{% set showDate = showDate|default(false) %}
+{% set ext = file.extension|lower|trim('x', 'right') %}
+{% switch ext %}
+{% case ext %}
+  {% set fileTypeClasses = 'text-' ~ ext %}
+{% endswitch %}
+
+<a href="{{ file.url() }}"
+   target="_blank"
+   class="inline-flex flex-wrap // items-starts {{ fileLinkClasses|default(fileTypeClasses) }} {{ fileHoverClasses|default('hover:text-brand-darkest') }}"
+>
+  {{ svg('@icons/icon-file-' ~ file.extension|default('doc')|lower|trim('x', 'right') ~ '.svg', class="w-8 // h-8 mb-1 // fill-current // mr-2 // flex-no-shrink") }}
+  <div class="flex-1">
+    {{ file.title }}
+    <br />
+    {%- if showDate == true -%}
+      <span class="text-grey-light text-xs leading-none italic">Updated {{ file.dateModified|date('jS F Y') }}</span>
+      <span class="px-2 text-grey-light text-xs leading-none">|</span>
+    {%- endif -%}
+    <span class="text-grey-light text-xs leading-none">{{ file.extension|upper }} - {{ macro.fileSize(file) }}</span>
+  </div>
+</a>
+

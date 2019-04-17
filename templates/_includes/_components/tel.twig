@@ -1,12 +1,8 @@
 {% spaceless %}
-  {#
-  ##########################################################################################
-    ###Image
-    Description for module
-
+  {# #########################################################################################
+    ###Telephone
     @param tel :: {object} (the telephone object to use)
     @param classes :: {array} (optional)
-    
 
     #USAGE:
     {% include
@@ -15,12 +11,10 @@
         classes:'text-lg text-blue hover:text-greener',
       }
     %}
-
-  ##########################################################################################
-  #}
+  ########################################################################################## #}
   
   {# Parameters #}
-  {% set tel = tel|default(contact.telephone) %}
+  {% set tel = tel|default(companyInformation.telephone) %}
   {% set classes = classes|default('') %}
 
 {% endspaceless %}
@@ -30,7 +24,7 @@
   href="tel:{{ tel }}"
   class="js-track-cta {{ classes }}"
   data-title="{{ tel }}"
-  data-url="{{ url(craft.app.request.pathInfo) }}"
+  data-url="{{ craft.app.request.absoluteUrl }}"
 >
   {{ tel }}
 </a>
