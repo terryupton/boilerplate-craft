@@ -39,7 +39,7 @@
     }
   },
   "urls": {
-    "local": "https://woburnmosaic.loc",
+    "local": "https://domain.loc",
     "live": "https://www.domain.ext",
     "critical": "https://www.domain.ext"
   },
