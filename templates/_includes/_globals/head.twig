@@ -27,15 +27,21 @@
   ================================================== -->
   
   <!-- Main Styles -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600" rel="stylesheet">
-  <link href="{{ siteUrl }}/assets/css/style.css" rel="stylesheet" type="text/css" media="screen, projection, print">
+  {# GOOGLE FONTS #}
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap" rel="stylesheet">
+  
+  {# MAIN SITE CSS #}
+  {% set cssFile = siteUrl ~ 'assets/css/style.' ~ (craft.app.config.general.cssVersion ? craft.app.config.general.cssVersion ~ '.') ~ 'css' %}
+  <link rel="preload" href="{{ cssFile }}" as="style">
+  <link href="{{ cssFile }}" rel="stylesheet">
   
   <!-- JAVASCRIPTS
   ================================================== -->
   <script>
-      (function (H) {
-          H.className = H.className.replace(/\bno-js\b/, 'js')
-      })(document.documentElement);
+    (function (H) {
+      H.className = H.className.replace(/\bno-js\b/, 'js');
+    })(document.documentElement);
   </script>
   
   <!-- Favicons
