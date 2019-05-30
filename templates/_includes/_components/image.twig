@@ -57,8 +57,9 @@
   #}
   
   {% set widthStart = widthStart|default(300) %}
-  {% set widthEnd = widthEnd|default(2600) %}
+  {% set widthEnd = widthEnd|default(2000) %}
   {% set srcWidth = srcWidth|default(widthStart) %}
+  {% set fillInterval = fillInterval|default(300) %}
   
   {% set largestImage = (image.width < widthEnd ? image.width : widthEnd) %}
   {% set imageSizes = [
@@ -90,6 +91,12 @@
       position:focalPoint,
       effects: effects,
     },
+    'bannerThin': {
+      mode: 'crop',
+      ratio: 16/6.6,
+      position:focalPoint,
+      effects: effects,
+    },
     '16x9': {
       mode: 'crop',
       ratio: 16/9,
@@ -104,9 +111,16 @@
     },
     'portrait': {
       mode: 'crop',
-      ratio: 4/5,
+      ratio:5/7,
       position:focalPoint,
       effects: effects,
+    },
+    'logo': {
+      mode: 'letterbox',
+      ratio:1/0.66,
+      position:focalPoint,
+      effects: effects,
+      letterbox: { color: '#FFF', opacity: 1 }
     }
   } %}
   
@@ -116,43 +130,38 @@
 {# OUTPUT #}
 <picture>
   {% if image.extension == 'svg' %}
-    {{ svg(image) }}
+    {{ svg(image, class=classes) }}
   {% else %}
     {% set placeholder = craft.imager.transformImage(image, placeholder, transform|merge({effects: {blur: 1}})) %}
     {% set srcImage = craft.imager.transformImage(image, {width:srcWidth}, transform) %}
-    {% set transformedImages = craft.imager.transformImage(image, imageSizes, transform, { fillTransforms: true }) %}
+    {% set transformedImages = craft.imager.transformImage(image, imageSizes, transform, { fillTransforms: true, fillInterval:fillInterval }) %}
     {% if craft.imager.serverSupportsWebp %}
       {% set transform = transform|merge({format: 'webp'}) %}
-      {% set transformedImagesWebp = craft.imager.transformImage(image, imageSizes, transform, { fillTransforms: true }) %}
+      {% set transformedImagesWebp = craft.imager.transformImage(image, imageSizes, transform, { fillTransforms: true, fillInterval:fillInterval }) %}
     {% endif %}
     {% if lazyLoad != 0 %}
       {% if craft.imager.serverSupportsWebp() %}
-        <source sizes="{{ sizes }}" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+        <source sizes="{{ sizes }}" data-srcset="{{ transformedImagesWebp|srcset }}" type="image/webp">
       {% endif %}
       <img
         class="lazyload {{ classes }}"
         src="{{ placeholder.url }}"
         data-src="{{ srcImage.url }}"
-        data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+        data-srcset="{{ transformedImages|srcset }}"
         data-sizes="{{ sizes }}"
         alt="{{ alt }}"
       />
     {% else %}
       {% if craft.imager.serverSupportsWebp() %}
-        <source sizes="{{ sizes }}" srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
+        <source sizes="{{ sizes }}" srcset="{{ transformedImagesWebp|srcset }}" type="image/webp">
       {% endif %}
       <img
         class="{{ classes }}"
         src="{{ srcImage.url }}"
-        srcset="{{ craft.imager.srcset(transformedImages) }}"
+        srcset="{{ transformedImages|srcset }}"
         sizes="{{ sizes }}"
         alt="{{ alt }}"
       />
     {% endif %}
   {% endif %}
 </picture>
-
-{# TODO: Finish off LazyLoad Checks and alternative code #}
-
-{# https://nystudio107.com/blog/creating-optimized-images-in-craft-cms #}
-{# https://voices.basedesign.com/dry-templating-with-twig-and-craft-cms-543292d114aa #}

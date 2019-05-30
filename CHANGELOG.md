@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2019-05-30
+### Added
+- new templates
+- new configs
+### Changed
+-Some Template Classes
+
 ## [1.4.0] - 2019-04-17
 ### Added
 - new templates

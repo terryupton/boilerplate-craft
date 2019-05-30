@@ -1,0 +1,23 @@
+<p class="leading-loose text-sm">
+  {{ legalInformation.fullCompanyName }} is registered at Companies House England and Wales<br />
+  {%- if legalInformation.companyNumber|length -%}
+    <span class="whitespace-no-wrap mr-4">Company Number. {{ legalInformation.companyNumber }}</span><br />
+  {%- endif -%}
+  {%- if legalInformation.vatNumber|length -%}
+    <span class="whitespace-no-wrap">VAT Number.  {{ legalInformation.vatNumber }}</span>
+  {%- endif -%}
+</p>
+
+{%- if legalInformation.address|length -%}
+  <p class="text-sm font-medium mb-0">Registered Address.</p>
+  <p class="leading-loose text-sm">
+    {% for row in legalInformation.address.all() %}
+      {% if row.buildingName|length %}{{ row.buildingName }},{% endif %}
+      {% if row.address1|length %}{{ row.address1 }},{% endif %}
+      {% if row.address2|length %}{{ row.address2 }},{% endif %}
+      {% if row.city|length %}{{ row.city }},{% endif %}
+      {% if row.county|length %}{{ row.county }},{% endif %}
+      {% if row.postCode|length %}{{ row.postCode }}{% endif %}
+    {% endfor %}
+  </p>
+{% endif %}
