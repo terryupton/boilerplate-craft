@@ -1,4 +1,4 @@
-const pkg = require("./package.json");
+const settings = require("./settings.json");
 const mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
@@ -9,123 +9,95 @@ require("laravel-mix-purgecss");
 
 // Set the public path to resolve any potential issues with version.
 mix
-        .setPublicPath(path.resolve('./'))
-        
-        .sass(pkg.paths.src.sass + 'style.scss', pkg.paths.build.css)
-        .js(pkg.paths.src.js + 'index.js', pkg.paths.build.js)
-        
-        .options({
-          processCssUrls: false,
-          postCss: [
-            tailwindcss(pkg.paths.tailwind.config),
+    .setPublicPath(path.resolve('./'))
+    .sass(settings.paths.src.sass + 'style.scss', settings.paths.build.css)
+
+    // JS to Concatenate and Minify JS files using Webpack bundler.
+    .js(settings.paths.src.js + 'index.js', settings.paths.build.js)
+
+    // Extract splits the JS into Vendor, Manfiest and Index
+    .extract()
+    // .extract([
+    //     'lazysizes',
+    //     'picturefill',
+    //     'jquery'
+    // ])
+
+    // Scripts Minifies Scripts - Use for Legacy Projects
+    // .scripts([settings.paths.src.js + 'classie.js'], settings.paths.build.js + 'classie.js')
+
+    // .autoload({
+    //     jQuery: 'jquery',
+    //     $: 'jquery',
+    //     jquery: 'jquery',
+    // })
+
+
+    .options({
+        processCssUrls: false,
+        postCss: [
+            tailwindcss(settings.paths.tailwind.config),
             require('autoprefixer')({
-              browsers: [
-                "last 2 versions",
-                "IE 10"
-              ]
+                browsers: [
+                    "last 2 versions",
+                    "IE 10"
+                ]
             }),
             require('postcss-sorting')({
-              "properties-order": "alphabetical"
+                "properties-order": "alphabetical"
             })
-          ],
-        })
-        
-        .browserSync({
-          proxy: pkg.urls.local,
-          port: 8080,
-          files: [
-            pkg.paths.build.css + '{*,**/*}.css',
-            pkg.paths.build.js + '{*,**/*}.js',
-            pkg.paths.templates.base + '**/*.{html,twig}',
-          ]
-        })
-        
-        // mix.sourceMaps();
-        
-        .purgeCss({
-          enabled: mix.inProduction(),
-          globs: [
-            path.join(__dirname, pkg.paths.templates.base + '**/*.{html,twig}'),
-            path.join(__dirname, pkg.paths.build.js + '**/*.js'),
-          ],
-          extensions: ["html", "js", "php", "vue", "twig"],
-          whitelistPatterns: [/ls-blur-up-img/],
-          whitelistPatternsChildren: [/body/, /ls-blur-up-img/],
-        })
-        
-        
-        .webpackConfig({
-          plugins: [
+        ],
+    })
+
+    .browserSync({
+        proxy: settings.urls.local,
+        port: 8080,
+        files: [
+            settings.paths.tailwind.config,
+            settings.paths.build.css + '{*,**/*}.css',
+            settings.paths.build.js + '{*,**/*}.js',
+            settings.paths.templates.base + '**/*.{html,twig}',
+        ]
+    })
+
+    .purgeCss({
+        enabled: mix.inProduction(),
+        globs: [
+            path.join(__dirname, settings.paths.templates.base + '**/*.{html,twig}'),
+            path.join(__dirname, settings.paths.build.js + '**/*.js'),
+            path.join(__dirname, settings.paths.src.js + '**/*.js'),
+        ],
+        extensions: ["html", "js", "php", "vue", "twig"],
+        whitelistPatterns: [/ls-blur-up-img/, /^mfp-/],
+        // whitelistPatternsChildren: [/body/, /ls-blur-up-img/],
+    })
+
+    //IMAGE and SVG MIN
+    .webpackConfig({
+        plugins: [
             new CopyWebpackPlugin([
-              {from: pkg.paths.src.svg, to: pkg.paths.build.svg},
-              {from: pkg.paths.src.img, to: pkg.paths.build.img}
-              // {from: 'src/img', to: 'web/assets/img'}
+                {from: settings.paths.src.svg, to: settings.paths.build.svg},
+                {from: settings.paths.src.img, to: settings.paths.build.img}
+                // {from: 'src/img', to: 'web/assets/img'}
             ]),
             new ImageminPlugin({
-              test: /\.(jpe?g|png|gif|svg)$/i,
-              svgo: {
-                plugins: [
-                  {removeViewBox: false},
-                  {removeDimensions: true},
-                ]
-              },
-              plugins:
-                      [
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                svgo: {
+                    plugins: [
+                        {removeViewBox: false},
+                        {removeDimensions: true},
+                    ]
+                },
+                plugins:
+                    [
                         imageminMozjpeg({
-                          quality: 80,
+                            quality: 80,
                         })
-                      ]
+                    ]
             })
-          ]
-        })
-        
-        .extract();
-
-
-//
+        ]
+    });
 
 if (mix.inProduction()) {
-  mix.version();
+    mix.version();
 }
-
-// mix.copyDirectory('node_modules/hamburgers/_sass', 'src/sass/vendors');
-
-// mix.version();
-
-// Full API
-// mix.js('src/js/app.js', 'assets/').
-// mix.js(src, output);
-// mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.
-// mix.preact(src, output); <-- Identical to mix.js(), but registers Preact compilation.
-// mix.coffee(src, output); <-- Identical to mix.js(), but registers CoffeeScript compilation.
-// mix.ts(src, output); <-- TypeScript support. Requires tsconfig.json to exist in the same folder as webpack.mix.js
-// mix.extract(vendorLibs);
-// mix.sass(src, output);
-// mix.less(src, output);
-// mix.stylus(src, output);
-// mix.postCss(src, output, [require('postcss-some-plugin')()]);
-// mix.browserSync('my-site.test');
-// mix.combine(files, destination);
-// mix.babel(files, destination); <-- Identical to mix.combine(), but also includes Babel compilation.
-// mix.copy(from, to);
-// mix.copyDirectory(fromDir, toDir);
-// mix.minify(file);
-// mix.sourceMaps(); // Enable sourcemaps
-// mix.version(); // Enable versioning.
-// mix.disableNotifications();
-// mix.setPublicPath('path/to/public');
-// mix.setResourceRoot('prefix/for/resource/locators');
-// mix.autoload({}); <-- Will be passed to Webpack's ProvidePlugin.
-// mix.webpackConfig({}); <-- Override webpack.config.js, without editing the file directly.
-// mix.babelConfig({}); <-- Merge extra Babel configuration (plugins, etc.) with Mix's default.
-// mix.then(function () {}) <-- Will be triggered each time Webpack finishes building.
-// mix.dump(); <-- Dump the generated webpack config object t the console.
-// mix.extend(name, handler) <-- Extend Mix's API with your own components.
-// mix.options({
-//   extractVueStyles: false, // Extract .vue component styling to file, rather than inline.
-//   globalVueStyles: file, // Variables file to be imported in every component.
-//   processCssUrls: true, // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
-//   purifyCss: false, // Remove unused CSS selectors.
-//   terser: {}, // Terser-specific options. https://github.com/webpack-contrib/terser-webpack-plugin#options
-//   postCss: [] // Post-CSS options: https://github.com/postcss/postcss/blob/master/docs/plugins.md
-// });

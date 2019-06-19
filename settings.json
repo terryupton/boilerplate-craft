@@ -1,0 +1,32 @@
+{
+  "paths": {
+    "src": {
+      "base": "./src/",
+      "js": "./src/js/",
+      "sass": "./src/sass/",
+      "img": "./src/img/",
+      "svg": "./src/svg/"
+    },
+    "build": {
+      "base": "./web/assets/",
+      "css": "./web/assets/css/",
+      "js": "./web/assets/js/",
+      "img": "./web/assets/img/",
+      "svg": "./web/assets/svg/"
+    },
+    "tailwind": {
+      "config": "./tailwind.config.js"
+    },
+    "templates": {
+      "base": "templates/"
+    }
+  },
+  "urls": {
+    "local": "https://domain.loc",
+    "live": "https://www.domain.ext",
+    "critical": "https://www.domain.ext"
+  },
+  "purgecss": [
+    "templates/**/*.{html,twig}"
+  ]
+}
