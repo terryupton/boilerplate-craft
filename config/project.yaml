@@ -592,22 +592,6 @@ sections:
                     sortOrder: 1
                 name: 'Tab 1'
                 sortOrder: 1
-        handle: contact
-        hasTitleField: false
-        name: Contact
-        sortOrder: 1
-        titleFormat: '{section.name|raw}'
-        titleLabel: ''
-    handle: contact
-    name: Contact
-    propagateEntries: true
-    siteSettings:
-      e9b5ffaf-2fae-43e5-8160-4a0bc36dadd0:
-        enabledByDefault: true
-        hasUrls: true
-        template: ''
-        uriFormat: contact
-    type: single
   6bec8522-2f36-4403-9812-127a64f0d9c7:
     enableVersioning: true
     entryTypes:
