@@ -32,9 +32,8 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap" rel="stylesheet">
   
   {# MAIN SITE CSS #}
-  {% set cssFile = siteUrl ~ 'assets/css/style.' ~ (craft.app.config.general.cssVersion ? craft.app.config.general.cssVersion ~ '.') ~ 'css' %}
-  <link rel="preload" href="{{ cssFile }}" as="style">
-  <link href="{{ cssFile }}" rel="stylesheet">
+  {{ craft.twigpack.includeCssModule("/css/style.css", true) }}
+  
   
   <!-- JAVASCRIPTS
   ================================================== -->
@@ -43,6 +42,8 @@
       H.className = H.className.replace(/\bno-js\b/, 'js');
     })(document.documentElement);
   </script>
+  
+  {{ craft.twigpack.includeCssRelPreloadPolyfill() }}
   
   <!-- Favicons
     ================================================== -->
