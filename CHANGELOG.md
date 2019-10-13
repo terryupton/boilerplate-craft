@@ -1,10 +1,22 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.7.0] - 2019-10-13
+### Added
+- Added Hashed versions for compiled assets
+- Added Twigpack to laravel mix and templates
+- Added Stylelintrc
+- Added Yarnclean
+- Added browserslistsrc to remove warnings and errors from laravel mix
+### Changed
+- Remove dependencies required initially
+- Updated dependency versions
+- Updated config and settings for paths, clean and twigpack
+
 ## [1.6.0] - 2019-06-19
 ### Changed
--Remove dependencies required initially
--Updated dependency versions
+- Remove dependencies required initially
+- Updated dependency versions
 
 ## [1.5.0] - 2019-05-30
 ### Added
