@@ -9,10 +9,14 @@
     },
     "build": {
       "base": "./web/assets/",
-      "css": "./web/assets/css/",
-      "js": "./web/assets/js/",
-      "img": "./web/assets/img/",
-      "svg": "./web/assets/svg/"
+      "css": "./css/",
+      "js": "./js/",
+      "img": "./img/",
+      "svg": "./svg/",
+      "clean": [
+        "./css/",
+        "./js/"
+      ]
     },
     "tailwind": {
       "config": "./tailwind.config.js"
@@ -22,7 +26,7 @@
     }
   },
   "urls": {
-    "local": "https://domain.loc",
+    "local": "https://pcdparts.loc",
     "live": "https://www.domain.ext",
     "critical": "https://www.domain.ext"
   },
