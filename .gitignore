@@ -14,6 +14,7 @@
 # CRAFT STORAGE
 /storage/*
 !/storage/.gitkeep
+!/storage/rebrand
 
 # ASSETS
 /web/uploads/*
