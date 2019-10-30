@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.8.0] - 2019-10-30
+### Changed
+- Added rebrand foldwer to git ignore
+- Updated image component twig template for better flexability to pass in options
+
 ## [1.7.0] - 2019-10-13
 ### Added
 - Added Hashed versions for compiled assets

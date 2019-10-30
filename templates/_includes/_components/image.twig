@@ -34,15 +34,15 @@
 
   ##########################################################################################
   #}
-  
+
   {# Parameters #}
   {% set alt = alt|default(image.alt|default(image.title)) %}
-  {% set focalPoint = image.getFocalPoint() %}
   {% set lazyLoad = lazyLoad|default(1) %}
   {% set sizes = sizes|default(image.width ~ 'px') %}
   {% set classes = classes|default('') %}
   {% set effects = effects ?? {} %}
-  
+  {% set options = options ?? {} %}
+
   {# Notes
     #########
     Setting the images for the fill transforms. This allows us to pass in the smallest image to start from and the largest image to transform up to.
@@ -55,18 +55,17 @@
     'largestImage     checks the integrity of the image width for the transforms and sets this correctly.
     '#########
   #}
-  
+
   {% set widthStart = widthStart|default(300) %}
   {% set widthEnd = widthEnd|default(2000) %}
   {% set srcWidth = srcWidth|default(widthStart) %}
-  {% set fillInterval = fillInterval|default(300) %}
-  
+
   {% set largestImage = (image.width < widthEnd ? image.width : widthEnd) %}
   {% set imageSizes = [
     { width: largestImage },
     { width: widthStart }
   ] %}
-  
+
   {# Notes
     #########
     The 'placeholder' image is used for the blur-up technique in lazysizes.
@@ -76,92 +75,83 @@
     width: 50,
     quality: 15,
   } %}
-  
-  
+
+
   {% set transforms = {
     'base': {
       mode: 'crop',
       ratio: image.width / image.height,
-      position:focalPoint,
       effects: effects,
     },
     'square': {
       mode: 'crop',
       ratio: 1,
-      position:focalPoint,
-      effects: effects,
-    },
-    'bannerThin': {
-      mode: 'crop',
-      ratio: 16/6.6,
-      position:focalPoint,
       effects: effects,
     },
     '16x9': {
       mode: 'crop',
       ratio: 16/9,
-      position:focalPoint,
       effects: effects,
     },
     '16x10': {
       mode: 'crop',
       ratio: 16/10,
-      position:focalPoint,
       effects: effects,
     },
     'portrait': {
       mode: 'crop',
-      ratio:5/7,
-      position:focalPoint,
+      ratio: 2/2.75,
       effects: effects,
     },
     'logo': {
       mode: 'letterbox',
       ratio:1/0.66,
-      position:focalPoint,
       effects: effects,
       letterbox: { color: '#FFF', opacity: 1 }
     }
   } %}
-  
+
   {% set transform = attribute(transforms, transform) %}
 {% endspaceless %}
 
 {# OUTPUT #}
 <picture>
   {% if image.extension == 'svg' %}
-    {{ svg(image, class=classes) }}
+    {{ svg(image) }}
   {% else %}
     {% set placeholder = craft.imager.transformImage(image, placeholder, transform|merge({effects: {blur: 1}})) %}
     {% set srcImage = craft.imager.transformImage(image, {width:srcWidth}, transform) %}
-    {% set transformedImages = craft.imager.transformImage(image, imageSizes, transform, { fillTransforms: true, fillInterval:fillInterval }) %}
+    {% set transformedImages = craft.imager.transformImage(image, imageSizes, transform, options) %}
     {% if craft.imager.serverSupportsWebp %}
       {% set transform = transform|merge({format: 'webp'}) %}
-      {% set transformedImagesWebp = craft.imager.transformImage(image, imageSizes, transform, { fillTransforms: true, fillInterval:fillInterval }) %}
+      {% set transformedImagesWebp = craft.imager.transformImage(image, imageSizes, transform, options) %}
     {% endif %}
     {% if lazyLoad != 0 %}
       {% if craft.imager.serverSupportsWebp() %}
-        <source sizes="{{ sizes }}" data-srcset="{{ transformedImagesWebp|srcset }}" type="image/webp">
+        <source sizes="{{ sizes }}" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
       {% endif %}
       <img
         class="lazyload {{ classes }}"
         src="{{ placeholder.url }}"
         data-src="{{ srcImage.url }}"
-        data-srcset="{{ transformedImages|srcset }}"
+        data-srcset="{{ craft.imager.srcset(transformedImages) }}"
         data-sizes="{{ sizes }}"
         alt="{{ alt }}"
       />
     {% else %}
       {% if craft.imager.serverSupportsWebp() %}
-        <source sizes="{{ sizes }}" srcset="{{ transformedImagesWebp|srcset }}" type="image/webp">
+        <source sizes="{{ sizes }}" srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
       {% endif %}
       <img
         class="{{ classes }}"
         src="{{ srcImage.url }}"
-        srcset="{{ transformedImages|srcset }}"
+        srcset="{{ craft.imager.srcset(transformedImages) }}"
         sizes="{{ sizes }}"
         alt="{{ alt }}"
       />
     {% endif %}
   {% endif %}
 </picture>
+
+{# https://nystudio107.com/blog/creating-optimized-images-in-craft-cms #}
+{# https://voices.basedesign.com/dry-templating-with-twig-and-craft-cms-543292d114aa #}
