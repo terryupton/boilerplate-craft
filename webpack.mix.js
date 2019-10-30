@@ -1,12 +1,11 @@
 const settings = require("./settings.json");
 const mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
-const moment = require('moment');
 require("laravel-mix-purgecss");
-require('laravel-mix-banner');
 require('laravel-mix-versionhash');
 
 
