@@ -18,6 +18,7 @@
 
 # ASSETS
 /web/uploads/*
+!/web/uploads/.gitkeep
 /web/imager/*
 /web/cp-resources/*
 
