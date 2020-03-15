@@ -1,50 +1,43 @@
-{# @var craft \craft\web\twig\variables\CraftVariable #}
-{% import '_macros' as macro %}
+{% import '_macros.twig' as macro %}
+
+{% set lastDay = date("12/31/" ~ now|date('Y') ~ " 23:59:59") %}
+{% cache globally using key "global: _footer" until lastDay %}
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+    
+    </div>
+  </footer>
+{% endcache %}
 
 
-<footer id="footer" role="contentinfo">
-  <div class="container">
-  
-  </div>
-</footer>
-
-
+{# ---------------------------------------------------------------------- #}
 {# COMMON ELEMENTS THAT WILL BE USED #}
-{# TODO: Legals into include #}
-{# TODO: Copyright into include #}
-<p>
-  {{ companyInformation.fullCompanyName }} is registered at Companies House England and Wales<br />
-  {%- if companyInformation.companyNumber|length -%}
-    <span class="whitespace-no-wrap mr-4">Company Number. {{ companyInformation.companyNumber }}</span>
-  {%- endif -%}
-  {%- if companyInformation.vatNumber|length -%}
-    <span class="whitespace-no-wrap">{{ companyInformation.vatNumber }}</span>
-  {%- endif -%}
-</p>
+{# ---------------------------------------------------------------------- #}
+{% include '_includes/_partials/legals.twig' %}
 
 <p>
   All Content &copy; {{ companyInformation.fullCompanyName }} | Website &copy;
   <a href="https://www.amasci.co.uk" target="_blank" rel="noopener noreferrer" class="text-white-50 hover:text-white">
-    Amasci Creative Limited, website design Milton Keynes {{ macro.autoCopyright(2019) }}
+    Amasci Creative Limited, website design Milton Keynes {{ macro.autoCopyright(2020) }}
   </a>
 </p>
 
 <nav role="navigation">
   <ul class="list-reset flex flex-wrap text-sm">
     <li class="mb-3 mr-6">
-      <a href="{{ url('terms/privacy') }}">Privacy</a>
+      <a href="{{ siteUrl('terms/privacy') }}">Privacy</a>
     </li>
     <li class="mb-3 mr-6">
-      <a href="{{ url('terms/cookies') }}">Cookies</a>
+      <a href="{{ siteUrl('terms/cookies') }}">Cookies</a>
     </li>
     <li class="mb-3 mr-6">
-      <a href="{{ url('terms/terms-of-use') }}">Terms of Use</a>
+      <a href="{{ siteUrl('terms/terms-of-use') }}">Terms of Use</a>
     </li>
     <li class="mb-3 mr-6">
-      <a href="{{ url('terms/terms-and-conditions') }}">Terms &amp;amp; Conditions</a>
+      <a href="{{ siteUrl('terms/terms-and-conditions') }}">Terms &amp;amp; Conditions</a>
     </li>
     <li class="mb-3">
-      <a href="{{ url('contact') }}">Contact</a>
+      <a href="{{ siteUrl('contact') }}">Contact</a>
     </li>
   </ul>
 </nav>
