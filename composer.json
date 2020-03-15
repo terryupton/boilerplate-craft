@@ -1,26 +1,25 @@
 {
   "name": "terryupton/boilerplate-craft",
   "description": "A starting boilerplate for Craft Projects",
-  "version": "1.8.0",
+  "version": "2.0.0",
   "type": "project",
   "require": {
-    "craftcms/cms": "^3.2.0",
-    "yiisoft/yii2-redis": "^2.0.6",
-    "vlucas/phpdotenv": "^2.4.0",
-    "verbb/super-table": "^2.0.14",
-    "verbb/field-manager": "^2.0.4",
-    "verbb/image-resizer": "^2.0.4",
-    "aelvan/imager": "^2.1.2",
+    "aelvan/imager": "^2.4.0",
+    "anubarak/craft-relabel": "^1.1",
+    "craftcms/cms": "^3.4.9",
     "craftcms/redactor": "^2.1.6",
-    "nystudio107/craft-scripts": "^1.2",
+    "mmikkel/cp-field-inspect": "^1.0.5",
     "mmikkel/retcon": "^2.1.0",
     "nystudio107/craft-minify": "^1.2.5",
-    "nystudio107/craft-seomatic": "^3.1.36",
-    "nystudio107/craft-typogrify": "^1.1.1",
-    "anubarak/craft-relabel": "^1.1",
-    "mmikkel/cp-field-inspect": "^1.0.5"
+    "nystudio107/craft-scripts": "^1.2",
+    "nystudio107/craft-seomatic": "^3.2.47",
     "nystudio107/craft-twigpack": "^1.2.0",
     "sebastianlenz/linkfield": "^1.0.20",
+    "verbb/field-manager": "^2.1.1",
+    "verbb/image-resizer": "^2.0.4",
+    "verbb/super-table": "^2.3.3",
+    "vlucas/phpdotenv": "^2.4.0",
+    "yiisoft/yii2-redis": "^2.0.6"
   },
   "autoload": {
     "psr-4": {
@@ -28,6 +27,7 @@
     }
   },
   "config": {
+    "sort-packages": true,
     "optimize-autoloader": true,
     "platform": {
       "php": "7.2"
