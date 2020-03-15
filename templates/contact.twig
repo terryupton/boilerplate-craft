@@ -1,13 +1,38 @@
-{% include '_includes/_components/tel.twig' %}<br />
-{% include '_includes/_components/email.twig' %}
+{% extends "_layouts/_site.twig" %}
 
-<div class="pt-12">
-  {% for row in companyInformation.address %}
-    {% if row.buildingName|length %}{{ row.buildingName }}<br />{% endif %}
-    {% if row.address1|length %}{{ row.address1 }}<br />{% endif %}
-    {% if row.address2|length %}{{ row.address2 }}<br />{% endif %}
-    {% if row.city|length %}{{ row.city }}<br />{% endif %}
-    {% if row.county|length %}{{ row.county }}<br />{% endif %}
-    {% if row.postCode|length %}{{ row.postCode }}{% endif %}
-  {% endfor %}
-</div>
+{% block content %}
+  
+  {% include '_includes/_components/tel.twig' %}<br />
+  {% include '_includes/_components/email.twig' %}
+  
+  <div class="pt-12">
+    {% for row in companyInformation.address %}
+      {% if row.buildingName|length %}{{ row.buildingName }}<br />{% endif %}
+      {% if row.address1|length %}{{ row.address1 }}<br />{% endif %}
+      {% if row.address2|length %}{{ row.address2 }}<br />{% endif %}
+      {% if row.city|length %}{{ row.city }}<br />{% endif %}
+      {% if row.county|length %}{{ row.county }}<br />{% endif %}
+      {% if row.postCode|length %}{{ row.postCode }}{% endif %}
+    {% endfor %}
+  </div>
+  
+  {# Adress with Icon  #}
+  {#<div class="flex items-start mb-6">#}
+  {#  <div class="mr-4">#}
+  {#    {{ svg('@icons/location.svg', class="w-6 h-6 fill-current") }}#}
+  {#  </div>#}
+  {#  #}
+  {#  <div class="font-deco text-sm leading-normal">#}
+  {#    <span class="uppercase font-black  text-gray-900 block">{{ siteName }}</span>#}
+  {#    {% for row in companyInformation.address.all() %}#}
+  {#      {% if row.buildingName|length %}{{ row.buildingName }}<br />{% endif %}#}
+  {#      {% if row.address1|length %}{{ row.address1 }}<br />{% endif %}#}
+  {#      {% if row.address2|length %}{{ row.address2 }}<br />{% endif %}#}
+  {#      {% if row.city|length %}{{ row.city }}<br />{% endif %}#}
+  {#      {% if row.county|length %}{{ row.county }}<br />{% endif %}#}
+  {#      {% if row.postCode|length %}{{ row.postCode }}{% endif %}#}
+  {#    {% endfor %}#}
+  {#  </div>#}
+  {#</div>#}
+
+{% endblock %}
