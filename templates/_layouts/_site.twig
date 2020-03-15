@@ -1,18 +1,27 @@
-{# @var craft \craft\web\twig\variables\CraftVariable #}
 {%- minify -%}
-  {% include '_includes/_globals/head' %}
+  <!DOCTYPE html>
+  <html xmlns="http://www.w3.org/1999/xhtml" lang="{{ craft.app.language }}" class="no-js">
+  {% include '_includes/_globals/head.twig' %}
   
   <body>
-  {% include '_includes/_globals/header' %}
-  {% block content %}
-    <div class="mx-auto max-w-4xl px-6">
-      <p>If you see me, you haven’t set your <code>{% verbatim %}{% block main %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-      <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-      <p>terry</p>
-    </div>
+  <div id="app">
+    {% include '_includes/_globals/header.twig' %}
+    {% block content %}
+      <div class="mx-auto max-w-4xl px-6">
+        <p>If you see me, you haven’t set your <code>{% verbatim %}{% block main %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+        <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+        <p>terry</p>
+      </div>
+    {% endblock %}
+    {% include '_includes/_globals/footer.twig' %}
+  </div>
+  {% include '_includes/_globals/scripts.twig' %}
+  
+  {# Any Footer Scripts that should be included or inlned #}
+  {% block footerJS %}
   {% endblock %}
-  {% include '_includes/_globals/footer' %}
-  {% include '_includes/_globals/scripts' %}
+  
+  {{ endBody() }}
   </body>
   </html>
 {%- endminify -%}
