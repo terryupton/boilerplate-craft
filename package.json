@@ -3,6 +3,7 @@
   "version": "1.8.0",
   "description": "",
   "main": "webpack.mix.js",
+  "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
