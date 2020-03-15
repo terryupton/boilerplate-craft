@@ -609,7 +609,7 @@ sections:
       e9b5ffaf-2fae-43e5-8160-4a0bc36dadd0:
         enabledByDefault: true
         hasUrls: true
-        template: index.twig
+        template: home.twig
         uriFormat: __home__
     type: single
   761595e6-8de4-4a64-b7a1-6b3b12c0348c:
