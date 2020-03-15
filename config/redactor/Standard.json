@@ -1,9 +1,39 @@
 {
-  "buttons": ["html", "formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "file", "video", "redo", "undo"],
-  "plugins": ["video", "counter"],
+  "buttons": [
+    "html",
+    "formatting",
+    "bold",
+    "italic",
+    "sup",
+    "sub",
+    "unorderedlist",
+    "orderedlist",
+    "link",
+    "file",
+    "redo",
+    "undo"
+  ],
+  "plugins": [
+    "video",
+    "counter",
+    "variable"
+  ],
   "toolbarFixed": true,
   "linkNewTab": true,
-  "pastePlainText": true,
+  "pastePlainText": false,
   "linkSize": 300,
-  "formatting": ["p", "blockquote", "h2", "h3"]
+  "formatting": [
+    "p",
+    "blockquote",
+    "h2",
+    "h3"
+  ],
+  "paragraphize": true,
+  "useLineBreaks": false,
+  "variables": [
+    "--Legal Company Name--",
+    "--Email--",
+    "--Telephone--",
+    "--Site Name--"
+  ]
 }

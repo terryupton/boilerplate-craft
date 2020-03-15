@@ -1,4 +1,14 @@
 {
-  "buttons": ["bold", "italic"],
-  "toolbarFixed": true
+  "buttons": [
+    "html",
+    "bold",
+    "italic",
+    "sup",
+    "sub"
+  ],
+  "plugins": [
+    "counter"
+  ],
+  "toolbarFixed": true,
+  "pastePlainText": false
 }
