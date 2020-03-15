@@ -11,3 +11,9 @@ A starting boilerplate for [Craft 3](https://craftcms.com/) projects using [Gulp
 - Gulp
 - Tailwind CSS
 - Craft CMS
+
+## TODO:
+- Convert Classes in components to arrays
+- Convert Email QueryString to an Array (subject and body)
+- Set button.twig component to switch between button and a href
+- Set and test button.twig to use classes as an array and then apply this approach to other components.
