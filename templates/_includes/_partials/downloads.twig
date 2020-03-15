@@ -1,8 +1,46 @@
-{% set downloads = downloads|default(entry.downloads) %}
-{% set fileListClasses = fileListClasses|default('') %}
-<ul class="list-reset // last-child">
+{% apply spaceless %}
+  {% import '_macros.twig' as macro %}
+  {# #########################################################################################
+    ###Downloads
+    
+    @param downloads                :: {object}    (required default:entry.downloads)
+    @param downloadListClasses      :: {string}    (optional)
+    @param downloadItemClasses      :: {string}    (optional) (passed down the stack to the download include)
+    @param showDate                 :: {bool}      (optional | default:0) (passed down the stack to the download include)
+    @param showSize                 :: {bool}      (optional | default:1) (passed down the stack to the download include)
+    @param fileLinkClasses          :: {string}    (optional) (passed down the stack to the download include)
+    @param fileHoverClasses         :: {string}    (optional) (passed down the stack to the download include)
+
+    #USAGE:
+    {% include
+      '_includes/components/downloads' with {
+        downloads: entry.chapters,
+        downloadListClasses: 'my-12 bg-gray-200 p-6'
+        downloadItemClasses: 'text-blue-400 text-lg mb-12'
+        showDate:true,
+        showFileSize:false,
+        fileLinkClasses:'text-blue-500 text-bold text-lg',
+        fileHoverClasses:'bg-blue-500 text-white',
+      }
+    %}
+    
+  ########################################################################################## #}
+  
+  {# PARAMETERS #}
+  {% set downloads = downloads|default(entry.downloads) %}
+  
+  {% if downloads|length > 1 %}
+    {% set downloads = downloads.all() %}
+  {% endif %}
+  
+  {% set downloadListClasses = downloadListClasses|default('') %}
+  {% set downloadItemClasses = downloadItemClasses|default('') %}
+{% endapply %}
+
+{# OUTPUT #}
+<ul class="{{ downloadListClasses|default('last-child') }}">
   {% for file in downloads %}
-    <li class="{{ fileListClasses }}">
+    <li class="{{ downloadItemClasses|default('mb-6') }}">
       {% include "_includes/_components/download.twig" %}
     </li>
   {% endfor %}

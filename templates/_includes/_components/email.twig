@@ -1,9 +1,9 @@
-{% spaceless %}
+{% apply spaceless %}
   {# ##########################################################################################
     ###Email
-    @param email :: {object} (the email object to use)
-    @param classes :: {array} (optional)
-    @param emailQueryString "" {string} (passing in query strings to tag on to the email link. E.G Setting the subject and body)
+    @param email              :: {object} (required)
+    @param classes            :: {string} (optional)
+    @param emailQueryString   :: {string} (optional) (pass in query strings to tag on to the email link. E.G Setting the subject and body)
 
     #USAGE:
     {% include
@@ -17,11 +17,10 @@
   ########################################################################################## #}
   
   {# Parameters #}
-  {% set email = tel|default(companyInformation.email) %}
-  {% set classes = classes|default('') %}
-  {% set emailQueryString = emailQueryString|default('') %}
-
-{% endspaceless %}
+  {% set email              = email|default(companyInformation.email) %}
+  {% set classes            = classes|default('font-light') %}
+  {% set emailQueryString   = emailQueryString|default('') %}
+{% endapply %}
 
 {# OUTPUT #}
 <a

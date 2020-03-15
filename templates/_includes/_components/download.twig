@@ -1,27 +1,67 @@
-{% import '_macros' as macro %}
+{% apply spaceless %}
+  {% import '_macros.twig' as macro %}
+  {# #########################################################################################
+    ###Download
+    @param file               :: {object}   (required)  (default:file)
+    @param showDate           :: {bool}     (optional)  (default:0)     (Should the download show the date)
+    @param showSize           :: {bool}     (optional)  (default:1)     (Should the download show the filesize)
+    @param fileLinkClasses    :: {string}   (optional)                  (Pass in any classes for the file link)
+    @param fileHoverClasses   :: {string}   (optional)                  (Pass in any classes for the file link Hover States)
 
-{#{% set file = download %}#}
+    #USAGE:
+    {% include
+      '_includes/components/download' with {
+        showDate:true,
+        showFileSize:false,
+        fileLinkClasses:'text-blue-500 text-bold text-lg',
+        fileHoverClasses:'bg-blue-500 text-white',
+      }
+    %}
+    
+  ########################################################################################## #}
+  
+  {# PARAMETERS #}
+  {% set file               = file %}
+  {% set showDate           = showDate|default(false) %}
+  {% set showFileSize       = showFileSize|default(true) %}
+  {% set ext                = file.extension|lower|trim('x', 'right') %}
+  {% switch ext %}
+  {% case ext %}
+    {% set fileTypeClasses  = 'text-file-' ~ ext %}
+  {% endswitch %}
+  
+  {% set fileLinkClasses    = fileLinkClasses|default(fileTypeClasses) %}
+  {% set fileHoverClasses   = fileHoverClasses|default('hover:text-lime-600') %}
 
-{% set showDate = showDate|default(false) %}
-{% set ext = file.extension|lower|trim('x', 'right') %}
-{% switch ext %}
-{% case ext %}
-  {% set fileTypeClasses = 'text-' ~ ext %}
-{% endswitch %}
+{% endapply %}
 
+{# OUTPUT #}
 <a href="{{ file.url() }}"
    target="_blank"
-   class="inline-flex flex-wrap // items-starts {{ fileLinkClasses|default(fileTypeClasses) }} {{ fileHoverClasses|default('hover:text-brand-darkest') }}"
+   class="inline-flex flex-wrap // items-starts {{ fileLinkClasses }} {{ fileHoverClasses }}"
 >
-  {{ svg('@icons/icon-file-' ~ file.extension|default('doc')|lower|trim('x', 'right') ~ '.svg', class="w-8 // h-8 mb-1 // fill-current // mr-2 // flex-no-shrink") }}
-  <div class="flex-1">
+  {{ svg('@icons/file-' ~ file.extension|default('doc')|lower|trim('x', 'right') ~ '.svg', class="w-8 // h-8 mb-1 // fill-current // mr-2 // flex-no-shrink") }}
+  <div class="flex-1 text-14">
     {{ file.title }}
-    <br />
-    {%- if showDate == true -%}
-      <span class="text-grey-light text-xs leading-none italic">Updated {{ file.dateModified|date('jS F Y') }}</span>
-      <span class="px-2 text-grey-light text-xs leading-none">|</span>
-    {%- endif -%}
-    <span class="text-grey-light text-xs leading-none">{{ file.extension|upper }} - {{ macro.fileSize(file) }}</span>
+    {% if showDate == true %}
+      <br />
+      <span class="text-gray-500 text-11 leading-none italic">Updated {{ file.dateModified|date('jS F Y') }}</span>
+      {% if showFileSize == true %}<span class="px-2 text-gray-500 text-12 leading-none">|</span>{% endif %}
+    {% endif %}
+    {% if showFileSize == true %}
+      <br />
+      <span class="text-gray-500 text-11 leading-none">{{ file.extension|upper }} - {{ macro.fileSize(file) }}</span>
+    {% endif %}
   </div>
 </a>
 
+{# ----------------------------------------------------------------------
+   TAILWIND CSS DYNAMIC CLASES FOR PURGE CSS
+-------------------------------------------------------------------------
+
+  text-file-pdf
+  text-file-xls
+  text-file-ppt
+  text-file-doc≤
+
+------------------------------------------------------------------------- #}

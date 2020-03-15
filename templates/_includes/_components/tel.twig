@@ -1,8 +1,8 @@
-{% spaceless %}
+{% apply spaceless %}
   {# #########################################################################################
     ###Telephone
-    @param tel :: {object} (the telephone object to use)
-    @param classes :: {array} (optional)
+    @param tel        :: {object}   (requred)
+    @param classes    :: {string}   (optional)
 
     #USAGE:
     {% include
@@ -11,13 +11,13 @@
         classes:'text-lg text-blue hover:text-greener',
       }
     %}
+    
   ########################################################################################## #}
   
-  {# Parameters #}
-  {% set tel = tel|default(companyInformation.telephone) %}
-  {% set classes = classes|default('') %}
-
-{% endspaceless %}
+  {# PARAMETERS #}
+  {% set tel        = tel|default(companyInformation.telephone) %}
+  {% set classes    = classes|default('font-light') %}
+{% endapply %}
 
 {# OUTPUT #}
 <a

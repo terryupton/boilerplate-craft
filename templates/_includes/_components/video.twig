@@ -1,0 +1,29 @@
+{% apply spaceless %}
+  {# #########################################################################################
+    ###Video
+    @param object :: {object}   (required)
+  
+    #USAGE:
+    {% include
+      '_includes/components/video' with {
+        object:entry,
+      }
+    %}
+    
+   #NOTES:
+   The object fieldname must be called video.
+   
+  ########################################################################################## #}
+  
+  {# PARAMETERS #}
+  {% set object       = matrixBlock ?? entry %}
+  {% set embed        = craft.videoEmbedder.getEmbedUrl(object.video, {autoplay: 0, rel: 0,  byline: 0}) %}
+  {% set videoTitle   = craft.videoEmbedder.title(object.video) %}
+{% endapply %}
+  
+{# OUTPUT #}
+<div class="video z-20">
+  {% if embed | length %}
+    <iframe title="{{ videoTitle }}" data-src="{{ embed }}" class="lazyload"></iframe>
+  {% endif %}
+</div>
