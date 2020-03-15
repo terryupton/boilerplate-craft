@@ -13,6 +13,7 @@ A starting boilerplate for [Craft 3](https://craftcms.com/) projects using [Gulp
 - Craft CMS
 
 ## TODO:
+- Add default error pages (404, 410, 503 etc) templates
 - Convert Classes in components to arrays
 - Convert Email QueryString to an Array (subject and body)
 - Set button.twig component to switch between button and a href
