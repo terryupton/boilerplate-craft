@@ -19,6 +19,7 @@
     "anubarak/craft-relabel": "^1.1",
     "mmikkel/cp-field-inspect": "^1.0.5"
     "nystudio107/craft-twigpack": "^1.2.0",
+    "sebastianlenz/linkfield": "^1.0.20",
   },
   "autoload": {
     "psr-4": {
