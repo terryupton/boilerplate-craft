@@ -13,6 +13,7 @@
     "aelvan/imager": "^2.1.2",
     "craftcms/redactor": "^2.1.6",
     "nystudio107/craft-scripts": "^1.2",
+    "mmikkel/retcon": "^2.1.0",
     "nystudio107/craft-minify": "^1.2.5",
     "nystudio107/craft-seomatic": "^3.1.36",
     "nystudio107/craft-typogrify": "^1.1.1",
