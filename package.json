@@ -1,9 +1,21 @@
 {
-  "name": "project-name",
-  "version": "1.8.0",
-  "description": "",
-  "main": "webpack.mix.js",
+  "name": "craft-bp",
+  "version": "2.0.0",
+  "description": "Craft CMS boilerplate and starter project",
+  "main": "index.js",
+  "keywords": [
+    "Craft",
+    "Boilerplate",
+    "TailwindCSS",
+    "Start Project"
+  ],
+  "author": "Terry Upton, Amasci Creative Limited",
+  "contact": "<terry@amasci.co.uk> <www.amasci.co.uk> <01908 668665>",
+  "copyright": "Amasci Creative Limited",
   "license": "SEE LICENSE IN LICENSE.md",
+  "sort-packages": true,
+  "private": true,
+  "browser": "/web/index.php",
   "scripts": {
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
