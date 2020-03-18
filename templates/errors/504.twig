@@ -1,0 +1,18 @@
+{% extends "_layouts/_error.twig" %}
+
+{% set exception = {
+  errorCode: '504',
+  heading: 'Gateway Time-Out',
+  link: siteUrl('contact'),
+  linkText: 'Contact Us'
+} %}
+
+{% set content %}
+  <h3>
+    This page is taking too long to load.
+  </h3>
+  <p>
+    Unfortunately, the server was unable to complete the request due to a system overload.<br />
+    Please try refreshing the page and contact us if the problems persists.
+  </p>
+{% endset %}

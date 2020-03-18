@@ -1,0 +1,48 @@
+{% extends "_layouts/_error.twig" %}
+
+{% set exception = {
+  errorCode: '410',
+  heading: 'Page Permanently Gone',
+  subHeading: 'Sorry, this page no longer exists!'
+} %}
+
+{% set content %}
+  <p>The page you are looking for can't be found and is permanently gone. It's likely that it has been deleted because the information it contained was out of date or no longer
+     relevant.
+  </p>
+{% endset %}
+
+{% block cta %}
+  <div class="mt-12">
+    {% set incomingUrl = craft.app.request.pathInfo %}
+    {{ incomingUrl }}
+    
+    {% if 'case-studies/'in incomingUrl %}
+      {% set url = siteUrl('case-studies') %}
+      {% set linkText = 'Our Projects' %}
+      {% set entryType = 'case study or project' %}
+    
+    {% elseif 'news/'in incomingUrl %}
+      {% set url = siteUrl('news') %}
+      {% set linkText = 'Latest News' %}
+      {% set entryType = 'news article' %}
+    
+    {% else %}
+      {% set url = siteUrl() %}
+      {% set linkText = siteName ~ 'Homepage' %}
+    {% endif %}
+    
+    {% if entryType|length %}
+      <p>
+        It looks like you are trying to find a {{ entryType }}.
+      </p>
+    {% endif %}
+    
+    <a href="{{ url }}"
+       class=""
+    >
+      {{ linkText }}
+    </a>
+  </div>
+
+{% endblock %}

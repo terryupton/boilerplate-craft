@@ -1,0 +1,28 @@
+{% extends "_layouts/_error.twig" %}
+
+{% set exception = {
+  errorCode: '404',
+  heading: 'Page Not Found',
+  subHeading: 'Unfortunately, we could not find the page you have requested.',
+} %}
+
+{% set content %}
+  <p>This might be because:</p>
+  
+  <ul>
+    <li>You may have typed the web address incorrectly. Please check the web address and spelling ensuring that it does not contain unwanted characters or spaces.</li>
+    <li>It is possible that the page you have requested may have been moved, updated or deleted.</li>
+  </ul>
+  
+  <p>Please try navigating again from our <a href="{{ siteUrl }}" title="homepage">homepage</a> or by searching the website below.</p>
+{% endset %}
+
+{% block cta %}
+  <div class="mt-12">
+    <a href="{{ siteUrl() }}"
+       class=""
+    >
+      {{ siteName }} Homepage
+    </a>
+  </div>
+{% endblock %}
