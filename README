@@ -14,6 +14,11 @@ A starting boilerplate for [Craft 3](https://craftcms.com/) projects using [Gulp
 
 ## TODO:
 - Add default error pages (404, 410, 503 etc) templates
+- Update `proejct.yaml` to add 1.0.0 schema versions for plugins.
+- Update `proejct.yaml` to fix terms block and redactor field.
+- Setup Humans.txt defaults in SeoMatic php settings files. <https://nystudio107.com/blog/tips-for-using-seomatic-effectively>
+- Add fallback <title> tag into `head.twig` if SEOmatic fails.
+- Add fallback meta tags into `head.twig` if SEOmatic fails.
 - Convert Classes in components to arrays
 - Convert Email QueryString to an Array (subject and body)
 - Set button.twig component to switch between button and a href
