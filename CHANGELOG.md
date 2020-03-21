@@ -1,6 +1,21 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.0.1] - 2020-03-21
+
+### Added
+- Added TailwindUI
+  -@tailwindcss/ui npm Package
+  -purgeCSS defaultExtractor update
+  -tailwind.config update
+
+
+### Changed
+- `readme` 
+    - to markdown. 
+    -added and updated todo's.
+ 
+
 ## [2.0.0] - 2020-03-21
 ### Added
 - `.browserlistrc` to configure browser support for autoprefixer and babel

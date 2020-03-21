@@ -70,8 +70,9 @@ mix
         path.join(__dirname, settings.paths.build.js + '**/*.js'),
         path.join(__dirname, settings.paths.src.js + '**/*.js'),
       ],
+      defaultExtractor: content => content.match(/[\w-/.%:]+(?<!:)/g) || [],
       extensions: ["html", "js", "php", "vue", "twig"],
-      whitelistPatterns: [/ls-blur-up-img/, /^mfp-/],
+      whitelistPatterns: [/lazyload/, /grayscale-up/],
       // whitelistPatternsChildren: [/body/, /ls-blur-up-img/],
     })
     
