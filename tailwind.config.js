@@ -1,10 +1,12 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   theme: {
     extend: {
       colors: {
         currentColor: 'currentColor',
       },
-
+      
       maxWidth: {
         '7xl': '80rem',
         '8xl': '90rem',
@@ -16,5 +18,7 @@ module.exports = {
   corePlugins: {
     container: false,
   },
-  plugins: []
-}
+  plugins: [
+    require('@tailwindcss/ui'),
+  ]
+};
