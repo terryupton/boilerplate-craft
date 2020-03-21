@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    '*' => array(
+    '*'       => [
         // ------------------------------------------------------------
         // Environment: ALL
         // ------------------------------------------------------------
@@ -26,13 +26,12 @@ return array(
         'allowUpscale'         => false,
         'smartResizeEnabled'   => false,
         'removeMetadata'       => true,
-        //        'filenamePattern' => '{basename}-{transformString|shorthash}.{extension}',
-        'filenamePattern'      => '{fullname}.{extension}',
-        'fillTransforms'       => true,
-        'fillInterval'         => '200',
+        'filenamePattern'      => '{basename}-{transformString|shorthash}.{extension}',
+        // 'fillTransforms'       => true,
+        // 'fillInterval'         => '300',
 
         // Settings for optimising the transform speeds
-        'resizeFilter'         => 'triangle',
+        'resizeFilter'         => 'lanczos',
         'instanceReuseEnabled' => true,
 
         'interlace' => 'line',
@@ -56,5 +55,41 @@ return array(
                 'optionString' => '--strip --skip-if-larger',
             ],
         ]
-    )
+    ],
+
+    // Dev environment settings
+    'local'   => [
+        // 'filenamePattern' => '{fullname}.{extension}',
+        // 'cwebpPath' => '/usr/local/bin/cwebp',
+        'useCwebp' => false,
+
+        'optimizerConfig' => [
+            'mozjpeg'  => [
+                'extensions'   => ['jpg'],
+                'path'         => '/usr/local/bin/mozjpeg',
+                'optionString' => '-optimize -copy none',
+            ],
+            'optipng'  => [
+                'extensions'   => ['png'],
+                'path'         => '/usr/local/bin/optipng',
+                'optionString' => '-o2 -strip all',
+            ],
+            'pngquant' => [
+                'extensions'   => ['png'],
+                'path'         => '/usr/local/bin/pngquant',
+                'optionString' => '--strip --skip-if-larger',
+            ],
+        ]
+    ],
+
+    // Staging environment settings
+    'staging' => [
+
+    ],
+
+    // Live environment settings
+    'live'    => [
+
+    ],
+
 );

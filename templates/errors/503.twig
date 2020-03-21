@@ -1,0 +1,45 @@
+{% extends "_layouts/_error.twig" %}
+
+{% if getenv('IS_SYSTEM_LIVE') == 0 %}
+  {% set exception = {
+    errorCode: '503',
+    heading: ' Site Protected',
+    subHeading: 'Sorry, you need to be logged in to see the staging website.',
+  } %}
+  
+  {% set content %}
+    <p>
+      The {{ siteName }} staging site is protected from access unless you are logged in.<br />
+      You need to be logged in to the CMS system in order to view the {{ siteName }} staging site.
+    </p>
+  {% endset %}
+  
+  {% block cta %}
+    <div class="mt-12">
+      <a href="{{ siteUrl('cms') }}"
+         class=""
+      >
+        Login
+      </a>
+    </div>
+  {% endblock %}
+
+{% else %}
+  
+  {% set exception = {
+    errorCode: '503',
+    heading: ' Site Offline',
+    subHeading: siteName ~ ' website is currently offline.',
+  } %}
+  
+  {% set content %}
+    <p>
+      Unfortunately, our website is temporarily unavailable for maintenance.<br />
+      We shouldn't be offline for long as we just running some updates. Please check abkac again soon.<br />
+    </p>
+    
+    <p><strong>We will be back online soon!</strong></p>
+  {% endset %}
+{% endif %}
+
+

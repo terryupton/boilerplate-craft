@@ -1,0 +1,23 @@
+{% extends "_layouts/_site.twig" %}
+
+{% block content %}
+  
+  <main role="main" class="pt-12 mb-24 pb-12">
+    <div class="container">
+      <h1 class="uppercase text-lime-500 text-5xl mb-0 leading-none" style="font-size:10rem">{{ exception.errorCode }}</h1>
+      <p class="uppercase font-black text-gray-900 text-20 mb-4">
+        {{ exception.errorCode }} Error - {{ exception.heading }}
+      </p>
+      
+      <div class="max-w-3xl">
+        <p><strong>{{ exception.subHeading }}</strong></p>
+        
+        {#        {% include '_includes/_matrix/blocks/_block_copy.twig' %}#}
+        {{ content }}
+      </div>
+      
+      {% block cta %}{% endblock %}
+    </div>
+  </main>
+
+{% endblock %}

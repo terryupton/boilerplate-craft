@@ -18,7 +18,9 @@
 
 # ASSETS
 /web/uploads/*
+!/web/uploads/.gitkeep
 /web/imager/*
+/web/transforms/*
 /web/cp-resources/*
 
 # BUILD FILES

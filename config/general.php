@@ -9,81 +9,45 @@
  */
 
 return [
-    // Global settings
-    '*' => [
-        // Default Week Start Day (0 = Sunday, 1 = Monday...)
-        'defaultWeekStartDay' => 1,
 
-        // Enable CSRF Protection (recommended)
-        'enableCsrfProtection' => true,
-
-        // URL
-        'omitScriptNameInUrls' => true,
-        'addTrailingSlashesToUrls' => true,
-
-        // Control Panel trigger word
-        'cpTrigger' => 'cms',
-
-        // The secure key Craft will use for hashing and encrypting data
-        'securityKey' => getenv('SECURITY_KEY'),
-
-        // Use Project Config File for best practice in data migration
-        'useProjectConfigFile' => true,
-
-        // Set fuzzy search by default
-        'defaultSearchTermOptions' => array(
-            'subLeft' => true,
-            'subRight' => true,
-        ),
-
-        'generateTransformsBeforePageLoad' => true,
-        'useEmailAsUsername' => true,
-        'timezone' => 'Europe/London',
-
-        //Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
-        //Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
-        'aliases' => [
-            '@webroot' => "@root/web",
-            '@siteUrl' => getenv('DEFAULT_SITE_URL'),
-            '@assetUrl' => getenv('DEFAULT_SITE_URL') . getenv('ASSETS_PATH'),
-            '@assetPath' => '@webroot' . getenv('ASSETS_PATH'),
-            '@icons' => '@webroot/assets/svg',
-        ],
-
+    // Craft config settings from .env variables
+    'aliases'                          => [
+        '@webroot'      => '@root/web',
+        '@siteUrl'      => getenv('DEFAULT_SITE_URL'),
+        '@assetUrl'     => getenv('DEFAULT_SITE_URL') . getenv('ASSETS_PATH'),
+        '@assetPath'    => '@webroot' . getenv('ASSETS_PATH'),
+        '@icons'        => '@webroot/assets/svg',
+        '@signatureImg' => '@siteUrl/assets/img/signature/',
     ],
+    'allowUpdates'                     => (bool)getenv('ALLOW_UPDATES'),
+    'allowAdminChanges'                => (bool)getenv('ALLOW_ADMIN_CHANGES'),
+    'backupOnUpdate'                   => (bool)getenv('BACKUP_ON_UPDATE'),
+    'devMode'                          => (bool)getenv('DEV_MODE'),
+    'enableTemplateCaching'            => (bool)getenv('ENABLE_TEMPLATE_CACHING'),
+    'isSystemLive'                     => (bool)getenv('IS_SYSTEM_LIVE'),
+    'runQueueAutomatically'            => (bool)getenv('RUN_QUEUE_AUTOMATICALLY'),
+    'securityKey'                      => getenv('SECURITY_KEY'),
+    'siteUrl'                          => getenv('SITE_URL'),
 
-    // Dev environment settings
-    'local' => [
-        'siteUrl' => null,
-        'devMode' => true,
-        'isSystemLive' => true,
-        'allowUpdates' => true,
-        'allowAdminChanges' => true,
-        'backupOnUpdate' => true,
-        'enableTemplateCaching' => false,
-        'testToEmailAddress' => 'terry@amasci.co.uk',
+    // Craft config settings from constants
+    'addTrailingSlashesToUrls'         => true,
+    'cacheDuration'                    => false,
+    'cpTrigger'                        => 'cms',
+    'defaultSearchTermOptions'         => [
+        'subLeft'  => true,
+        'subRight' => true,
     ],
-
-    // Staging environment settings
-    'staging' => [
-        'siteUrl' => null,
-        'allowUpdates' => false,
-        'backupOnUpdate' => false,
-        'devMode' => false,
-        'allowAdminChanges' => false,
-        'isSystemLive' => false,
-        'enableTemplateCaching' => false,
-        'testToEmailAddress' => 'terry@amasci.co.uk',
-    ],
-
-    // Production environment settings
-    'production' => [
-        'siteUrl' => null,
-        'allowUpdates' => false,
-        'backupOnUpdate' => false,
-        'enableTemplateCaching' => true,
-        'devMode' => false,
-        'allowAdminChanges' => false,
-        'isSystemLive' => true,
-    ],
+    'defaultTokenDuration'             => 'P2W',
+    'defaultWeekStartDay'              => 1,
+    'enableCsrfProtection'             => true,
+    'errorTemplatePrefix'              => 'pages/errors/',
+    'generateTransformsBeforePageLoad' => true,
+    'maxUploadFileSize'                => '100M',
+    'maxRevisions'                     => getenv('MAX_REVISIONS'),
+    'omitScriptNameInUrls'             => true,
+    'pageTrigger'                      => 'page/',
+    'timezone'                         => 'Europe/London',
+    'useEmailAsUsername'               => true,
+    'usePathInfo'                      => true,
+    'useProjectConfigFile'             => true,
 ];

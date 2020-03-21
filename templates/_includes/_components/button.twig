@@ -1,26 +1,57 @@
-{% spaceless %}
+{% apply spaceless %}
+  {% import '_macros.twig' as macro %}
+  {# #########################################################################################
+    ###Button
+    
+    @param type                     :: {object}    (required) (default: link) (options: link, button)
+    @param url                      :: {object}    (required)
+    @param buttonText               :: {string}    (optional) (default: Read More)
+    @param btnClasses               :: {??}        (optional)
+    @param btnClasses               :: {??}        (optional)
 
-{% set baseClasses = '' %}
+    #USAGE:
+    {% include
+      '_includes/components/button' with {
+        type: 'link',
+        url: url('contact')
+        buttonText: 'Get in touch'
+      }
+    %}
+    
+    #NOTES:
+    This component is to be used for actual buttons <button>Submit</button> or links that look like buttons <a href="" class="button">Click me</a>
+    
+  ########################################################################################## #}
+  
+  {% set baseClasses = '' %}
+  
+  {% set type             = type|default('link') %}
+  {% set url              = url %}
+  {% set buttonText       = buttonText|default('Read More') %}
+  {% set btnClasses       = btnClasses|default('') %}
+  
+  {% set classes = classes|merge(baseClasses) %}
+{% endapply %}
 
-{% set url = url %}
-{% set buttonText = buttonText|default('Read More') %}
-{% set classes = classes|default('') %}
+{% switch type %}
 
-{% set classes = classes|merge(baseClasses) %}
-
-
-<a href="" class="{{ classes }}">
-  <span class="py-3 px-4">{{ buttonText }}</span>
-  <div class="bg-white-35 p-3">
-    <div class="w-5 h-5 fill-current text-white">
-    {{ svg('@webroot/src/svg/' ~ icon|default() ~ '.svg' ) }}
+{% case "link" %}
+  <a href="" class="{{ classes }}">
+    <span class="py-3 px-4">{{ buttonText }}</span>
+    <div class="bg-white-35 p-3">
+      <div class="w-5 h-5 fill-current text-white">
+        {{ svg('@icons/' ~ icon|default() ~ '.svg' ) }}
+      </div>
     </div>
-  </div>
-</a>
+  </a>
 
 
+{% case "button" %}
+  <button class="{{ classes }}">
+    {{ buttonText }}
+  </button>
 
-
+{% endswitch %}
 
 {%- set classes = [
   sectionColor is not null ? 'group-hover:bg-gradient-' ~ sectionColor : 'group-hover:bg-brand-darkest',
@@ -28,3 +59,10 @@
   craft.request.lastSegment == "" ? 'md:border-' ~ entry.uri ~' bg-' ~ entry.uri : 'md:border-' ~ sectionColor|default('brand'),
   'flex flex-col justify-center //// h-auto w-full //// absolute pin-x pin-b z-20 //// md:mb-4 p-2 /// bg-'~ sectionColor|default('brand') ~ ' border-t border-white // md:border-b-6 md:border-0 md:bg-black-75 //// text-white // text-center md:text-lg  //// transition-slow transition-property-bg //// group-hover:h-full group-hover:mb-0 group-hover:text-xl group-hover:absolute // fadeInUp',
 ]|join(' ') -%}
+
+
+{#TODO:
+  - Switch for button vs link
+  - Handle Icons
+  - Handle Classes
+,#}

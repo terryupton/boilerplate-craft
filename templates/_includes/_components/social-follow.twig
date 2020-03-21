@@ -1,35 +1,68 @@
-{% spaceless %}
+{% apply spaceless %}
   {% import _self as macro %}
+  {# #########################################################################################
+    ###Social Follow
+    
+    @param iconSize                 :: {string}    (required)   (defautl:w-7 h-7)
+    @param listClasses              :: {string}    (optional)   (default: flex items-center)
+    @param linkClasses              :: {string}    (optional)
+  
+    #USAGE:
+    {% include
+      '_includes/components/social-follow' with {
+        iconSize: 'w-12 h-12',
+        listClasses: 'p-12 bg-gray-200'
+        linkClasses: 'text-white'
+      }
+    %}
+  ########################################################################################## #}
+  
   
   {# SETUP THE NETWORKS FROM THE CMS #}
-  {#{% set networks = {#}
-  {#facebook:    { name: "Facebook", url: "https://facebook.com/", handle:socialMedia.facebookUsername,  },#}
-  {#twitter:    { name: "Twitter", url: "https://twitter.com/", handle:socialMedia.twitterHandle,  },#}
-  {#instagram:   { name: "Instagram", url: "https://instagram.com/", handle:socialMedia.instagramUsername },#}
-  {#LinkedIn:   { name: "LinkedIn", url: "https://www.linkedin.com/company", handle:socialMedia.linkedinCompanyName },#}
-  {#YouTube:   { name: "YouTube", url:, handle:socialMedia.youtubeUrl },#}
-  {#} %}#}
-  
   {% set networks = {
-    facebook:    { name: "Facebook", url: "http://facebook.com/", handle:socialMedia.facebookUsername,  },
-    twitter:    { name: "Twitter", url: "http://twitter.com/", handle:socialMedia.twitterHandle,  }
+    facebook: {
+      name: "Facebook",
+      url: "https://facebook.com/",
+      handle:socialMedia.facebookUsername,
+    },
+    twitter: {
+      name: "Twitter",
+      url: "https://twitter.com/",
+      handle:socialMedia.twitterHandle,
+    },
+    instagram: {
+      name: "Instagram",
+      url: "https://instagram.com/",
+      handle:socialMedia.instagramUsername
+    },
+    LinkedIn: {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/company/",
+      handle:socialMedia.linkedinCompanyName
+    },
+    YouTube: {
+      name: "YouTube",
+      url:'',
+      handle:socialMedia.youtubeUrl
+    }
   } %}
   
-  {% set iconSize = iconSize|default('w-6 h-6') %}
-  {% set classes = classes|default("list-reset // flex items-center") %}
-  {% set linkClasses = linkClasses|default('') %}
+  {# PARAMETERS #}
+  {% set iconSize       = iconSize|default('w-7 h-7') %}
+  {% set classes        = classes|default("flex items-center") %}
+  {% set linkClasses    = linkClasses|default('') %}
   
   {% macro socialFollow(networks, iconSize, classes, linkClasses) %}
     {# BUILD THE MACRO - Manually update the classes for the <li> and <a> tags as required in the macro code #}
     
-    <ul {% if classes %}class="{{ classes }}"{% endif %}>
+    <ul class="{{ listClasses }}">
       {% for network in networks %}
         {%- if network.handle|length -%}
-          <li class="mr-4 // animate-grow-on-hover">
+          <li class="mr-2 // animate-grow-on-hover">
             <a href="{{ network.url ~ network.handle }}"
                title="{{ network.name }}"
                target="_blank" rel="noopener noreferrer"
-               class="js-track-social-follow block hover:bg-social-{{ network.name|lower }} hover:text-social-{{ network.name|lower }} {% if linkClasses %}{{ linkClasses }} {% endif %}  "
+               class="js-track-social-follow block hover:text-social-{{ network.name|lower }} hover:bg-white p-1 rounded-lg {% if linkClasses %}{{ linkClasses }} {% endif %}  "
                data-url="{{ url(craft.app.request.pathInfo) }}"
             >
               {{ svg('@webroot/assets/svg/social-' ~ network.name|lower ~ '.svg', class='fill-current block ' ~ iconSize) }}
@@ -40,8 +73,19 @@
       {% endfor %}
     </ul>
   {% endmacro %}
-{% endspaceless %}
+{% endapply %}
 
 {# OUTPUT #}
 {{ macro.socialFollow(networks, iconSize, classes, linkClasses) }}
 
+{# ----------------------------------------------------------------------
+   TAILWIND CSS DYNAMIC CLASES FOR PURGE CSS
+-------------------------------------------------------------------------
+
+  hover:text-social-facebook
+  hover:text-social-twitter
+  hover:text-social-instagram
+  hover:text-social-linkedin
+  hover:text-social-youtube
+
+------------------------------------------------------------------------- #}

@@ -1,20 +1,18 @@
-{# @var craft \craft\web\twig\variables\CraftVariable #}
-{# @var entry \craft\elements\Entry #}
 <header role="banner" class="border-b brand-grey-lighter">
   <div class="flex justify-between">
     <div class="flex-1">
       <img src="/assets/img/logo.svg" alt={{ siteName }} Logo"" style="max-width:220px;">
     </div>
-    <div class="">
+    <div :class="{ 'block': navOpen, 'hidden lg:block': !navOpen }" v-cloak>
       {% include '_includes/_globals/nav.twig' %}
     </div>
   </div>
-  
-  
 </header>
 
-
+{# ---------------------------------------------------------------------- #}
 {# COMMON ELEMENTS THAT MIGHT BE USED #}
+{# ---------------------------------------------------------------------- #}
+
 {# {% include "_includes/global/nav" %} #}
 
 {# Hamburger Icon #}
