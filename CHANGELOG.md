@@ -12,11 +12,19 @@ Added some composer post create project scripts
 
 Added craft scripts based on <https://github.com/nystudio107/craft-scripts>
 
-Added Readme Default
+- Image Component
+   - Added Picture Classes var
+   - Renamed Image Classes var
+   - Added svgConvert var
+
+Added Readme Default p
 - Still in development 
 
 ### Changed
-- 
+- tweaks to `.gitignore`
+
+### Removed
+- amasci-setup script
 
 
 ## [2.0.2] - 2020-03-22
