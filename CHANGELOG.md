@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.1.2] - 2020-03-22
+
+### Changed
+- Updated README file
 
 ## [2.1.1] - 2020-03-22
 
