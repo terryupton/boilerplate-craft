@@ -1,15 +1,23 @@
 # Amasci Craft 3 Boilerplate with Tailwind CSS
-A starting boilerplate for [Craft 3](https://craftcms.com/) projects using [Gulp](https://gulpjs.com/), [Tailwind CSS](https://tailwindcss.com/) and porting aspects over my old static boilerplate [available here](https://github.com/terryupton/new-website-boilerplate)
+A starting boilerplate for [Craft 3](https://craftcms.com/) projects using [Laravel Mix](https://laravel-mix.com/), [Tailwind CSS](https://tailwindcss.com/)
 
+## Content Management System (CMS)
+- [Craft CMS](https://craftcms.com/)
+- [Craft CMS 3.x documentation](https://docs.craftcms.com/v3/)
 
-## Build Instructions
-- write step 1
-- write step 2
+## Front-end
 
-## Technologies
-- Composer
-- Tailwind CSS
-- Craft CMS
+### Build Tools
+- [Laravel Mix](https://github.com/JeffreyWay/laravel-mix)
+
+### CSS
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Tailwind UI](https://tailwindui.com/)
+
+### JavaScript
+- [Alpine JS](https://github.com/alpinejs/alpine)
+- [lazySizes](https://afarkas.github.io/lazysizes/index.html)
+- [Vue.js](https://vuejs.org/)
 
 ## TODO:
 - Create proper Readme file and instructions.
@@ -34,3 +42,7 @@ A starting boilerplate for [Craft 3](https://craftcms.com/) projects using [Gulp
 - Convert Email QueryString to an Array (subject and body)
 - Set button.twig component to switch between button and a href
 - Set and test button.twig to use classes as an array and then apply this approach to other components.
+
+
+## License
+The MIT License (MIT). Please see [License file](./LICENSE.md) for more information.
