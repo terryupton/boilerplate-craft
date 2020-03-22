@@ -1,0 +1,21 @@
+/**
+ * ----------------------------------------
+ * animation float-down
+ * ----------------------------------------
+ */
+@keyframes float-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.float-down {
+  animation: float-down 2s ease-in-out infinite both;
+}
