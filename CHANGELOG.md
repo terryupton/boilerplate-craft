@@ -10,6 +10,8 @@ Added some composer post create project scripts
 - copy /scripts/.env.example.sh to /scripts/.env.sh
 - copy README.md.default to README.md
 
+Added craft scripts based on <https://github.com/nystudio107/craft-scripts>
+
 Added Readme Default
 - Still in development 
 
