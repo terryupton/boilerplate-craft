@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+
+## [2.1.1] - 2020-03-22
+
+### Changed
+- Fixed composer.json file
+
 ## [2.1.0] - 2020-03-22
 ### Added
 Added some composer post create project scripts
