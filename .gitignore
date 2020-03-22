@@ -4,12 +4,11 @@
 #
 
 # CRAFT ENVIRONMENT
-.env.php
-.env.sh
-.env
+.env*
+!.env.example
 
 # COMPOSER
-/vendor
+/vendor/*
 
 # CRAFT STORAGE
 /storage/*
@@ -57,7 +56,3 @@ urllist.txt
 
 #BPROJECT SPECIFIC
 # /assets/img/tmp/*
-
-#consider removing these?
-amasci-setup
-/scripts

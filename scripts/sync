@@ -1,0 +1,3 @@
+#!/bin/bash
+bash pull_assets.sh
+bash pull_db.sh

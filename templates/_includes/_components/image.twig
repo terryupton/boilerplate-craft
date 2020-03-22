@@ -4,15 +4,18 @@
     This generates webp with jpeg fallbacks and use picture to deliver the correct images.
     Uses Srcset and Sizes for delivering suitable images based on screen resolution and uses lazysizes for performance.
 
-    @param image        :: {object}             (required)    (the image to apply the transform to)
-    @param transform    :: {string}             (required)    (set a transform from the array of transforms below. e.g transform:'16x9')
-    @param alt          :: {string or object}   (optonal)
-    @param lazyLoad     :: {bool}               (rquired)     (default:1)
-    @param classes      :: {array}              (optional)
-    @param widths       :: {array}              (required)    (default:image.width)  (passing in an array of image sizes)
-    @param srcWidth     :: {integer}            (required)    (default:400)  (passing in the src image size)
-    @param sizes        :: {string}             (optional)    (default'auto') (what sizes for the srcset to set for the image.)
-    @param effects      :: {array}              (optional)    (any effects to apply to the image)
+    @param image            :: {object}             (required)    (the image to apply the transform to)
+    @param transform        :: {string}             (required)    (set a transform from the array of transforms below. e.g transform:'16x9')
+    @param alt              :: {string or object}   (optonal)
+    @param lazyLoad         :: {bool}               (rquired)     (default:1)
+    @param svgConvert       :: {bool}               (optional)    (if an SVg image should it be embed as an img or converted using crsft SVG filter)
+    @param imgClasses       :: {string}             (optional)
+    @param pictureClasses   :: {string}             (optional)
+    @param classes          :: {array}              (optional)
+    @param widths           :: {array}              (required)    (default:image.width)  (passing in an array of image sizes)
+    @param srcWidth         :: {integer}            (required)    (default:400)  (passing in the src image size)
+    @param sizes            :: {string}             (optional)    (default'auto') (what sizes for the srcset to set for the image.)
+    @param effects          :: {array}              (optional)    (any effects to apply to the image)
 
     #USAGE:
     {% include
@@ -21,7 +24,8 @@
         transform: 'portrait',
         alt: 'entry.title',
         lazyLoad: 0,
-        classes:'w-1/4 border',
+        imgClasses:'w-1/4 border',
+        pictureClasses: 'bg-red-500'
         srcWidth:600,
         widths: [1000, 700, 500, 300],
         sizes:'(min-width:992px) 10rem, (min-width:576px) 50vw, 100vw',
@@ -32,12 +36,12 @@
   ########################################################################################## #}
   
   {# PARAMETERS #}
-  {% set alt = alt|default(image.alt|default(image.title)) %}
-  {% set lazyLoad = lazyLoad|default(1) %}
-  {% set sizes = sizes|default(image.width ~ 'px') %}
-  {% set classes = classes|default('') %}
-  {% set effects = effects ?? {} %}
-  {% set options = options ?? {} %}
+  {% set alt          = alt|default(image.alt|default(image.title)) %}
+  {% set lazyLoad     = lazyLoad|default(1) %}
+  {% set sizes        = sizes|default(image.width ~ 'px') %}
+  {% set imgClasses   = classes|default('') %}
+  {% set effects      = effects ?? {} %}
+  {% set options      = options ?? {} %}
   
   {# NOTES
     #########
@@ -131,16 +135,19 @@
 
 {# OUTPUT #}
 
-{% if image.extension == 'svg' %}
-  {#    {{ svg(image, class=classes) }}#}
-  <img
-    class="{{ classes }}"
-    src="{{ image.url }}"
-    sizes="{{ sizes }}"
-    alt="{{ alt }}"
-  />
+{% if image['extension'] is defined and image.extension == 'svg' %}
+  {% if svgConvert is defined %}
+      {{ svg(image, class=imgClasses) }}
+  {% else %}
+    <img
+      class="{{ imgClasses }}"
+      src="{{ image.url }}"
+      sizes="{{ sizes }}"
+      alt="{{ alt }}"
+    />
+  {% endif %}
 {% else %}
-  <picture>
+  <picture{% if pictureClasses is defined %} class="{{ pictureClasses }}"{% endif %>
     {% set placeholder = craft.imager.transformImage(image, placeholder, transform|merge({effects: {blur: 1}})) %}
     {% set srcImage = craft.imager.transformImage(image, {width:srcWidth}, transform) %}
     {% set transformedImages = craft.imager.transformImage(image, imageSizes, transform, options) %}
@@ -153,7 +160,7 @@
         <source sizes="{{ sizes }}" data-srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
       {% endif %}
       <img
-        class="lazyload grayscale-up {{ classes }}"
+        class="lazyload grayscale-up {{ imgClasses }}"
         src="{{ placeholder.url }}"
         data-src="{{ srcImage.url }}"
         data-srcset="{{ craft.imager.srcset(transformedImages) }}"
@@ -165,7 +172,7 @@
         <source sizes="{{ sizes }}" srcset="{{ craft.imager.srcset(transformedImagesWebp) }}" type="image/webp">
       {% endif %}
       <img
-        class="{{ classes }}"
+        class="{{ imgClasses }}"
         src="{{ srcImage.url }}"
         srcset="{{ craft.imager.srcset(transformedImages) }}"
         sizes="{{ sizes }}"
@@ -174,7 +181,7 @@
     {% endif %}
   </picture>
   <noscript>
-    <img src="{{ srcImage.url }}" class="{{ classes }}" alt="{{ alt }}">
+    <img src="{{ srcImage.url }}" class="{{ imgClasses }}" alt="{{ alt }}">
   </noscript>
 {% endif %}
 

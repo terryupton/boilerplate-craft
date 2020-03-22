@@ -1,7 +1,7 @@
 {
   "name": "terryupton/boilerplate-craft",
   "description": "A starting boilerplate for Craft Projects",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "type": "project",
   "require": {
     "aelvan/imager": "^2.4.0",
@@ -11,7 +11,6 @@
     "mmikkel/cp-field-inspect": "^1.0.5",
     "mmikkel/retcon": "^2.1.0",
     "nystudio107/craft-minify": "^1.2.5",
-    "nystudio107/craft-scripts": "^1.2",
     "nystudio107/craft-seomatic": "^3.2.47",
     "nystudio107/craft-twigpack": "^1.2.0",
     "sebastianlenz/linkfield": "^1.0.20",
@@ -34,37 +33,39 @@
     }
   },
   "scripts": {
-    "post-root-package-install": [
-      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-    ],
     "post-create-project-cmd": [
-      "@php craft setup/welcome"
-    ],
-    "post-update-cmd": [
-      "@php craft migrate/all",
-      "@php craft project-config/sync",
-      "@php craft clear-caches/compiled-templates",
-      "@php craft clear-caches/cp-resources",
-      "@php craft clear-caches/data",
-      "@php craft clear-caches/seomatic-frontendtemplate-caches",
-      "@php craft clear-caches/seomatic-metabundle-caches",
-      "@php craft clear-caches/seomatic-sitemap-caches",
-      "@php craft clear-caches/twigpack-manifest-cache ",
-      "@php craft clear-caches/temp-files",
-      "@php craft clear-caches/template-caches"
-    ],
-    "post-install-cmd": [
-      "@php craft migrate/all",
-      "@php craft project-config/sync",
-      "@php craft clear-caches/compiled-templates",
-      "@php craft clear-caches/cp-resources",
-      "@php craft clear-caches/data",
-      "@php craft clear-caches/seomatic-frontendtemplate-caches",
-      "@php craft clear-caches/seomatic-metabundle-caches",
-      "@php craft clear-caches/seomatic-sitemap-caches",
-      "@php craft clear-caches/twigpack-manifest-cache ",
-      "@php craft clear-caches/temp-files",
-      "@php craft clear-caches/template-caches"
+      "@php -r \"copy('example.env', '.env');\"",
+      "@php -r \"copy('./scripts/example.env.sh', './scripts/.env.sh');\"",
+      "@php -r \"unlink('composer.json');\"",
+      "@php -r \"unlink('LICENSE.md');\"",
+      "@php -r \"unlink('README.md');\"",
+      "@php -r \"copy('README.md.default', 'README.md');\""
     ]
+    //    "post-update-cmd": [
+    //      "@php craft migrate/all",
+    //      "@php craft project-config/sync",
+    //      "@php craft clear-caches/compiled-templates",
+    //      "@php craft clear-caches/cp-resources",
+    //      "@php craft clear-caches/data",
+    //      "@php craft clear-caches/seomatic-frontendtemplate-caches",
+    //      "@php craft clear-caches/seomatic-metabundle-caches",
+    //      "@php craft clear-caches/seomatic-sitemap-caches",
+    //      "@php craft clear-caches/twigpack-manifest-cache ",
+    //      "@php craft clear-caches/temp-files",
+    //      "@php craft clear-caches/template-caches"
+    //    ],
+    //    "post-install-cmd": [
+    //      "@php craft migrate/all",
+    //      "@php craft project-config/sync",
+    //      "@php craft clear-caches/compiled-templates",
+    //      "@php craft clear-caches/cp-resources",
+    //      "@php craft clear-caches/data",
+    //      "@php craft clear-caches/seomatic-frontendtemplate-caches",
+    //      "@php craft clear-caches/seomatic-metabundle-caches",
+    //      "@php craft clear-caches/seomatic-sitemap-caches",
+    //      "@php craft clear-caches/twigpack-manifest-cache ",
+    //      "@php craft clear-caches/temp-files",
+    //      "@php craft clear-caches/template-caches"
+    //    ]
   }
 }

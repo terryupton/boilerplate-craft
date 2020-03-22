@@ -1,6 +1,34 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.1.0] - 2020-03-22
+### Added
+Added some composer post create project scripts
+- remove readme
+- remove licence
+- copy .env.example to .env
+- copy /scripts/.env.example.sh to /scripts/.env.sh
+- copy README.md.default to README.md
+
+Added craft scripts based on <https://github.com/nystudio107/craft-scripts>
+
+- Image Component
+   - Added Picture Classes var
+   - Renamed Image Classes var
+   - Added svgConvert var
+
+Added Readme Default
+- Still in development 
+
+### Changed
+- tweaks to `.gitignore`
+- Comment out Craft scripts until installed
+
+### Removed
+- amasci-setup script
+- NY107 Craft Scripts from composer
+
+
 ## [2.0.2] - 2020-03-22
 ### Added
 - src Folder

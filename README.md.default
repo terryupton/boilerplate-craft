@@ -1,0 +1,22 @@
+Project Name
+============
+
+Icons
+-------
+- Icon Package Name and Url
+
+
+
+Config and Setup
+----------
+
+1.  Update a .env file by duplicating `.env.example` and filling in the appropriate environment specific values
+
+2.  Set up a node_modules symlink
+    - create new node_modules folder under /Users/terryupton/node_modules_local/domain.ext
+    - add symlink to node_modules folder: ln -s  ~/node_modules_local/domain.ext/node_modules
+
+3. Create tailwind.full.js file for easy reference.
+   -  npx tailwindcss init tailwindcss.full.js
+
+3.
