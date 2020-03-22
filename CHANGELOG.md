@@ -1,6 +1,22 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.1.0] - 2020-03-22
+### Added
+Added some composer post create project scripts
+- remove readme
+- remove licence
+- copy .env.example to .env
+- copy /scripts/.env.example.sh to /scripts/.env.sh
+- copy README.md.default to README.md
+
+Added Readme Default
+- Still in development 
+
+### Changed
+- 
+
+
 ## [2.0.2] - 2020-03-22
 ### Added
 - src Folder

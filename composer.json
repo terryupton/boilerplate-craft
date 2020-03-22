@@ -38,7 +38,12 @@
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
     ],
     "post-create-project-cmd": [
-      "@php craft setup/welcome"
+      "@php -r \"copy('example.env', '.env');\"",
+      "@php -r \"copy('./scripts/example.env.sh', './scripts/.env.sh');\"",
+      "@php -r \"unlink('composer.json');\"",
+      "@php -r \"unlink('LICENSE.md');\"",
+      "@php -r \"unlink('README.md');\"",
+      "@php -r \"copy('README.md.default', 'README.md');\""
     ],
     "post-update-cmd": [
       "@php craft migrate/all",
