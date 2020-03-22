@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <title>icon-email-share</title>
+  <rect width="24" height="24"/>
+  <path d="M19.2,7.3H4.8v9.4a.2.2,0,0,0,.2.2H19a.2.2,0,0,0,.2-.2V7.3Zm-9,5.5,1.5,1.5h.6l1.5-1.5,4.5,3.7H5.7ZM5.3,16.2V7.8l4.6,4.6Zm8.9-3.8,4.6-4.6v8.4Zm4.3-4.9L12,13.9h0v0L5.6,7.5Z" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.71"/>
+</svg>

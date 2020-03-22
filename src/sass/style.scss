@@ -1,0 +1,60 @@
+//-------------------------------------------------------------------------------
+// Initial setup to import all our SASS based files and tailwind files.
+//---------------------------------------------------------------------------------
+@tailwind base;
+//@import 'base/_vcloak';
+//@import 'base/_xcloak';
+@import 'base/_framework';
+//@import 'base/_typography';
+@import 'base/_links';
+@import 'base/_images';
+@import 'base/_helpers';
+//@import "base/_print";
+
+//ANIMATIONS
+@import 'animations/animations';
+
+// COMPONENTS
+//@import 'node_modules/animate.css/animate';
+//@import "components/_breadcrumbs";
+//@import "components/_bullets";
+//@import "components/_nav";
+//@import 'components/_video';
+//@import 'components/_map';
+//@import 'components/_triangles';
+
+// HTML COMPONENTS
+//@import 'components/_blockquote';
+//@import "components/_tables";
+
+//Layouts (grids)
+//@import 'components/_grid-example';
+
+//FORMS
+//STOP!!!! Consider Using Tailwind Forms Instead --- https://tailwindcss.com/components/forms/
+//@import "components/forms/_forms";
+//@import "components/forms/_forms-radio-buttons";
+//@import "components/forms/_forms-checkbox";
+//@import "components/forms/_forms-select";
+//@import "components/forms/_forms-yoko";
+//@import "components/forms/_forms-freeform";
+
+//-------------------------------------------------------------------------------
+///VENDORS
+//-------------------------------------------------------------------------------
+/* purgecss start ignore */
+// SWIPER
+//@import 'node_modules/swiper/css/swiper';
+//@import 'components/carousel-arrows';
+//@import 'components/carousel-pagination';
+//@import 'components/carousel-animations';
+
+//GLightbox
+//@import 'node_modules/glightbox/dist/css/glightbox';
+/* purgecss end ignore */
+
+// DEBUG
+//@import "base/_debug";
+
+@tailwind components;
+@tailwind utilities;

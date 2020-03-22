@@ -49,8 +49,10 @@ namespace nystudio107\craft;
  * @property \craft\web\twig\variables\SystemSettings $systemSettings
  * @property \craft\web\twig\variables\UserSession $session
  * @property \craft\commerce\web\twig\CraftVariableBehavior $commerce
- * @property \putyourlightson\blitz\variables\BlitzVariable $blitz
  * @property \nystudio107\twigpack\variables\ManifestVariable $twigpack
+ * @property  \aelvan\imager\variables\ImagerVariable $imager
+ * @property \modules\sitemodule\SiteModule $site
+ * @mixin \craft\commerce\web\twig\CraftVariableBehavior
  *
  * @author    nystudio107
  * @package   nystudio107\craft
@@ -74,36 +76,36 @@ class FauxTwigExtension extends \Twig\Extension\AbstractExtension implements \Tw
     {
         return [
             // Craft Variable
-            'craft' => new FauxCraftVariable(),
+            'craft'              => new FauxCraftVariable(),
             // Craft Elements
-            'asset' => new \craft\elements\Asset(),
-            'category' => new \craft\elements\Category(),
-            'entry' => new \craft\elements\Entry(),
-            'tag' => new \craft\elements\Tag(),
+            'asset'              => new \craft\elements\Asset(),
+            'category'           => new \craft\elements\Category(),
+            'entry'              => new \craft\elements\Entry(),
+            'tag'                => new \craft\elements\Tag(),
             // Craft "Constants"
-            'SORT_ASC' => 4,
-            'SORT_DESC' => 3,
-            'SORT_REGULAR' => 0,
-            'SORT_NUMERIC' => 1,
-            'SORT_STRING' => 2,
+            'SORT_ASC'           => 4,
+            'SORT_DESC'          => 3,
+            'SORT_REGULAR'       => 0,
+            'SORT_NUMERIC'       => 1,
+            'SORT_STRING'        => 2,
             'SORT_LOCALE_STRING' => 5,
-            'SORT_NATURAL' => 6,
-            'SORT_FLAG_CASE' => 8,
-            'POS_HEAD' => 1,
-            'POS_BEGIN' => 2,
-            'POS_END' => 3,
-            'POS_READY' => 4,
-            'POS_LOAD' => 5,
+            'SORT_NATURAL'       => 6,
+            'SORT_FLAG_CASE'     => 8,
+            'POS_HEAD'           => 1,
+            'POS_BEGIN'          => 2,
+            'POS_END'            => 3,
+            'POS_READY'          => 4,
+            'POS_LOAD'           => 5,
             // Misc. Craft globals
-            'currentUser' => new \craft\elements\User(),
-            'currentSite' => new \craft\models\Site(),
-            'now' => new \DateTime(),
+            'currentUser'        => new \craft\elements\User(),
+            'currentSite'        => new \craft\models\Site(),
+            'now'                => new DateTime(),
             // Commerce Elements
-            'lineItem' => new \craft\commerce\models\LineItem(),
-            'order' => new \craft\commerce\elements\Order(),
-            'product' => new \craft\commerce\elements\Product(),
+            'lineItem'           => new \craft\commerce\models\LineItem(),
+            'order'              => new \craft\commerce\elements\Order(),
+            'product'            => new \craft\commerce\elements\Product(),
             // Third party globals
-            'seomatic' => new \nystudio107\seomatic\variables\SeomaticVariable(),
+            'seomatic'           => new \nystudio107\seomatic\variables\SeomaticVariable(),
         ];
     }
 }

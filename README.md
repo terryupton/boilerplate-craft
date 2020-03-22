@@ -12,7 +12,16 @@ A starting boilerplate for [Craft 3](https://craftcms.com/) projects using [Gulp
 - Craft CMS
 
 ## TODO:
-- Add Src Folder and base boilerplate
+- Create proper Readme file and instructions.
+<https://github.com/miranj/craft-boilerplate>
+<https://github.com/ademers/craft-starter>
+<https://github.com/madebyshape/craft-3>
+<https://github.com/timkelty/craftcms-boilerplate>
+<https://github.com/nystudio107/craft>
+
+- Add default files for composer, package, readme - see this example 
+<https://github.com/miranj/craft-boilerplate>
+- Add Vue and Apline to package.default once created.
 - Create better boilerplate template architecture.  
 <https://nystudio107.com/blog/an-effective-twig-base-templating-setup>
 - Update `proejct.yaml` to add 1.0.0 schema versions for plugins.
