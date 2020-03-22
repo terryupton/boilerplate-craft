@@ -22,7 +22,6 @@ A starting boilerplate for [Craft 3](https://craftcms.com/) projects using [Gulp
 - Add default files for composer, package, readme - see this example 
 <https://github.com/miranj/craft-boilerplate>
 - Add Vue and Apline to package.default once created.
-- Add Src Folder and base boilerplate
 - Create better boilerplate template architecture.  
 <https://nystudio107.com/blog/an-effective-twig-base-templating-setup>
 - Update `proejct.yaml` to add 1.0.0 schema versions for plugins.

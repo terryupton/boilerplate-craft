@@ -1,6 +1,21 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.0.2] - 2020-03-22
+
+### Added
+- src Folder
+  - SVG's for standard social icons and social sharing
+  - PHPstorm extension for providing auto-complete for Craft CMS API and Plugins
+  - Sass Files, Defaults and Examples
+  - JS Files, Defaults and Examples
+  - Img and touch directories and gitkeep files.
+
+
+### Changed
+- Social Colours added to `tailwind.config`
+ 
+
 ## [2.0.1] - 2020-03-21
 
 ### Added
