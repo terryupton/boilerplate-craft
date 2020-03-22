@@ -2,7 +2,7 @@
   "name": "terryupton/boilerplate-craft",
   "description": "A starting boilerplate for Craft Projects",
   "version": "2.1.1",
-  "license": "See LICENSE.MD file for details",
+  "license": "MIT",
   "type": "project",
   "require": {
     "aelvan/imager": "^2.4.0",
