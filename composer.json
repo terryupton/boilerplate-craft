@@ -35,9 +35,8 @@
   },
   "scripts": {
     "post-create-project-cmd": [
-      "@php -r \"copy('example.env', '.env');\"",
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
       "@php -r \"copy('./scripts/example.env.sh', './scripts/.env.sh');\"",
-      "@php -r \"unlink('composer.json');\"",
       "@php -r \"unlink('LICENSE.md');\"",
       "@php -r \"unlink('README.md');\"",
       "@php -r \"copy('README.md.default', 'README.md');\""
