@@ -41,32 +41,6 @@
       "@php -r \"unlink('LICENSE.md');\"",
       "@php -r \"unlink('README.md');\"",
       "@php -r \"copy('README.md.default', 'README.md');\""
-    ],
-    "post-update-cmd": [
-      "@php craft migrate/all",
-      "@php craft project-config/sync",
-      "@php craft clear-caches/compiled-templates",
-      "@php craft clear-caches/cp-resources",
-      "@php craft clear-caches/data",
-      "@php craft clear-caches/seomatic-frontendtemplate-caches",
-      "@php craft clear-caches/seomatic-metabundle-caches",
-      "@php craft clear-caches/seomatic-sitemap-caches",
-      "@php craft clear-caches/twigpack-manifest-cache ",
-      "@php craft clear-caches/temp-files",
-      "@php craft clear-caches/template-caches"
-    ],
-    "post-install-cmd": [
-      "@php craft migrate/all",
-      "@php craft project-config/sync",
-      "@php craft clear-caches/compiled-templates",
-      "@php craft clear-caches/cp-resources",
-      "@php craft clear-caches/data",
-      "@php craft clear-caches/seomatic-frontendtemplate-caches",
-      "@php craft clear-caches/seomatic-metabundle-caches",
-      "@php craft clear-caches/seomatic-sitemap-caches",
-      "@php craft clear-caches/twigpack-manifest-cache ",
-      "@php craft clear-caches/temp-files",
-      "@php craft clear-caches/template-caches"
     ]
   }
 }
