@@ -1,18 +1,11 @@
 {
-  "name": "craft-bp",
-  "version": "2.1.3",
-  "description": "Craft CMS boilerplate and starter project",
+  "name": "REPLACE_ME",
+  "version": "1.0.0",
+  "description": "REPLACE_ME",
   "main": "index.js",
-  "keywords": [
-    "Craft",
-    "Boilerplate",
-    "TailwindCSS",
-    "Start Project"
-  ],
   "author": "Terry Upton, Amasci Creative Limited",
   "contact": "<terry@amasci.co.uk> <www.amasci.co.uk> <01908 668665>",
   "copyright": "Amasci Creative Limited",
-  "license": "SEE LICENSE IN LICENSE.md",
   "sort-packages": true,
   "private": true,
   "browser": "/web/index.php",
