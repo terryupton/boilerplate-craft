@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.1.3] - 2020-03-27
+### Added
+Added package.json.default file
+
+### Changed
+- Updated Composer Scripts
+- Updated npm Scripts
+
 ## [2.1.2] - 2020-03-22
 
 ### Changed
