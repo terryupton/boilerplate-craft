@@ -4,13 +4,13 @@ A starting boilerplate for [Craft 3](https://craftcms.com/) projects using [Lara
 
 ## Installation
 
-1.  To create a new project, run composer create-project terryupton/boilerplate-craft <Path>, substituting <Path> with the path where Composer should create the project.
+1.  To create a new project, run `composer create-project terryupton/boilerplate-craft <Path>`, substituting <Path> with the path where Composer should create the project.
 
 2. Update a .env file adding the database connections and other settings
 
 3. Run ./craft setup and follow the instructions
 
-4. Refer to new `Readme.md` file for further instructions
+4. Refer to new `READdME.md` file for further instructions
 
 ## Content Management System (CMS)
 - [Craft CMS](https://craftcms.com/)
