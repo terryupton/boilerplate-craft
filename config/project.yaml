@@ -1,4 +1,4 @@
-dateModified: 1552834196
+dateModified: 1585408471
 email:
   fromEmail: $EMAIL_FROM_ADDRESS
   fromName: $EMAIL_FROM_NAME
@@ -172,6 +172,32 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  63b677fc-5b4e-4b9e-afed-681184de614e:
+    contentColumnType: string
+    fieldGroup: 9ace1fad-7441-439d-9f5f-40620d68b63c
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:2704582f-5c82-44da-9552-cddd0a262a82'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add Image'
+      singleUploadLocationSource: 'volume:2704582f-5c82-44da-9552-cddd0a262a82'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
   66a6808a-8c39-46ae-a30c-eb8758c059e5:
     contentColumnType: string
     fieldGroup: 9ace1fad-7441-439d-9f5f-40620d68b63c
@@ -181,9 +207,9 @@ fields:
     searchable: true
     settings:
       contentTable: '{{%matrixcontent_terms}}'
-      localizeBlocks: false
-      maxBlocks: null
-      minBlocks: null
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
@@ -222,6 +248,35 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  9da9e5b9-e131-4bde-9799-6a28ebdd215e:
+    contentColumnType: string
+    fieldGroup: 3fbdb43a-29d7-4c3e-b657-7031ab65ccb4
+    handle: address
+    instructions: ''
+    name: Address
+    searchable: true
+    settings:
+      columns:
+        22:
+          width: ''
+        23:
+          width: ''
+        24:
+          width: ''
+        25:
+          width: ''
+        26:
+          width: ''
+      contentTable: '{{%stc_address}}'
+      fieldLayout: row
+      localizeBlocks: false
+      maxRows: ''
+      minRows: ''
+      selectionLabel: ''
+      staticField: '1'
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
   b300f039-a202-4d80-93cf-cdcafcfbb5d9:
     contentColumnType: string
     fieldGroup: 9ace1fad-7441-439d-9f5f-40620d68b63c
@@ -315,91 +370,36 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  9da9e5b9-e131-4bde-9799-6a28ebdd215e:
-    name: Address
-    handle: address
-    instructions: ''
-    searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: verbb\supertable\fields\SuperTableField
-    settings:
-      minRows: ''
-      maxRows: ''
-      contentTable: '{{%stc_address}}'
-      localizeBlocks: false
-      staticField: '1'
-      columns:
-        22:
-          width: ''
-        23:
-          width: ''
-        24:
-          width: ''
-        25:
-          width: ''
-        26:
-          width: ''
-      fieldLayout: row
-      selectionLabel: ''
-    contentColumnType: string
-    fieldGroup: 3fbdb43a-29d7-4c3e-b657-7031ab65ccb4
-  63b677fc-5b4e-4b9e-afed-681184de614e:
-    name: Image
-    handle: image
-    instructions: ''
-    searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Assets
-    settings:
-      useSingleFolder: ''
-      defaultUploadLocationSource: 'volume:2704582f-5c82-44da-9552-cddd0a262a82'
-      defaultUploadLocationSubpath: ''
-      singleUploadLocationSource: 'volume:2704582f-5c82-44da-9552-cddd0a262a82'
-      singleUploadLocationSubpath: ''
-      restrictFiles: '1'
-      allowedKinds:
-        - image
-      sources: '*'
-      source: null
-      targetSiteId: null
-      viewMode: large
-      limit: '1'
-      selectionLabel: 'Add Image'
-      localizeRelations: false
+  fd7aea35-41ba-4ef9-baf1-b829c39b5932:
     contentColumnType: string
     fieldGroup: 9ace1fad-7441-439d-9f5f-40620d68b63c
-  fd7aea35-41ba-4ef9-baf1-b829c39b5932:
-    name: Downloads
     handle: downloads
     instructions: ''
+    name: Downloads
     searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Assets
     settings:
-      useSingleFolder: '1'
-      defaultUploadLocationSource: 'volume:2704582f-5c82-44da-9552-cddd0a262a82'
-      defaultUploadLocationSubpath: ''
-      singleUploadLocationSource: 'volume:df54fe7f-5058-4ae8-91b8-0f2b0db5e400'
-      singleUploadLocationSubpath: ''
-      restrictFiles: '1'
       allowedKinds:
         - excel
         - pdf
         - powerpoint
         - word
+      defaultUploadLocationSource: 'volume:2704582f-5c82-44da-9552-cddd0a262a82'
+      defaultUploadLocationSubpath: ''
+      limit: ''
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add a document'
+      singleUploadLocationSource: 'volume:df54fe7f-5058-4ae8-91b8-0f2b0db5e400'
+      singleUploadLocationSubpath: ''
+      source: null
       sources:
         - 'volume:df54fe7f-5058-4ae8-91b8-0f2b0db5e400'
-      source: null
       targetSiteId: null
+      useSingleFolder: '1'
       viewMode: list
-      limit: ''
-      selectionLabel: 'Add a document'
-      localizeRelations: false
-    contentColumnType: string
-    fieldGroup: 9ace1fad-7441-439d-9f5f-40620d68b63c
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
 globalSets:
   25031c1d-296c-4f89-a356-86ccfb0b1c5e:
     fieldLayouts:
@@ -426,26 +426,22 @@ globalSets:
     handle: socialMedia
     name: 'Social Media'
   5a6a5511-e946-4be0-9b5c-c0b840f9f464:
-    name: 'Company Information'
-    handle: companyInformation
     fieldLayouts:
       05ea6d16-e7ec-461d-92d9-0968b91bcb66:
         tabs:
-          - name: Contact
-            sortOrder: 1
-            fields:
+          - fields:
               0efcb020-757f-48f5-a3ad-c5db918a5079:
                 required: true
                 sortOrder: 1
-              c8a96201-891a-43e4-89e9-3263caa261e5:
-                required: true
-                sortOrder: 2
               9da9e5b9-e131-4bde-9799-6a28ebdd215e:
                 required: true
                 sortOrder: 3
-          - name: Legals
-            sortOrder: 2
-            fields:
+              c8a96201-891a-43e4-89e9-3263caa261e5:
+                required: true
+                sortOrder: 2
+            name: Contact
+            sortOrder: 1
+          - fields:
               2c286930-21e6-47b4-940e-071e1c977fed:
                 required: false
                 sortOrder: 1
@@ -455,6 +451,10 @@ globalSets:
               b798f838-613c-4876-bc1b-df4b7278fc70:
                 required: false
                 sortOrder: 3
+            name: Legals
+            sortOrder: 2
+    handle: companyInformation
+    name: 'Company Information'
 matrixBlockTypes:
   7cd0b9ad-8198-4647-aa5a-62c7032541d8:
     field: 66a6808a-8c39-46ae-a30c-eb8758c059e5
@@ -472,26 +472,28 @@ matrixBlockTypes:
             sortOrder: 1
     fields:
       26f79cf2-503e-4c50-aa72-f671e2b629f2:
-        contentColumnType: string
+        contentColumnType: text
         fieldGroup: null
         handle: terms
         instructions: 'Please don''t include numbers as these will dynamically be created based on the blocks position.'
         name: Terms
         searchable: true
         settings:
-          errorMessage: 'Unable to find component class ''craft\fields\RichText''.'
-          expectedType: craft\fields\RichText
-          settings:
-            availableAssetSources: '*'
-            availableTransforms: '*'
-            cleanupHtml: 1
-            columnType: text
-            configFile: Standard.json
-            purifierConfig: ''
-            purifyHtml: 1
+          availableTransforms: '*'
+          availableVolumes: '*'
+          cleanupHtml: true
+          columnType: text
+          purifierConfig: ''
+          purifyHtml: '1'
+          redactorConfig: ''
+          removeEmptyTags: '1'
+          removeInlineStyles: '1'
+          removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: false
         translationKeyFormat: null
         translationMethod: none
-        type: craft\fields\MissingField
+        type: craft\redactor\Field
       371e5387-fab3-4179-b33f-7c8b97815ecc:
         contentColumnType: text
         fieldGroup: null
@@ -500,10 +502,11 @@ matrixBlockTypes:
         name: Heading
         searchable: true
         settings:
-          charLimit: ''
-          code: false
+          byteLimit: null
+          charLimit: null
+          code: ''
           columnType: text
-          initialRows: 4
+          initialRows: '4'
           multiline: ''
           placeholder: ''
         translationKeyFormat: null
@@ -513,6 +516,9 @@ matrixBlockTypes:
     name: 'Terms Block'
     sortOrder: 1
 plugins:
+  cp-field-inspect:
+    edition: standard
+    enabled: true
   field-manager:
     edition: standard
     enabled: true
@@ -520,24 +526,24 @@ plugins:
     edition: standard
     enabled: true
     settings:
-      enabled: '1'
-      imageWidth: '2400'
-      imageHeight: '2400'
-      imageQuality: '100'
       assetSourceSettings:
         1:
           enabled: '1'
-          imageWidth: ''
           imageHeight: ''
           imageQuality: ''
+          imageWidth: ''
         2:
           enabled: '1'
-          imageWidth: ''
           imageHeight: ''
           imageQuality: ''
-      skipLarger: '1'
-      nonDestructiveResize: ''
+          imageWidth: ''
+      enabled: '1'
+      imageHeight: '2400'
+      imageQuality: '100'
+      imageWidth: '2400'
       nonDestructiveCrop: false
+      nonDestructiveResize: ''
+      skipLarger: '1'
   imager:
     edition: standard
     enabled: true
@@ -550,16 +556,13 @@ plugins:
   relabel:
     edition: standard
     enabled: true
+  retcon:
+    edition: standard
+    enabled: true
   seomatic:
     edition: standard
     enabled: true
   super-table:
-    edition: standard
-    enabled: true
-  cp-field-inspect:
-    edition: standard
-    enabled: true
-  retcon:
     edition: standard
     enabled: true
   twigpack:
@@ -570,25 +573,9 @@ plugins:
     enabled: true
 sections:
   46b46ed4-a0ea-40e9-8ebf-41874babf122:
-    name: Contact
-    handle: contact
-    type: single
     enableVersioning: false
-    propagateEntries: true
-    siteSettings:
-      e9b5ffaf-2fae-43e5-8160-4a0bc36dadd0:
-        enabledByDefault: true
-        hasUrls: true
-        uriFormat: contact
-        template: contact
     entryTypes:
       aad9c1a9-a657-4829-96ac-3485bf61f374:
-        name: Contact
-        handle: contact
-        hasTitleField: false
-        titleLabel: ''
-        titleFormat: '{section.name|raw}'
-        sortOrder: 1
         fieldLayouts:
           bfef7f63-3c26-4e33-ac93-8eac679b5547:
             tabs:
@@ -601,6 +588,22 @@ sections:
                     sortOrder: 1
                 name: 'Tab 1'
                 sortOrder: 1
+        handle: contact
+        hasTitleField: false
+        name: Contact
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: ''
+    handle: contact
+    name: Contact
+    propagateEntries: true
+    siteSettings:
+      e9b5ffaf-2fae-43e5-8160-4a0bc36dadd0:
+        enabledByDefault: true
+        hasUrls: true
+        template: contact
+        uriFormat: contact
+    type: single
   6bec8522-2f36-4403-9812-127a64f0d9c7:
     enableVersioning: true
     entryTypes:
@@ -672,133 +675,133 @@ sites:
 superTableBlockTypes:
   005e724b-8b34-4f29-8129-3cd4c60db482:
     field: 9da9e5b9-e131-4bde-9799-6a28ebdd215e
-    fields:
-      d41e4e73-5fc9-4c39-a936-99c54496698b:
-        name: 'Building Name'
-        handle: buildingName
-        instructions: ''
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-      e1b38fd9-22fa-4a5a-9c3f-549f8a61c386:
-        name: 'Address 1'
-        handle: address1
-        instructions: ''
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-      25d996e3-3a74-4fbc-be90-1fd0bfb940b3:
-        name: 'Address 2'
-        handle: address2
-        instructions: ''
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-      9854c5b5-08cc-485f-915d-2c1c91f9e2a9:
-        name: City/Town
-        handle: city
-        instructions: ''
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-      0e1b0bd1-cfea-4fb9-ad3e-75f702da2c3f:
-        name: County
-        handle: county
-        instructions: ''
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-      6a9797e9-902d-4572-adbb-b4f2ac5d5893:
-        name: 'Post Code'
-        handle: postCode
-        instructions: ''
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
     fieldLayouts:
       b19d8c31-0dc0-4cfe-9c7d-3e1d9be51ad5:
         tabs:
-          - name: Content
-            sortOrder: 1
-            fields:
+          - fields:
+              0e1b0bd1-cfea-4fb9-ad3e-75f702da2c3f:
+                required: false
+                sortOrder: 5
+              25d996e3-3a74-4fbc-be90-1fd0bfb940b3:
+                required: false
+                sortOrder: 3
+              6a9797e9-902d-4572-adbb-b4f2ac5d5893:
+                required: true
+                sortOrder: 6
+              9854c5b5-08cc-485f-915d-2c1c91f9e2a9:
+                required: true
+                sortOrder: 4
               d41e4e73-5fc9-4c39-a936-99c54496698b:
                 required: false
                 sortOrder: 1
               e1b38fd9-22fa-4a5a-9c3f-549f8a61c386:
                 required: true
                 sortOrder: 2
-              25d996e3-3a74-4fbc-be90-1fd0bfb940b3:
-                required: false
-                sortOrder: 3
-              9854c5b5-08cc-485f-915d-2c1c91f9e2a9:
-                required: true
-                sortOrder: 4
-              0e1b0bd1-cfea-4fb9-ad3e-75f702da2c3f:
-                required: false
-                sortOrder: 5
-              6a9797e9-902d-4572-adbb-b4f2ac5d5893:
-                required: true
-                sortOrder: 6
+            name: Content
+            sortOrder: 1
+    fields:
+      0e1b0bd1-cfea-4fb9-ad3e-75f702da2c3f:
+        contentColumnType: text
+        fieldGroup: null
+        handle: county
+        instructions: ''
+        name: County
+        searchable: true
+        settings:
+          charLimit: ''
+          code: ''
+          columnType: text
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+      25d996e3-3a74-4fbc-be90-1fd0bfb940b3:
+        contentColumnType: text
+        fieldGroup: null
+        handle: address2
+        instructions: ''
+        name: 'Address 2'
+        searchable: true
+        settings:
+          charLimit: ''
+          code: ''
+          columnType: text
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+      6a9797e9-902d-4572-adbb-b4f2ac5d5893:
+        contentColumnType: text
+        fieldGroup: null
+        handle: postCode
+        instructions: ''
+        name: 'Post Code'
+        searchable: true
+        settings:
+          charLimit: ''
+          code: ''
+          columnType: text
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+      9854c5b5-08cc-485f-915d-2c1c91f9e2a9:
+        contentColumnType: text
+        fieldGroup: null
+        handle: city
+        instructions: ''
+        name: City/Town
+        searchable: true
+        settings:
+          charLimit: ''
+          code: ''
+          columnType: text
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+      d41e4e73-5fc9-4c39-a936-99c54496698b:
+        contentColumnType: text
+        fieldGroup: null
+        handle: buildingName
+        instructions: ''
+        name: 'Building Name'
+        searchable: true
+        settings:
+          charLimit: ''
+          code: ''
+          columnType: text
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+      e1b38fd9-22fa-4a5a-9c3f-549f8a61c386:
+        contentColumnType: text
+        fieldGroup: null
+        handle: address1
+        instructions: ''
+        name: 'Address 1'
+        searchable: true
+        settings:
+          charLimit: ''
+          code: ''
+          columnType: text
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
 system:
   edition: pro
   live: true
@@ -807,50 +810,59 @@ system:
   timeZone: Europe/London
 users:
   allowPublicRegistration: false
-  defaultGroup: null
+  defaultGroup: ''
   photoSubpath: ''
-  photoVolumeUid: null
+  photoVolumeUid: 76549dc8-df2a-4ea7-ba9b-1a3ffea124fd
   requireEmailVerification: true
 volumes:
   2704582f-5c82-44da-9552-cddd0a262a82:
-    name: Images
-    handle: images
-    type: craft\volumes\Local
-    hasUrls: true
-    url: '@assetUrl/images'
-    settings:
-      path: '@assetPath/images'
-    sortOrder: null
     fieldLayouts:
       fc3c2174-735f-42b1-8ed7-73f02694ab13:
         tabs:
-          - name: Content
-            sortOrder: 1
-            fields:
+          - fields:
               1daffcc0-78ad-4066-934f-57421e0bd5ef:
                 required: false
                 sortOrder: 1
-              52e82fa9-0507-4677-9f2b-f34dbc5aeddb:
-                required: false
-                sortOrder: 2
               2d81e303-5711-4abe-bad0-d7bb9cb25068:
                 required: false
                 sortOrder: 3
-  df54fe7f-5058-4ae8-91b8-0f2b0db5e400:
-    name: Documents
-    handle: documents
-    type: craft\volumes\Local
+              52e82fa9-0507-4677-9f2b-f34dbc5aeddb:
+                required: false
+                sortOrder: 2
+            name: Content
+            sortOrder: 1
+    handle: images
     hasUrls: true
-    url: '@assetUrl/documents'
+    name: Images
     settings:
-      path: '@assetPath/documents'
-    sortOrder: '1'
+      path: '@assetPath/images'
+    sortOrder: null
+    type: craft\volumes\Local
+    url: '@assetUrl/images'
+  76549dc8-df2a-4ea7-ba9b-1a3ffea124fd:
+    handle: userPhotos
+    hasUrls: true
+    name: 'User Photos'
+    settings:
+      path: '@basePath/userphotos'
+    sortOrder: 2
+    type: craft\volumes\Local
+    url: '@baseUrl/userphotos'
+  df54fe7f-5058-4ae8-91b8-0f2b0db5e400:
     fieldLayouts:
       2c8ce468-bcdd-44b0-9cd2-069a5b72da81:
         tabs:
-          - name: Content
-            sortOrder: 1
-            fields:
+          - fields:
               52e82fa9-0507-4677-9f2b-f34dbc5aeddb:
                 required: false
                 sortOrder: 1
+            name: Content
+            sortOrder: 1
+    handle: documents
+    hasUrls: true
+    name: Documents
+    settings:
+      path: '@assetPath/documents'
+    sortOrder: '1'
+    type: craft\volumes\Local
+    url: '@assetUrl/documents'
