@@ -1,6 +1,22 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+
+## [2.1.3] - 2020-03-28
+### Added
+Added package.json.default file
+
+### Changed
+- Updated Project.Yaml
+  - Added User Photos Storage
+  - Updated Terms Copy Field
+- Added setup and install instructions
+
+## [2.1.2] - 2020-03-22
+
+### Changed
+- Updated README file
+
 ## [2.1.3] - 2020-03-27
 ### Added
 Added package.json.default file
