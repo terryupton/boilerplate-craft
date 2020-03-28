@@ -559,6 +559,15 @@ plugins:
   cp-field-inspect:
     edition: standard
     enabled: true
+  retcon:
+    edition: standard
+    enabled: true
+  twigpack:
+    edition: standard
+    enabled: true
+  typedlinkfield:
+    edition: standard
+    enabled: true
 sections:
   46b46ed4-a0ea-40e9-8ebf-41874babf122:
     name: Contact
@@ -649,7 +658,7 @@ sections:
     type: structure
 siteGroups:
   13a10389-f66f-49d3-bbfe-5a5918ca298f:
-    name: default
+    name: 'Craft Boilerplate'
 sites:
   e9b5ffaf-2fae-43e5-8160-4a0bc36dadd0:
     baseUrl: $DEFAULT_SITE_URL
@@ -657,9 +666,9 @@ sites:
     hasUrls: true
     language: en-GB
     name: 'Craft Boilerplate'
-    primary: '1'
+    primary: true
     siteGroup: 13a10389-f66f-49d3-bbfe-5a5918ca298f
-    sortOrder: '1'
+    sortOrder: 1
 superTableBlockTypes:
   005e724b-8b34-4f29-8129-3cd4c60db482:
     field: 9da9e5b9-e131-4bde-9799-6a28ebdd215e
@@ -791,8 +800,10 @@ superTableBlockTypes:
                 required: true
                 sortOrder: 6
 system:
-  edition: solo
+  edition: pro
   live: true
+  name: 'Craft Boilerplate'
+  schemaVersion: 3.4.10
   timeZone: Europe/London
 users:
   allowPublicRegistration: false
