@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 
 
+## [2.2.0] - 2020-03-29
+### Added
+IE Notice to update browsers for IE10/11
+
 ## [2.1.3] - 2020-03-28
 ### Added
 Added package.json.default file
