@@ -33,6 +33,11 @@ module.exports = {
         },
       },
   
+      spacing: {
+        '5/8': '62.5%',
+        // '9/16': '56.25%'
+      },
+  
       margin: {
         'flood': 'calc(50% - 50vw)'
       },
