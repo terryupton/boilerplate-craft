@@ -1,0 +1,155 @@
+[
+    {
+        "name": "Address Line 1",
+        "handle": "addressLine1",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": null
+        }
+    },
+    {
+        "name": "Address Line 2",
+        "handle": "addressLine2",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": null
+        }
+    },
+    {
+        "name": "Building Name",
+        "handle": "buildingName",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": null
+        }
+    },
+    {
+        "name": "City\/Town",
+        "handle": "cityTown",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": null
+        }
+    },
+    {
+        "name": "County",
+        "handle": "county",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": null
+        }
+    },
+    {
+        "name": "Email",
+        "handle": "email",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\Email",
+        "settings": {
+            "placeholder": null
+        }
+    },
+    {
+        "name": "Post Code",
+        "handle": "postCode",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": 8,
+            "byteLimit": null,
+            "columnType": null
+        }
+    },
+    {
+        "name": "Telephone",
+        "handle": "telephone",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": "text"
+        }
+    }
+]
