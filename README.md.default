@@ -7,24 +7,34 @@ Icons
 
 
 
-Config and Setup
+Further Config and Setup
 ----------
 
-1.  To create a new project, run composer create-project terryupton/boilerplate-craft <Path>, substituting <Path> with the path where Composer should create the project.
 
-2. Update a .env file adding the database connections and other settings
 
-3. Run ./craft setup and follow the instructions
+1.  Setup website locally in Valet
+  - valet link domain
+  - valet secure
 
-4.  Set up a node_modules symlink
+2. Set up a node_modules symlink
     - create new node_modules folder under /Users/terryupton/node_modules_local/domain.ext
     - add symlink to node_modules folder: ln -s  ~/node_modules_local/domain.ext/node_modules
 
+3. Install Node Modules
+    - run yarn install
+
+4.  Set up Git Repository
+
 5. Create tailwind.full.js file for easy reference.
-   -  npx tailwindcss init tailwindcss.full.js
-   
-   
- Craft Setup
+   -  npx tailwindcss init tailwind.full.js --full
+
+6. Update settings.json
+
+5. Proceed with Craft Setup and Config
+
+
+
+ Craft Setup and Config
  ----------
 Updates to run inside Craft
 1. General > System Name
