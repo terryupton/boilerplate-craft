@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 63ae782f-2926-4acb-a91e-556ec5702f8d
+handle: companyNumber
+instructions: ''
+name: 'Company Number'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: 8
+  code: ''
+  columnType: text
+  initialRows: 4
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
