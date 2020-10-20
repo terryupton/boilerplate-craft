@@ -1,4 +1,4 @@
-dateModified: 1603211335
+dateModified: 1603212011
 email:
   fromEmail: terry@amasci.co.uk
   fromName: 'Lincoln Green Solicitors'
@@ -56,5 +56,5 @@ users:
   allowPublicRegistration: false
   defaultGroup: null
   photoSubpath: null
-  photoVolumeUid: null
+  photoVolumeUid: 295603a3-5597-4fd3-a26b-ad30439e5dd0
   requireEmailVerification: true
