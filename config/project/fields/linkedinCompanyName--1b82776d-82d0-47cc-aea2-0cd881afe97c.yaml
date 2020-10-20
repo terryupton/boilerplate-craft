@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: f8b7bde8-597c-4a27-b7f2-3fec26edff9b
+handle: linkedinCompanyName
+instructions: 'To find or update your LinkedIn Company Name please see [this LinkedIn help article](https://www.linkedin.com/help/linkedin/answer/62467/updating-the-url-of-your-company-page?lang=en)'
+name: 'Linkedin Company Name'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: text
+  initialRows: 4
+  multiline: ''
+  placeholder: username
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
