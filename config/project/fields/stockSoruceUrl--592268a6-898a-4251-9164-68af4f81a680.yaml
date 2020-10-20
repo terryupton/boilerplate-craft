@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: b23af6a1-f1eb-49db-a8ef-d48c281a27a5
+handle: stockSoruceUrl
+instructions: 'Use this field to paste the URL for the original stock/source image. This could be useful to reference Stock images.'
+name: 'Stock/Source Url'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: text
+  initialRows: 4
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,27 @@
+contentColumnType: text
+fieldGroup: b23af6a1-f1eb-49db-a8ef-d48c281a27a5
+handle: notes
+instructions: 'Use this field to enter any additional notes regarding the image.'
+name: Notes
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: ''
+  purifyHtml: 1
+  redactorConfig: Simple.json
+  removeEmptyTags: 1
+  removeInlineStyles: 1
+  removeNbsp: 1
+  showHtmlButtonForNonAdmins: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field
