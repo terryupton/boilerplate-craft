@@ -1,0 +1,77 @@
+field: 266b2b6b-53b0-4127-acb0-0a7dbc9e52f3
+fieldLayouts:
+  a788b16e-4ca5-438a-8268-8c6601afa957:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 429c6d25-0b08-4a35-b00a-70171c683640
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 83be6e38-eeec-40f7-ae70-549240212c46
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  429c6d25-0b08-4a35-b00a-70171c683640:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: 4
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  83be6e38-eeec-40f7-ae70-549240212c46:
+    contentColumnType: text
+    fieldGroup: null
+    handle: terms
+    instructions: 'Please don''t include numbers as these will dynamically be created based on the blocks position.'
+    name: Terms
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: 1
+      redactorConfig: Standard.json
+      removeEmptyTags: 1
+      removeInlineStyles: 1
+      removeNbsp: 1
+      showHtmlButtonForNonAdmins: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: termsBlock
+name: 'Terms Block'
+sortOrder: 1

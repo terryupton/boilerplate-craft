@@ -1,0 +1,14 @@
+enableVersioning: true
+handle: terms
+name: Terms
+propagationMethod: all
+siteSettings:
+  0f11f7ce-ae36-4dee-9ecd-d1cf1167181a:
+    enabledByDefault: true
+    hasUrls: true
+    template: null
+    uriFormat: 'terms/{slug}'
+structure:
+  maxLevels: 2
+  uid: 95107aa1-359c-4d33-ac58-dedb5dace338
+type: structure
