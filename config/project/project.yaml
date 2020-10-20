@@ -1,4 +1,4 @@
-dateModified: 1603207574
+dateModified: 1603207928
 email:
   fromEmail: terry@amasci.co.uk
   fromName: 'Lincoln Green Solicitors'
@@ -48,6 +48,7 @@ plugins:
 system:
   edition: solo
   live: true
+  name: 'Lincoln Green Solicitors'
   retryDuration: null
   schemaVersion: 3.5.13
   timeZone: Europe/London
