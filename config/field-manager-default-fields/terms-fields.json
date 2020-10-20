@@ -1,0 +1,77 @@
+[
+    {
+        "name": "Terms",
+        "handle": "terms",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "site",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\Matrix",
+        "settings": {
+            "minBlocks": "",
+            "maxBlocks": "",
+            "contentTable": "{{%matrixcontent_terms}}",
+            "propagationMethod": "all",
+            "blockTypes": {
+                "new1": {
+                    "name": "Terms Block",
+                    "handle": "termsBlock",
+                    "fields": {
+                        "new1": {
+                            "name": "Heading",
+                            "handle": "heading",
+                            "required": 1,
+                            "instructions": "",
+                            "searchable": 1,
+                            "translationMethod": "none",
+                            "translationKeyFormat": null,
+                            "type": "craft\\fields\\PlainText",
+                            "typesettings": {
+                                "uiMode": "normal",
+                                "placeholder": "",
+                                "code": "",
+                                "multiline": "",
+                                "initialRows": 4,
+                                "charLimit": null,
+                                "byteLimit": null,
+                                "columnType": "text"
+                            },
+                            "width": 100
+                        },
+                        "new2": {
+                            "name": "Terms",
+                            "handle": "terms",
+                            "required": 1,
+                            "instructions": "Please don't include numbers as these will dynamically be created based on the blocks position.",
+                            "searchable": 1,
+                            "translationMethod": "none",
+                            "translationKeyFormat": null,
+                            "type": "craft\\redactor\\Field",
+                            "typesettings": {
+                                "uiMode": "enlarged",
+                                "redactorConfig": "Standard.json",
+                                "purifierConfig": "",
+                                "cleanupHtml": true,
+                                "removeInlineStyles": 1,
+                                "removeEmptyTags": 1,
+                                "removeNbsp": 1,
+                                "purifyHtml": 1,
+                                "columnType": "text",
+                                "availableVolumes": "*",
+                                "availableTransforms": "*",
+                                "showUnpermittedVolumes": false,
+                                "showUnpermittedFiles": false,
+                                "showHtmlButtonForNonAdmins": true,
+                                "configSelectionMode": "choose",
+                                "manualConfig": "",
+                                "defaultTransform": ""
+                            },
+                            "width": 100
+                        }
+                    }
+                }
+            }
+        }
+    }
+]
