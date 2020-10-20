@@ -1,0 +1,100 @@
+[
+    {
+        "name": "Srcset 8x5",
+        "handle": "srcset8x5",
+        "instructions": "",
+        "required": null,
+        "searchable": 0,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "nystudio107\\imageoptimize\\fields\\OptimizedImages",
+        "settings": {
+            "fieldVolumeSettings": {
+                "images": "*"
+            },
+            "ignoreFilesOfType": [],
+            "displayOptimizedImageVariants": 1,
+            "displayDominantColorPalette": 1,
+            "displayLazyLoadPlaceholderImages": 1,
+            "variants": [
+                {
+                    "width": 2200,
+                    "useAspectRatio": 1,
+                    "aspectRatioX": 8,
+                    "aspectRatioY": 5,
+                    "retinaSizes": [
+                        1
+                    ],
+                    "quality": 82,
+                    "format": "jpg"
+                },
+                {
+                    "width": 1280,
+                    "useAspectRatio": 1,
+                    "aspectRatioX": 8,
+                    "aspectRatioY": 5,
+                    "retinaSizes": [
+                        1
+                    ],
+                    "quality": 82,
+                    "format": "jpg"
+                },
+                {
+                    "width": 1024,
+                    "useAspectRatio": 1,
+                    "aspectRatioX": 8,
+                    "aspectRatioY": 5,
+                    "retinaSizes": [
+                        1
+                    ],
+                    "quality": 82,
+                    "format": "jpg"
+                },
+                {
+                    "width": 768,
+                    "useAspectRatio": 1,
+                    "aspectRatioX": 8,
+                    "aspectRatioY": 5,
+                    "retinaSizes": [
+                        1
+                    ],
+                    "quality": 60,
+                    "format": "jpg"
+                },
+                {
+                    "width": 640,
+                    "useAspectRatio": 1,
+                    "aspectRatioX": 8,
+                    "aspectRatioY": 5,
+                    "retinaSizes": [
+                        1
+                    ],
+                    "quality": 60,
+                    "format": "jpg"
+                },
+                {
+                    "width": 480,
+                    "useAspectRatio": 1,
+                    "aspectRatioX": 8,
+                    "aspectRatioY": 5,
+                    "retinaSizes": [
+                        1
+                    ],
+                    "quality": 82,
+                    "format": "jpg"
+                },
+                {
+                    "width": 200,
+                    "useAspectRatio": 1,
+                    "aspectRatioX": 8,
+                    "aspectRatioY": 5,
+                    "retinaSizes": [
+                        1
+                    ],
+                    "quality": 82,
+                    "format": "jpg"
+                }
+            ]
+        }
+    }
+]
