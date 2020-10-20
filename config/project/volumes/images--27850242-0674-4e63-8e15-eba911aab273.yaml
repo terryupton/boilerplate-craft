@@ -1,0 +1,82 @@
+fieldLayouts:
+  2c9b6814-da14-4b39-99b8-6adc46bec4ce:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0ebf5a6e-2b5b-44b1-b8d9-60a8c52d785a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 15a02a0e-70c1-4289-a9b0-a577a1de53c5
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 592268a6-898a-4251-9164-68af4f81a680
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Notes
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: b76c6319-449e-4f5c-9f99-95a1f0b2bb2e
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Image Optimisations'
+        sortOrder: 3
+handle: images
+hasUrls: true
+name: Images
+settings:
+  path: '@assetPath/images'
+sortOrder: 3
+type: craft\volumes\Local
+url: '@assetUrl/images'
