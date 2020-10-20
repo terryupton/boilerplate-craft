@@ -1,4 +1,4 @@
-dateModified: 1603207451
+dateModified: 1603207574
 email:
   fromEmail: terry@amasci.co.uk
   fromName: 'Lincoln Green Solicitors'
@@ -16,6 +16,15 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
+    settings:
+      assetSourceSettings: null
+      enabled: '1'
+      imageHeight: '2400'
+      imageQuality: '100'
+      imageWidth: '2400'
+      nonDestructiveCrop: false
+      nonDestructiveResize: ''
+      skipLarger: '1'
   minify:
     edition: standard
     enabled: true
