@@ -1,0 +1,255 @@
+[
+    {
+        "name": "Address Line 1",
+        "handle": "addressLine1",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": null
+        }
+    },
+    {
+        "name": "Address Line 2",
+        "handle": "addressLine2",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": null
+        }
+    },
+    {
+        "name": "Building Name",
+        "handle": "buildingName",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": null
+        }
+    },
+    {
+        "name": "City\/Town",
+        "handle": "cityTown",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": null
+        }
+    },
+    {
+        "name": "County",
+        "handle": "county",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": null
+        }
+    },
+    {
+        "name": "Email",
+        "handle": "email",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\Email",
+        "settings": {
+            "placeholder": null
+        }
+    },
+    {
+        "name": "Post Code",
+        "handle": "postCode",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": 8,
+            "byteLimit": null,
+            "columnType": null
+        }
+    },
+    {
+        "name": "Telephone",
+        "handle": "telephone",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": "text"
+        }
+    },
+    {
+        "name": "Facebook Username",
+        "handle": "facebookUsername",
+        "instructions": "Facebook Username. Click on the 'About' tab on your Facebook company\/fan page, scroll to the Username.",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "username",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": "text"
+        }
+    },
+    {
+        "name": "Instagram Username",
+        "handle": "instagramUsername",
+        "instructions": "Instagram Username. Usually the part after _www.instgram.com\/_. Click on the 'Settings' tab on your Instagram company\/fan page and find your 'Username'.",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "username",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": "text"
+        }
+    },
+    {
+        "name": "Linkedin Company Name",
+        "handle": "linkedinCompanyName",
+        "instructions": "To find or update your LinkedIn Company Name please see [this LinkedIn help article](https:\/\/www.linkedin.com\/help\/linkedin\/answer\/62467\/updating-the-url-of-your-company-page?lang=en)",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "username",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": "text"
+        }
+    },
+    {
+        "name": "Twitter Handle",
+        "handle": "twitterHandle",
+        "instructions": "Twitter username for the website - without the preceding @. ",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "handle",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": "text"
+        }
+    },
+    {
+        "name": "YouTube URL",
+        "handle": "youtubeUrl",
+        "instructions": "The URL for your YouTube channel, account or playlist. To find your YouTube url or to create one please read this [YouTube help article](https:\/\/support.google.com\/youtube\/answer\/2657968?hl=en-GB)",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "handle",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": "text"
+        }
+    }
+]
