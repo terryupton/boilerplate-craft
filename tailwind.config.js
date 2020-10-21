@@ -1,6 +1,18 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+  purge: {
+    mode: 'all',
+    content: [
+      './templates/**/*.html',
+      './templates/**/*.twig',
+      './src/**/*.js'
+    ],
+    
+    options: {
+      whitelistPatterns: [/lazyload/, /grayscale-up/, /blur-up/],
+    }
+  },
   theme: {
     screens: {
       'sm': '600px',
@@ -9,7 +21,7 @@ module.exports = {
       'xl': '1280px',
       'xxl': '1400px',
     },
-  
+    
     fontFamily: {
       sans: ['Open Sans', 'sans-serif'],
     },
@@ -24,7 +36,7 @@ module.exports = {
           'youtube': '#BB0000',
           'email': '#a0aec0'
         },
-  
+        
         file: {
           'doc': '#295595',
           'xls': '#207245',
@@ -32,16 +44,16 @@ module.exports = {
           'pdf': '#FB3449',
         },
       },
-  
+      
       spacing: {
         '5/8': '62.5%',
         // '9/16': '56.25%'
       },
-  
+      
       margin: {
         'flood': 'calc(50% - 50vw)'
       },
-  
+      
       minWidth: theme => ({
         ...theme('spacing'),
       }),
@@ -51,7 +63,7 @@ module.exports = {
         '8xl': '90rem',
         '9xl': '100rem',
       },
-  
+      
       opacity: {
         '10': '0.10',
         '15': '0.15',
@@ -65,14 +77,14 @@ module.exports = {
         '90': '0.90',
         '95': '0.95'
       },
-  
+      
       zIndex: {
         '60': '60',
         '70': '70',
         '80': '80',
         '90': '90',
       },
-  
+      
       gridTemplateColumns: {
         'auto-fit-130': 'repeat(auto-fit, minmax(130px, 1fr))',
         'auto-fit-150': 'repeat(auto-fit, minmax(150px, 1fr))',
@@ -82,11 +94,11 @@ module.exports = {
         'auto-fit-400': 'repeat(auto-fit, minmax(400px, 1fr))',
         'auto-fit-600': 'repeat(auto-fit, minmax(600px, 1fr))',
       },
-  
+      
       gridColumnEnd: {
         '-1': '-1',
       },
-  
+      
       gridRowEnd: {
         '-1': '-1',
       },
