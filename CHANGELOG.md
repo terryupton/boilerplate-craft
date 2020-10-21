@@ -1,6 +1,80 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [3.0.0] - 2020-10-20
+### Added
+- Image Optimize Plugin
+- Sync script to run pull_db and pull_assets together in one script
+- Added Field Manager JSON fields for contact fields
+    - Building Name
+    - Address Line 1
+    - Address Line 2
+    - City/Town
+    - County
+    - Post Code
+    - Email
+    - Telephone
+- Added Field Manager JSON fields for social media fields  
+    - Facebook
+    - Instagram
+    - LinkedIn
+    - Twitter
+    - YouTube
+ - Added Field Manager JSON fields for legal fields
+    - Full Company Name
+    - Company Number
+    - VAT Number  
+ - Added Field Manager JSON fields for terms fields
+    - Terms
+- Added Field Manager JSON fields for teaser fields
+    - Teaser Image
+    - Teaser Body
+    - Teaser Heading  
+- Added Field Manager JSON fields for assets fields
+    - Alt
+    - Notes
+    - Stock/Source Url
+    - Display Title  
+- Added Field Manager JSON fields for image optimisation fields 
+    - Srcset 8x5
+    
+Config Files
+    - Image Optimization Config File
+
+### Changed
+- Update to the Latest Composer Package Versions
+- Update to the Latest NPM Dependencies
+- Updated and Migrated to New Project Yaml Setup as per Craft 3.5
+- Fixed Common_mysql to allow for funny characters in db passwords
+- Update post- README file for new projects
+- Swapped general settings to use Environmental Vars where applicable
+- Update to .env example
+    - Add app ID  Setting(craft 3.5) 
+    - Add Disallow Robots Setting (craft 3.5)
+    - Swapped to DEFAULT_SITE_URL to PRIMARY_SITE_URL (as per Craft default)
+ - Set users profile image asset folder
+ - Setting better Tailwind Defaults
+    - Opacity
+    - Zindex
+    - Spacing
+    - Margin (flood/full width)
+    - CSS Grid Auto Cols
+    - CSS Grid (cols/rows) -1
+    - Screensizes
+    - File colours
+    - Min Width
+    - Variants
+
+### Removed
+Plugins Removed 
+    - Imager Plugin (no longer supported)
+    - Retcon Plugin (possibly not required now tailwind offers typography plugin)
+    - Typed Link Field Plugin (not required for all projects as standard)
+    - CP Field Inspect Plugin (now native)
+    - Relabel Plugin (now native)
+Config Files
+    - Image Config File
+    
 
 ## [2.2.0] - 2020-03-29
 ### Added
