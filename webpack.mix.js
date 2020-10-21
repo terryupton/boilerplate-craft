@@ -63,19 +63,6 @@ mix
       ]
     })
     
-    .purgeCss({
-      enabled: mix.inProduction(),
-      globs: [
-        path.join(__dirname, settings.paths.templates.base + '**/*.{html,twig}'),
-        path.join(__dirname, settings.paths.build.js + '**/*.js'),
-        path.join(__dirname, settings.paths.src.js + '**/*.js'),
-      ],
-      defaultExtractor: content => content.match(/[\w-/.%:]+(?<!:)/g) || [],
-      extensions: ["html", "js", "php", "vue", "twig"],
-      whitelistPatterns: [/lazyload/, /grayscale-up/],
-      // whitelistPatternsChildren: [/body/, /ls-blur-up-img/],
-    })
-    
     //IMAGE and SVG MIN
     .webpackConfig({
       plugins: [

@@ -34,7 +34,6 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "laravel-mix": "^5.0.7",
     "laravel-mix-criticalcss": "^1.0.1",
-    "laravel-mix-purgecss": "^5.0.0",
     "laravel-mix-versionhash": "^1.1.7",
     "postcss-color-function": "^4.1.0",
     "postcss-pxtorem": "^5.1.1",

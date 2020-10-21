@@ -1,5 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
+## [3.2.0] - 2020-10-20
+### Added
+Adding PurgeCSS settings to tailwind config
+
+### Removed
+PurgeCSS config and dependencies removed from laravel-mix
+
 ## [3.1.0] - 2020-10-20
 ### Changed
 Updated NPM Package and Dependencies
