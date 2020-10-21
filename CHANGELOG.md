@@ -10,6 +10,10 @@ Clean and tidy up of laravel-mix config
 ### Removed
 PurgeCSS config and dependencies removed from laravel-mix
 
+Removed PostCSS dependencies no longer required
+   - PostCSS Colour Functions
+   - PostCSS Sorting
+
 ## [3.1.0] - 2020-10-20
 ### Changed
 Updated NPM Package and Dependencies
