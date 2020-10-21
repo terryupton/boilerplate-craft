@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 ### Added
 Adding PurgeCSS settings to tailwind config
 
+### Changed
+Clean and tidy up of laravel-mix config
+
 ### Removed
 PurgeCSS config and dependencies removed from laravel-mix
 
