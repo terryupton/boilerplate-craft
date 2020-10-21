@@ -1,5 +1,8 @@
 # Changelog
 All notable changes to this project will be documented in this file.
+## [3.1.0] - 2020-10-20
+### Changed
+Updated NPM Package and Dependencies
 
 ## [3.0.0] - 2020-10-20
 ### Added
@@ -66,13 +69,13 @@ Config Files
     - Variants
 
 ### Removed
-Plugins Removed 
+- Plugins Removed 
     - Imager Plugin (no longer supported)
     - Retcon Plugin (possibly not required now tailwind offers typography plugin)
     - Typed Link Field Plugin (not required for all projects as standard)
     - CP Field Inspect Plugin (now native)
     - Relabel Plugin (now native)
-Config Files
+- Config Files
     - Image Config File
     
 
