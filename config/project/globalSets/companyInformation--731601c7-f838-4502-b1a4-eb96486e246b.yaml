@@ -1,0 +1,85 @@
+fieldLayouts:
+  5c7729a1-cbe4-4495-89f2-cb048fb15933:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: c15b675e-c9b7-4871-abc7-ec2239552b40
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 857f3fe1-cb69-408b-80ce-1943f90a3f55
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Contact
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 5d91b0cc-cf78-49d8-a597-2a01d8507608
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 67a8fa3e-cea0-4962-b7dd-5fd47bc51e27
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 5bd23f24-f01d-4144-bab5-ab5997145873
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 7607dc4d-da8d-44ff-b983-28e9c1929cdd
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 2025c119-5197-4551-b348-cb39ed54284c
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: ba81683f-b648-4c09-9b2a-0d199314a7fe
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+        name: Address
+        sortOrder: 2
+handle: companyInformation
+name: '01. Company Information'

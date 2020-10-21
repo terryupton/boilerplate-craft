@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: f8b7bde8-597c-4a27-b7f2-3fec26edff9b
+handle: facebookUsername
+instructions: 'Facebook Username. Click on the ''About'' tab on your Facebook company/fan page, scroll to the Username.'
+name: 'Facebook Username'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: text
+  initialRows: 4
+  multiline: ''
+  placeholder: username
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

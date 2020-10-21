@@ -1,0 +1,94 @@
+fieldLayouts:
+  d1190d5b-d11c-4344-9520-abf1e8438bdd:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 8c069033-71bf-4ea4-a3a9-7afcb77230f9
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3333ece9-252f-4ad7-9b4b-e45dffb6d3d8
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 35cec235-6956-43a2-bf58-35ac9a6b62b8
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Legals
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 5d91b0cc-cf78-49d8-a597-2a01d8507608
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 67a8fa3e-cea0-4962-b7dd-5fd47bc51e27
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5bd23f24-f01d-4144-bab5-ab5997145873
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7607dc4d-da8d-44ff-b983-28e9c1929cdd
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2025c119-5197-4551-b348-cb39ed54284c
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ba81683f-b648-4c09-9b2a-0d199314a7fe
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Registered Address'
+        sortOrder: 2
+handle: legalInformation
+name: '02. Legal Information'

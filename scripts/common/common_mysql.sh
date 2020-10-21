@@ -48,7 +48,7 @@ if [[ -n "${REMOTE_DB_USER}" ]] ; then
     REMOTE_DB_CREDS+="--user=${REMOTE_DB_USER} "
 fi
 if [[ -n "${REMOTE_DB_PASSWORD}" ]] ; then
-    REMOTE_DB_CREDS+="--password=${REMOTE_DB_PASSWORD} "
+    REMOTE_DB_CREDS+="--password='${REMOTE_DB_PASSWORD}' "
 fi
 if [[ -n "${REMOTE_DB_HOST}" ]] ; then
     REMOTE_DB_CREDS+="--host=${REMOTE_DB_HOST} "
@@ -68,7 +68,7 @@ if [[ -n "${LOCAL_DB_USER}" ]] ; then
     LOCAL_DB_CREDS+="--user=${LOCAL_DB_USER} "
 fi
 if [[ -n "${LOCAL_DB_PASSWORD}" ]] ; then
-    LOCAL_DB_CREDS+="--password=${LOCAL_DB_PASSWORD} "
+    LOCAL_DB_CREDS+="--password='${LOCAL_DB_PASSWORD}' "
 fi
 if [[ -n "${LOCAL_DB_HOST}" ]] ; then
     LOCAL_DB_CREDS+="--host=${LOCAL_DB_HOST} "

@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 63ae782f-2926-4acb-a91e-556ec5702f8d
+handle: fullCompanyName
+instructions: 'Please enter the full company name as registered with companies house or the full trading name of the business. '
+name: 'Full Company Name'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: text
+  initialRows: 4
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

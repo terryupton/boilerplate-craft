@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Teaser Body",
+        "handle": "teaserBody",
+        "instructions": "The teaser copy, sometimes referred to as the excerpt,  is used for article\/page summaries. This is typically used in listing pages and related link modules.  ",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "enlarged",
+            "placeholder": "",
+            "code": "",
+            "multiline": 1,
+            "initialRows": 2,
+            "charLimit": 120,
+            "byteLimit": null,
+            "columnType": "text"
+        }
+    },
+    {
+        "name": "Teaser Heading",
+        "handle": "teaserHeading",
+        "instructions": "The teaser heading is used for the heading on any teaser pages. This should be kept concise and is most instances the name of the page\/section.\r\n_Some examples: About Hatch End Tuition, Mock Exams, Tuition Courses_\r\n",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "enlarged",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": 55,
+            "byteLimit": null,
+            "columnType": null
+        }
+    },
+    {
+        "name": "Teaser Image",
+        "handle": "teaserImage",
+        "instructions": "A teaser image is typically used on listing pages and related content modules. The image is usually representative of the article\/page. \r\nThis field is might also be used as a fallback image for SEO meta images. \r\n\r\n**More Information**  \r\n_For more information on SEO Images please visit [Yoast SEO](https:\/\/yoast.com\/advanced-technical-seo-social-image-ogimage-tags\/) and [Open Graph](http:\/\/ogp.me\/)_",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "site",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\Assets",
+        "settings": {
+            "useSingleFolder": false,
+            "defaultUploadLocationSource": "volume:2704582f-5c82-44da-9552-cddd0a262a82",
+            "defaultUploadLocationSubpath": "",
+            "singleUploadLocationSource": "volume:2704582f-5c82-44da-9552-cddd0a262a82",
+            "singleUploadLocationSubpath": "",
+            "restrictFiles": "",
+            "allowedKinds": null,
+            "showUnpermittedVolumes": true,
+            "showUnpermittedFiles": false,
+            "previewMode": "full",
+            "sources": "*",
+            "source": null,
+            "targetSiteId": null,
+            "viewMode": "large",
+            "limit": 1,
+            "selectionLabel": "Add Image",
+            "showSiteMenu": true,
+            "localizeRelations": false,
+            "validateRelatedElements": false,
+            "allowSelfRelations": false
+        }
+    }
+]

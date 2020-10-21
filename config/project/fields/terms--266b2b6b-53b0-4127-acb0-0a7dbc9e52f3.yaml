@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 5954c5a6-632c-493b-a48a-00516e7f52e8
+handle: terms
+instructions: ''
+name: Terms
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_terms}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

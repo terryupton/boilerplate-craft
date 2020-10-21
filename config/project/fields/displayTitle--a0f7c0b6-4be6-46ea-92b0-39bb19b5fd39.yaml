@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: b23af6a1-f1eb-49db-a8ef-d48c281a27a5
+handle: displayTitle
+instructions: 'This is used for documents and files and will use this title on the website for downloads/links to documents.'
+name: 'Display Title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

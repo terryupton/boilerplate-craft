@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Company Number",
+        "handle": "companyNumber",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": 8,
+            "byteLimit": null,
+            "columnType": "text"
+        }
+    },
+    {
+        "name": "Full Company Name",
+        "handle": "fullCompanyName",
+        "instructions": "Please enter the full company name as registered with companies house or the full trading name of the business. ",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": null,
+            "byteLimit": null,
+            "columnType": "text"
+        }
+    },
+    {
+        "name": "VAT Number",
+        "handle": "vatNumber",
+        "instructions": "",
+        "required": null,
+        "searchable": 1,
+        "translationMethod": "none",
+        "translationKeyFormat": null,
+        "type": "craft\\fields\\PlainText",
+        "settings": {
+            "uiMode": "normal",
+            "placeholder": "",
+            "code": "",
+            "multiline": "",
+            "initialRows": 4,
+            "charLimit": 14,
+            "byteLimit": null,
+            "columnType": "text"
+        }
+    }
+]

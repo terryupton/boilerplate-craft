@@ -1,0 +1,54 @@
+fieldLayouts:
+  8d8f6b74-6a06-419d-ac92-7ff052518ea4:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 64145551-cf92-4391-9f89-21c8053059b3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0acdff16-56da-4a51-bb95-e92e66dd78c2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c8dfcfd3-683f-4cb1-b425-50fe9cbf3272
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1b82776d-82d0-47cc-aea2-0cd881afe97c
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3346b216-220c-4d1f-8c36-3d5612b0e2ec
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Social Accounts'
+        sortOrder: 1
+handle: socialMedia
+name: '03. Social Media'

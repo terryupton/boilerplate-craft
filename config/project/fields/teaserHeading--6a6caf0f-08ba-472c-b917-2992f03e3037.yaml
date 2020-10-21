@@ -1,0 +1,18 @@
+contentColumnType: string(220)
+fieldGroup: fa1be04a-5fe4-4dad-a59c-7d52eee2b403
+handle: teaserHeading
+instructions: "The teaser heading is used for the heading on any teaser pages if you want to over-ride the default title.  Sometimes the default title is too long or you want to use an alternative phrase. This field allows you to keep the teaser heading concise and is most instances the name of the page/section. \r\n_Some examples: About Us, Get in Touch, Our Process_ "
+name: 'Teaser Heading'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: 55
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

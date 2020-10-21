@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en-GB
+name: 'Lincoln Green Solicitors'
+primary: true
+siteGroup: c1d42bdb-fd4d-4973-9172-687c9da78430
+sortOrder: 1

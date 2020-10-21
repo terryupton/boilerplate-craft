@@ -1,0 +1,187 @@
+contentColumnType: text
+fieldGroup: 5fe6cc71-8112-4570-bd3f-51d95a32c19a
+handle: srcset8x5
+instructions: ''
+name: 'Srcset 8x5'
+searchable: false
+settings:
+  displayDominantColorPalette: 1
+  displayLazyLoadPlaceholderImages: 1
+  displayOptimizedImageVariants: 1
+  fieldVolumeSettings:
+    __assoc__:
+      -
+        - images
+        - '*'
+  variants:
+    -
+      __assoc__:
+        -
+          - width
+          - 2200
+        -
+          - useAspectRatio
+          - 1
+        -
+          - aspectRatioX
+          - 8
+        -
+          - aspectRatioY
+          - 5
+        -
+          - retinaSizes
+          -
+            - 1
+        -
+          - quality
+          - 82
+        -
+          - format
+          - jpg
+    -
+      __assoc__:
+        -
+          - width
+          - 1280
+        -
+          - useAspectRatio
+          - 1
+        -
+          - aspectRatioX
+          - 8
+        -
+          - aspectRatioY
+          - 5
+        -
+          - retinaSizes
+          -
+            - 1
+        -
+          - quality
+          - 82
+        -
+          - format
+          - jpg
+    -
+      __assoc__:
+        -
+          - width
+          - 1024
+        -
+          - useAspectRatio
+          - 1
+        -
+          - aspectRatioX
+          - 8
+        -
+          - aspectRatioY
+          - 5
+        -
+          - retinaSizes
+          -
+            - 1
+        -
+          - quality
+          - 82
+        -
+          - format
+          - jpg
+    -
+      __assoc__:
+        -
+          - width
+          - 768
+        -
+          - useAspectRatio
+          - 1
+        -
+          - aspectRatioX
+          - 8
+        -
+          - aspectRatioY
+          - 5
+        -
+          - retinaSizes
+          -
+            - 1
+        -
+          - quality
+          - 60
+        -
+          - format
+          - jpg
+    -
+      __assoc__:
+        -
+          - width
+          - 640
+        -
+          - useAspectRatio
+          - 1
+        -
+          - aspectRatioX
+          - 8
+        -
+          - aspectRatioY
+          - 5
+        -
+          - retinaSizes
+          -
+            - 1
+        -
+          - quality
+          - 60
+        -
+          - format
+          - jpg
+    -
+      __assoc__:
+        -
+          - width
+          - 480
+        -
+          - useAspectRatio
+          - 1
+        -
+          - aspectRatioX
+          - 8
+        -
+          - aspectRatioY
+          - 5
+        -
+          - retinaSizes
+          -
+            - 1
+        -
+          - quality
+          - 82
+        -
+          - format
+          - jpg
+    -
+      __assoc__:
+        -
+          - width
+          - 200
+        -
+          - useAspectRatio
+          - 1
+        -
+          - aspectRatioX
+          - 8
+        -
+          - aspectRatioY
+          - 5
+        -
+          - retinaSizes
+          -
+            - 1
+        -
+          - quality
+          - 82
+        -
+          - format
+          - jpg
+translationKeyFormat: null
+translationMethod: none
+type: nystudio107\imageoptimize\fields\OptimizedImages

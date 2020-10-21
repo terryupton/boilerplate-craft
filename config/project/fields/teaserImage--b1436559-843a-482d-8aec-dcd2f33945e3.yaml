@@ -1,0 +1,31 @@
+contentColumnType: string
+fieldGroup: fa1be04a-5fe4-4dad-a59c-7d52eee2b403
+handle: teaserImage
+instructions: "A teaser image is typically used on listing pages and related content modules. The image is usually representative of the article/page. \r\nThis field is might also be used as a fallback image for SEO meta images. \r\n\r\n**More Information**  \r\n_For more information on SEO Images please visit [Yoast SEO](https://yoast.com/advanced-technical-seo-social-image-ogimage-tags/) and [Open Graph](http://ogp.me/)_"
+name: 'Teaser Image'
+searchable: true
+settings:
+  allowSelfRelations: false
+  allowUploads: true
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:2704582f-5c82-44da-9552-cddd0a262a82'
+  defaultUploadLocationSubpath: ''
+  limit: 1
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: ''
+  selectionLabel: 'Add Image'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
+  singleUploadLocationSource: 'volume:2704582f-5c82-44da-9552-cddd0a262a82'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets
