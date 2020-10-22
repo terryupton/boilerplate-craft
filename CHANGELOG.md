@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [3.2.2] - 2020-10-21
+### Removed
+Removed Commented out post composer scripts for after initial installation due to breaking the composer.json file
+
+
 ## [3.2.1] - 2020-10-21
 ### Changed
 Clean and tidy up of composer.json for correct plugins and versions
