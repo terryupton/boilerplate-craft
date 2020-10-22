@@ -1,8 +1,17 @@
 dateModified: 1603213994
 email:
-  fromEmail: terry@amasci.co.uk
-  fromName: 'Lincoln Green Solicitors'
-  transportType: craft\mail\transportadapters\Sendmail
+  fromEmail: $EMAIL_FROM_ADDRESS
+  fromName: $EMAIL_FROM_NAME
+  template: null
+  transportSettings:
+    encryptionMethod: ssl
+    host: $EMAIL_HOST_NAME
+    password: $EMAIL_HOST_PASSWORD
+    port: '465'
+    timeout: '10'
+    useAuthentication: '1'
+    username: $EMAIL_HOST_USERNAME
+  transportType: craft\mail\transportadapters\Smtp
 plugins:
   field-manager:
     edition: standard
