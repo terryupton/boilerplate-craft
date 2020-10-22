@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [3.2.4] - 2020-10-21
+### Changed
+Project Config Site Name
+Project Config Email Settings
+
+
 ## [3.2.3] - 2020-10-21
 ### Added
 Added post install command `craft setup/welcome`
