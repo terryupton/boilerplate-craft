@@ -6,6 +6,7 @@ Adding PurgeCSS settings to tailwind config
 
 ### Changed
 Clean and tidy up of laravel-mix config
+Renamed Craft Site Name in Project Config
 
 ### Removed
 PurgeCSS config and dependencies removed from laravel-mix
