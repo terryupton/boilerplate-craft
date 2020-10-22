@@ -1,8 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [3.3.0] - 2020-10-21
+## [4.0.0] - 2020-10-21
 ### Changed
+Swapped to PostCSS instead of Sass
+ - Changed ot PostCSS Setup
+ - Removed lots of unnecessary CSS. I found quite a bit of redundancy - some now done with tailwind by default, some done in normalize; some just dropped as not needed.
 Renamed IE Notice to Outdated Browser Notice
 
 
