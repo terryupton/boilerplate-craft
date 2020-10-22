@@ -1,0 +1,62 @@
+{# -- Layout template for HTML pages -- #}
+{#
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ ┌─────────────────────────────────────────────────────────────────────────┐ │
+│ │                                                                         │ │
+│ │                                                                         │ │
+│ │                                                                         │ │
+│ │                                 content                                 │ │
+│ └─────────────────────────────────────────────────────────────────────────┘ │
+│ ┌─────────────────────────────────────────────────────────────────────────┐ │
+│ │                                                                         │ │
+│ │                                                                         │ │
+│ │                                                                         │ │
+│ │                               subContent                                │ │
+│ └─────────────────────────────────────────────────────────────────────────┘ │
+│                                                                             │
+│                                  bodyHtml                                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+#}
+{% extends "_boilerplate/_layouts/base-html-layout.twig" %}
+
+{# -- Any <meta> tags that should be included in the <head> #}
+{% block headMeta %}
+{% endblock headMeta %}
+
+{# -- Any <link> tags that should be included in the <head> #}
+{% block headLinks %}
+  {# Google fonts #}
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+{% endblock headLinks %}
+
+{# -- Any CSS that should be included before </head> -- #}
+{% block headCss %}
+  {# {% include "_inline-css/site-fonts.css" %} #}
+{% endblock headCss %}
+
+
+{# -- Page body -- #}
+{% block bodyHtml %}
+  <div id="page-container">
+    {# -- Info header and nav -- #}
+    {% include "_includes/_globals/header.twig" %}
+    
+    <div class="container">
+{#      {% include '_includes/_globals/breadcrumbs.twig' %}#}
+    </div>
+    
+    <main>
+      {# -- Primary content block -- #}
+      {% block content %}
+      {% endblock %}
+    </main>
+    
+    {# -- Content that appears below the primary content block -- #}
+    {% block subcontent %}
+    {% endblock %}
+    
+    {# -- Info footer -- #}
+    {% include "_includes/_globals/footer.twig" %}
+  
+  </div>
+{% endblock bodyHtml %}

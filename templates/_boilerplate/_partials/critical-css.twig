@@ -1,0 +1,16 @@
+{# -- Critical CSS -- #}
+{% set cssHash = craft.twigpack.getModuleHash("styles.css", "legacy") %}
+
+<!--# if expr="$HTTP_COOKIE=/critical\-css\={{ cssHash }}/" -->
+{{ craft.twigpack.includeCssModule("styles.css", false) }}
+<!--# else -->
+{#<script>#}
+{#  Cookie.set("critical-css", "{{ cssHash }}", { expires: "7D", secure: true });#}
+{#</script>#}
+
+{{ craft.twigpack.includeCriticalCssTags() }}
+
+{{ craft.twigpack.includeCssModule("/css/style.css", false) }}
+<!--# endif -->
+
+{# TODO: Critical CSS OR CHNAGE TO TRUE on  craft.twigpack.includeCssModule and cleanup #}

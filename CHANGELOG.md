@@ -8,6 +8,7 @@ Swapped to PostCSS instead of Sass
  - Removed lots of unnecessary CSS. I found quite a bit of redundancy - some now done with tailwind by default, some done in normalize; some just dropped as not needed.
 Renamed IE Notice to Outdated Browser Notice
 
+Swapped Templates Structure based on <https://nystudio107.com/blog/an-effective-twig-base-templating-setup>
 
 ## [3.2.4] - 2020-10-21
 ### Changed
