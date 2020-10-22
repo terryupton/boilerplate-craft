@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [3.3.0] - 2020-10-21
+### Changed
+Renamed IE Notice to Outdated Browser Notice
+
+
 ## [3.2.4] - 2020-10-21
 ### Changed
 Project Config Site Name
