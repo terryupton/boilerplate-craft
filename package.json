@@ -1,6 +1,6 @@
 {
   "name": "craft-bp",
-  "version": "3.2.3",
+  "version": "3.2.4",
   "description": "Craft CMS boilerplate and starter project",
   "main": "index.js",
   "keywords": [
