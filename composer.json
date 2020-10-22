@@ -36,7 +36,9 @@
       "@php -r \"unlink('LICENSE.md');\"",
       "@php -r \"unlink('README.md');\"",
       "@php -r \"copy('README.md.default', 'README.md');\"",
-      "@php -r \"unlink('README.md.default');\""
+      "@php -r \"unlink('README.md.default');\"",
+      "@composer dump-autoload -o",
+      "@php craft setup/welcome"
     ]
   }
 }
