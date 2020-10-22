@@ -1,5 +1,20 @@
 # Changelog
 All notable changes to this project will be documented in this file.
+## [3.2.0] - 2020-10-20
+### Added
+Adding PurgeCSS settings to tailwind config
+
+### Changed
+Clean and tidy up of laravel-mix config
+Renamed Craft Site Name in Project Config
+
+### Removed
+PurgeCSS config and dependencies removed from laravel-mix
+
+Removed PostCSS dependencies no longer required
+   - PostCSS Colour Functions
+   - PostCSS Sorting
+
 ## [3.1.0] - 2020-10-20
 ### Changed
 Updated NPM Package and Dependencies

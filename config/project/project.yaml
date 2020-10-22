@@ -48,7 +48,7 @@ plugins:
 system:
   edition: pro
   live: true
-  name: 'Lincoln Green Solicitors'
+  name: 'Craft Boiler Plate'
   retryDuration: null
   schemaVersion: 3.5.13
   timeZone: Europe/London

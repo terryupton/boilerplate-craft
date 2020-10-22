@@ -19,21 +19,6 @@ mix
     
     // Extract splits the JS into Vendor, Manfiest and Index
     .extract()
-    // .extract([
-    //     'lazysizes',
-    //     'picturefill',
-    //     'jquery'
-    // ])
-    
-    // Scripts Minifies Scripts - Use for Legacy Projects
-    // .scripts([settings.paths.src.js + 'classie.js'], settings.paths.build.js + 'classie.js')
-    
-    // .autoload({
-    //     jQuery: 'jquery',
-    //     $: 'jquery',
-    //     jquery: 'jquery',
-    // })
-    
     
     .options({
       processCssUrls: false,
@@ -63,19 +48,6 @@ mix
       ]
     })
     
-    .purgeCss({
-      enabled: mix.inProduction(),
-      globs: [
-        path.join(__dirname, settings.paths.templates.base + '**/*.{html,twig}'),
-        path.join(__dirname, settings.paths.build.js + '**/*.js'),
-        path.join(__dirname, settings.paths.src.js + '**/*.js'),
-      ],
-      defaultExtractor: content => content.match(/[\w-/.%:]+(?<!:)/g) || [],
-      extensions: ["html", "js", "php", "vue", "twig"],
-      whitelistPatterns: [/lazyload/, /grayscale-up/],
-      // whitelistPatternsChildren: [/body/, /ls-blur-up-img/],
-    })
-    
     //IMAGE and SVG MIN
     .webpackConfig({
       plugins: [
@@ -103,16 +75,14 @@ mix
     });
 
 if (mix.inProduction()) {
-  mix
-      .versionHash()
-      
-      //CLEAN HASHED VERSIONS
-      .webpackConfig({
-        plugins: [
-          new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: settings.paths.build.clean,
-            dry: false,
-          })
-        ]
-      });
+  mix.versionHash();
+  
+  mix.webpackConfig({
+    plugins: [
+      new CleanWebpackPlugin({
+        cleanOnceBeforeBuildPatterns: settings.paths.build.clean,
+        dry: false,
+      })
+    ]
+  });
 }
