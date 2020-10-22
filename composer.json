@@ -1,25 +1,21 @@
 {
   "name": "terryupton/boilerplate-craft",
   "description": "A starting boilerplate for Craft Projects",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "license": "MIT",
   "type": "project",
   "require": {
-    "aelvan/imager": "^2.4.0",
-    "anubarak/craft-relabel": "^1.1",
-    "craftcms/cms": "^3.4.9",
-    "craftcms/redactor": "^2.1.6",
-    "mmikkel/cp-field-inspect": "^1.0.5",
-    "mmikkel/retcon": "^2.1.0",
-    "nystudio107/craft-minify": "^1.2.5",
-    "nystudio107/craft-seomatic": "^3.2.47",
-    "nystudio107/craft-twigpack": "^1.2.0",
-    "sebastianlenz/linkfield": "^1.0.20",
-    "verbb/field-manager": "^2.1.1",
-    "verbb/image-resizer": "^2.0.4",
-    "verbb/super-table": "^2.3.3",
-    "vlucas/phpdotenv": "^2.4.0",
-    "yiisoft/yii2-redis": "^2.0.6"
+    "craftcms/cms": "^3.5.13.2",
+    "craftcms/redactor": "^2.8.2",
+    "nystudio107/craft-imageoptimize": "^1.6",
+    "nystudio107/craft-minify": "^1.2.10",
+    "nystudio107/craft-seomatic": "^3.3.21",
+    "nystudio107/craft-twigpack": "^1.2.6",
+    "verbb/field-manager": "^2.2.1",
+    "verbb/image-resizer": "^2.0.10",
+    "verbb/super-table": "^2.6.3",
+    "vlucas/phpdotenv": "^2.6.6",
+    "yiisoft/yii2-redis": "^2.0.13"
   },
   "autoload": {
     "psr-4": {
@@ -42,5 +38,31 @@
       "@php -r \"copy('README.md.default', 'README.md');\"",
       "@php -r \"unlink('README.md.default');\""
     ]
+    //    "post-update-cmd": [
+    //      "@php craft migrate/all",
+    //      "@php craft project-config/sync",
+    //      "@php craft clear-caches/compiled-templates",
+    //      "@php craft clear-caches/cp-resources",
+    //      "@php craft clear-caches/data",
+    //      "@php craft clear-caches/seomatic-frontendtemplate-caches",
+    //      "@php craft clear-caches/seomatic-metabundle-caches",
+    //      "@php craft clear-caches/seomatic-sitemap-caches",
+    //      "@php craft clear-caches/twigpack-manifest-cache ",
+    //      "@php craft clear-caches/temp-files",
+    //      "php craft invalidate-tags/template"
+    //    ],
+    //    "post-install-cmd": [
+    //      "@php craft migrate/all",
+    //      "@php craft project-config/sync",
+    //      "@php craft clear-caches/compiled-templates",
+    //      "@php craft clear-caches/cp-resources",
+    //      "@php craft clear-caches/data",
+    //      "@php craft clear-caches/seomatic-frontendtemplate-caches",
+    //      "@php craft clear-caches/seomatic-metabundle-caches",
+    //      "@php craft clear-caches/seomatic-sitemap-caches",
+    //      "@php craft clear-caches/twigpack-manifest-cache ",
+    //      "@php craft clear-caches/temp-files",
+    //      "php craft invalidate-tags/template"
+    //    ]
   }
 }

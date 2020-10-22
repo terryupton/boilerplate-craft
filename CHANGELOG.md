@@ -1,5 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
+
+## [3.2.1] - 2020-10-21
+### Changed
+Clean and tidy up of composer.json for correct plugins and versions
+
+### Added
+Commented out post composer scripts for after initial installation
+
 ## [3.2.0] - 2020-10-20
 ### Added
 Adding PurgeCSS settings to tailwind config
