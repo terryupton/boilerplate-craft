@@ -1,0 +1,34 @@
+{% block main_view %}
+  <article class="sm:flex sm:items-end group pt-8 lg:border-none">
+    {% set optimizedImages = entry.teaserImage[0].srcset1x1 %}
+    <a href="{{ entry.url() }}" class="block mb-4 sm:mb-0 mr-4 lg:mr-2">
+      <figure class="relative flex items-end">
+        <picture class="w-60 block overflow-hidden">
+          <source srcset="{{ optimizedImages.srcsetWebP() }}"
+                  sizes="100vw"
+                  type="image/webp"
+          />
+          <img src="{{ optimizedImages.placeholderImage() }}"
+               srcset="{{ optimizedImages.srcset() }}"
+               sizes="15rem"
+               class="lazy-load relative z-20 transform relative ease-in-out duration-500 group-hover:scale-125"
+          />
+        </picture>
+        <div class="mb-2 ml-px text-pink-500 group-hover:text-blue-600">
+          {{ svg('@icons/logo-chevron.svg')|attr({ class:"w-auto h-16 flex-shrink-0 fill-current" }) }}
+        </div>
+      </figure>
+    </a>
+    
+    <div class="flex-1">
+      <div class="lg:pl-3">
+        <h3 class="text-xl text-gray-800 lg:mb-2">
+          <a href="{{ entry.url }}" class="hover:text-blue-600 group-hover:text-blue-600">
+            {{ entry.title }}
+          </a>
+        </h3>
+        <a href="{{ entry.url }}" class="text-pink-500 hover:text-blue-600 group-hover:text-blue-600 underline">Find out more</a>
+      </div>
+    </div>
+  </article>
+{% endblock %}

@@ -1,0 +1,25 @@
+<div class="mb-4">
+  <div class="mb-2">
+    {% include '_includes/_freeform/_default/_partials/_label.twig' %}
+  </div>
+  
+  {{ field.oneLine ? '<div class="flex flex-wrap">'|raw }}
+  {% for index, option in field.options %}
+    <div class="px-3 mb-1.5">
+      <input type="radio"
+             name="{{ field.handle }}"
+             value="{{ option.value }}"
+             id="{{ field.idAttribute }}-{{ index }}"
+             class="{{ fieldClass }} {{ field.hasErrors ? " border-red-500" }}"
+        {{ option.checked ? "checked" : "" }}
+      />
+      <label class="ml-0.5 text-sm" for="{{ field.idAttribute }}-{{ index }}">
+        {{ option.label|t|raw }}
+      </label>
+    </div>
+  {% endfor %}
+  {{ field.oneLine ? "</div>"|raw }}
+  
+  {{ field.renderInstructions() }}
+  {% include '_includes/_freeform/_default/_partials/_error.twig' %}
+</div>

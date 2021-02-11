@@ -1,0 +1,50 @@
+{# ---------------------------------------------------------------------- #}
+{# MODAL OVERLAY CODE #}
+{# ---------------------------------------------------------------------- #}
+
+<section x-cloak>
+  <div class="fixed z-80 inset-0 h-full w-full bg-black bg-opacity-90" x-show="showModal"></div>
+  <div
+    class="fixed inset-0 flex z-90 overflow-scroll my-6 md:my-12 mx-auto {{ self.width|default('max-w-5xl w-2/3 px-6 lg:px-12') }}"
+    x-show="showModal"
+    @click.away="showModal = false"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 transform scale-90"
+    x-transition:enter-end="opacity-100 transform scale-100"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100 transform scale-100"
+    x-transition:leave-end="opacity-0 transform scale-90"
+  >
+    <div class="relative md:rounded shadow-2xl bg-white w-full m-auto">
+      <btn class="absolute right-0 top-0 z-90 text-white hover:bg-red-700 m-2 bg-red-500 cursor-pointer" @click="showModal = false">
+        {{ svg('@icons/bx/line/bx-x.svg')|attr({class: "w-15 h-15 fill-current"}) }}
+      </btn>
+      
+      <div
+        x-show="showLoading"
+        x-transition:leave="transition ease-out duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="absolute h-full w-full inset-0 z-20 flex flex-col justify-center items-center text-gray-600 bg-white"
+      >
+        <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" class="w-16 h-16 fill-current"
+        >
+                <path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+                  <animateTransform
+                    attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    dur="1s"
+                    from="0 50 50"
+                    to="360 50 50"
+                    repeatCount="indefinite"
+                  />
+                </path>
+            </svg>
+        Loading&hellip;
+      </div>
+      <div x-html="html" class="md:px-6 pb-6 pt-12"></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+<div class="mb-4">
+  <input type="checkbox"
+         name="{{ field.handle }}"
+         value="1"
+         id="form-input-{{ field.id }}"
+         class="{{ fieldClass }} {{ field.hasErrors ? " border-red-500" }}"
+    {{ field.checked ? "checked" : "" }}
+  />
+  
+  <label class="ml-1 text-sm" for="form-input-{{ field.id }}">
+    {{ field.label|t|raw }}
+  </label>
+  
+  {% include '_includes/_freeform/_default/_partials/_error.twig' %}
+  {% include '_includes/_freeform/_default/_partials/_instructions.twig' %}
+</div>

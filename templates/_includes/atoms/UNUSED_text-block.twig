@@ -1,0 +1,19 @@
+{% apply spaceless %}
+  {% set content = content %}
+  
+  {% set content = content | replace({
+    '--Legal Company Name--': legalInformation.fullCompanyName,
+    '--Email--': '<a href="mailto:' ~ companyInformation.email ~ '">' ~ companyInformation.email ~ '</a>',
+    '--Telephone--': '<a href="tel:' ~ companyInformation.telephone|replace({' ': ''}) ~ '" class="tel">' ~ companyInformation.telephone ~ '</a>',
+    '--Site Name--': siteName
+  }) %}
+{% endapply %}
+
+  {{ content | retcon([
+    ['attr', 'ul', { class: 'ml-8' }],
+    ['attr', 'ol', { class: 'ml-8' }],
+    ['attr', '.tel', { class: 'whitespace-no-wrap' }, false ],
+    ['attr', 'a', { class: class.links  }, false ],
+    ['attr', 'blockquote', { class: 'mx-10 ' ~ class.primaryText  }],
+    ['removeEmpty'],
+  ]) }}

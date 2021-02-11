@@ -1,0 +1,7 @@
+{% if field.hasErrors %}
+  <div class="inline-flex items-start  mt-2 p-1.5 // border-white border border-opacity-50 bg-red-200 bg-opacity-80 text-red-600">
+    {{ svg('@icons/bx/line/bx-error-circle.svg')|attr({class: "h-4 w-4 fill-current flex-shrink-0 mr-1 mt-px"}) }}
+    <div class="my-custom-errors-list"></div>
+    {{ field.renderErrors }}
+  </div>
+{% endif %}

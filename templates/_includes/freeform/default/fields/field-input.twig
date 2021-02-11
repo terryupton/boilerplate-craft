@@ -1,0 +1,18 @@
+<div class="mb-4">
+  {% include '_includes/_freeform/_default/_partials/_label-with-note.twig' %}
+  <div class="mt-1 relative shadow-sm {{ (field.hasErrors ? "focus:border-red-200") }}">
+    {{ field.renderInput({
+      class: fieldClass,
+      errorClass: errorClass,
+    }) }}
+    
+    {% if field.hasErrors %}
+      <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+        {{ svg('@icons/bx-solid/bxs-error-circle.svg')|attr({class: "h-5 w-5 text-red-500 fill-current flex-shrink-0"}) }}
+      </div>
+    {% endif %}
+  </div>
+  
+  {% include '_includes/_freeform/_default/_partials/_error.twig' %}
+  {% include '_includes/_freeform/_default/_partials/_instructions.twig' %}
+</div>

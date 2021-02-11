@@ -1,0 +1,32 @@
+{% apply spaceless %}
+  {# #########################################################################################
+    ###ADDRESS
+    @param address                :: {object}   (requred)
+    @param classes                :: {string}   (optional)
+    @param shobuildingName        :: {bool}   (optional)
+
+    #USAGE:
+    {% include
+      '_includes/components/address' with {
+        object:entry.,
+        classes:'text-lg text-blue hover:text-greener',
+        shobuildingName: 0
+      }
+    %}
+  ########################################################################################## #}
+  
+  {# PARAMETERS #}
+  {% set object           = object|default(companyInformation) %}
+  {% set classes          = classes|default('') %}
+  {% set shobuildingName  = shobuildingName|default(1) %}
+{% endapply %}
+
+{# OUTPUT #}
+<div class="{{ classes }}">
+  {% if object.buildingName|length and shobuildingName == 1 %}{{ object.buildingName }}<br />{% endif %}
+  {% if object.addressLine1|length %}{{ object.addressLine1 }}<br />{% endif %}
+  {% if object.addressLine2|length %}{{ object.addressLine2 }}<br />{% endif %}
+  {% if object.cityTown|length %}{{ object.cityTown }}<br />{% endif %}
+  {% if object.county|length %}{{ object.county }}<br />{% endif %}
+  {% if object.postCode|length %}{{ object.postCode }}{% endif %}
+</div>

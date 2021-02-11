@@ -55,18 +55,18 @@
   {% macro socialFollow(networks, iconSize, classes, linkClasses) %}
     {# BUILD THE MACRO - Manually update the classes for the <li> and <a> tags as required in the macro code #}
     
-    <ul class="{{ listClasses }}">
+    <ul class="flex items-center">
       {% for network in networks %}
         {%- if network.handle|length -%}
           <li class="mr-2 // animate-grow-on-hover">
             <a href="{{ network.url ~ network.handle }}"
                title="{{ network.name }}"
                target="_blank" rel="noopener noreferrer"
-               class="js-track-social-follow block hover:text-social-{{ network.name|lower }} hover:bg-white p-1 rounded-lg {% if linkClasses %}{{ linkClasses }} {% endif %}  "
+               class="js-track-social-follow block hover:text-social-{{ network.name|lower }} hover:bg-white p-1 rounded-lg transition ease-in-out duration-200 transform hover:scale-110 {% if linkClasses %}{{ linkClasses }} {% endif %}  "
                data-url="{{ url(craft.app.request.pathInfo) }}"
             >
-              {{ svg('@webroot/assets/svg/social-' ~ network.name|lower ~ '.svg', class='fill-current block ' ~ iconSize) }}
-              <span class="alt">{{ network.name }}</span>
+              {{ svg('@icons/social-' ~ network.name|lower ~ '.svg')|attr({ class:"fill-current block " ~ iconSize }) }}
+              <span class="sr-only">{{ network.name }}</span>
             </a>
           </li>
         {%- endif -%}

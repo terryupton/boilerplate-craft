@@ -1,0 +1,208 @@
+{{ form.renderTag() }}
+
+{# Render errors #}
+{% if form.hasErrors %}
+  <div class="relative mb-4 p-3 border-white border border-opacity-50 bg-red-200 bg-opacity-80 text-red-600 text-sm" role="alert">
+    <div class="flex items-center">
+      {{ svg('@icons/bx/line/bx-error-circle.svg')|attr({class: "h-6 w-6 fill-current flex-shrink-0 mr-1"}) }}
+      <div class="">
+        <strong class="font-bold">{{ "Error! Please review the form and try submitting again."|t('freeform') }}</strong>
+        {% if form.errors|length %}
+          <ul class="mb-0 ">
+            {% for error in form.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{# Define standard field classes #}
+  {% apply spaceless %}
+  
+    {% set standardFieldClasses =
+      "form-input text-gray-500 rounded-none sm:text-sm sm:leading-5 py-3 mt-1 w-full" %}
+  
+    {% set selectFieldClasses =
+      "form-select h-full rounded-none sm:text-sm sm:leading-5 py-3 mt-1 w-full text-gray-500" %}
+  
+    {% set checkboxFieldClasses =
+      "form-checkbox -mt-1 w-5 h-5 rounded-none " ~ form.customAttributes.formAttributes['checkboxFieldClasses']|default('') %}
+  
+    {% set radioFieldClasses =
+      "form-radio w-5 h-5 rounded-none " ~ form.customAttributes.formAttributes['radioFieldClasses']|default('') %}
+  
+    {% set fileFieldClasses =
+      "appearance-none block w-full text-gray-700 py-3 px-4 leading-tight" %}
+  
+    {% set tableFieldClasses =
+      "appearance-none w-full text-gray-700 py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %}
+  
+    {% set signatureFieldClasses =
+      "bg-gray-200 hover:bg-gray-400 text-black font-normal py-1 px-2 rounded mr-1" %}
+  
+    {% set standardLabelsClasses =
+      "text-sm font-medium leading-5 block" %}
+  
+    {% set submitClasses =
+      "w-full sm:w-auto sm:min-w-40 border border-white border-opacity-50 sm:leading-5 py-4 px-6 rounded-none focus:outline-none transition duration-150 ease-in-out flex items-center justify-center" %}
+  
+    {% set errorClass =
+      "text-xs font-medium" %}
+  
+    {% set instructionsClass =
+      "text-white text-opacity-50 text-xs italic max-w-md" %}
+  {% endapply %}
+{# Render form rows #}
+{% for row in form %}
+  <div class="flex flex-wrap -mx-3 {{ form.customAttributes.rowClass }}">
+    {% for field in row %}
+      
+      {# Calculate column class based on columns count #}
+      {% set columnCount = row|length %}
+      {% set columnClass = "w-full px-3 mb-4" %}
+      {% set columnClass = columnClass ~ form.customAttributes.columnClass %}
+      
+      {% if columnCount > 1 %}
+        {% set columnClass = columnClass ~ " md:w-1/" ~ columnCount ~ " lg:w-1/" ~ columnCount ~ " xl:w-1/" ~ columnCount %}
+      {% endif %}
+      
+      {# Set a custom column class for the submit button #}
+      {% if field.type == "submit" %}
+        {% if form.pages|length > 1 %}
+          {% set columnClass = 'w-full flex flex-wrap items-center justify-between px-3 border-t border-gray-200 pt-4 mt-8' %}
+        {% endif %}
+        {% set columnClass = columnClass ~ " text-" ~ field.position %}
+      {% endif %}
+      
+      {# Set field class based on field type #}
+      {% set fieldClass = standardFieldClasses %}
+      {% set fieldClass = fieldClass ~ (field.hasErrors ? " border-red-500 pr-10 bg-red-50 focus:border-red-300 focus:shadow-outline-red") %}
+      
+      {# Set label class #}
+      {% set labelClass = standardLabelsClasses ~ (field.required ? " required" : "") %}
+      
+      
+      {# Create a column except when creating Freeform Payments columns #}
+      {% if field.type != 'cc_details' %}
+        <div class="{{ columnClass }}"{{ field.rulesHtmlData }}>
+      {% endif %}
+      
+      {# ---------------------------------------------------------------------- #}
+      {# START BESPOKE FIELDS #}
+      {# ---------------------------------------------------------------------- #}
+      
+      {% if  field.handle == "amount" %}
+        <input name="{{ field.handle }}" type="hidden" x-data="priceField()" x-on:item-selected.window="getPrice()" x-model="price" x-init="init">
+      
+      {% elseif field.handle == "classSwap" %}
+        {% set fieldClass = selectFieldClasses %}
+        {% set child = form.customAttributes.formAttributes['data-child'] %}
+        {% include '_includes/_freeform/_default/_fields/bespoke-field-class-swap-lessons.twig' with { child: child } %}
+        
+        {# ---------------------------------------------------------------------- #}
+        {# START DEFAULT FIELDS #}
+        {# ---------------------------------------------------------------------- #}
+      {% elseif field.type == "checkbox_group" %}
+        {% set fieldClass = checkboxFieldClasses %}
+        {% include '_includes/_freeform/_default/_fields/field-checkbox-group.twig' %}
+      
+      
+      {% elseif field.type == "radio_group" %}
+        {% set fieldClass = radioFieldClasses %}
+        {% include '_includes/_freeform/_default/_fields/field-radio-group.twig' %}
+      
+      {% elseif field.type == "dynamic_recipients" and (field.showAsRadio or field.showAsCheckboxes) %}
+        {% set fieldClass = field.showAsRadio ? checkboxFieldClasses : radioFieldClasses %}
+        
+        {{ field.showAsRadio ?
+        include('_includes/_freeform/_default/_fields/field-radio-group.twig') :
+        include('_includes/_freeform/_default/_fields/field-checkbox-group.twig') }}
+      
+      
+      {% elseif field.type == "dynamic_recipients" and (field.showAsSelect) %}
+        {% set fieldClass = selectFieldClasses %}
+        {% include '_includes/_freeform/_default/_fields/field-select.twig' %}
+      
+      {% elseif field.type == "select" %}
+        {% set fieldClass = selectFieldClasses %}
+        {% include '_includes/_freeform/_default/_fields/field-select.twig' %}
+      
+      {% elseif field.type in ["checkbox", "mailing_list"] %}
+        {% set fieldClass = checkboxFieldClasses %}
+        {% include '_includes/_freeform/_default/_fields/field-checkbox.twig' %}
+      
+      {% elseif field.type == "submit" %}
+        {% set fieldClass = submitClasses ~ ' ' ~ form.customAttributes.submitClass %}
+        
+        {% if form.pages|length <= 1 %}
+          <button type="submit"
+                  x-data="{btnSpin: false}"
+                  @click="btnSpin=true"
+                  @disable-spinner.window="btnSpin = false"
+                  class="{{ fieldClass }}"
+          >
+          <span x-show="btnSpin">
+            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                 viewBox="0 0 24 24"
+            >
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+          </span>
+            <span x-show="!btnSpin">
+             {{ svg('@icons/bx/bx-mail-send.svg')|attr({class: "w-6 h-6 mr-1 flex-shrink-0 fill-current"}) }}
+          </span>
+            {{ field.label }}
+          </button>
+        {% else %}
+          {{ field.renderInput({
+            class: fieldClass
+          }) }}
+        {% endif %}
+      
+      {% elseif field.type == "table" %}
+        {{ field.render({
+          class: fieldClass,
+          labelClass: labelClass,
+          instructionsClass: instructionsClass,
+          instructionsBelowField: true,
+          errorClass: errorClass,
+          addButtonLabel: "Add +",
+          addButtonClass: "bg-green-500 hover:bg-green-700 text-white font-normal py-2 px-4 rounded m-4",
+          removeButtonLabel: svg('@icons/bx/bx-mail-send.svg')|attr({class: "w-6 h-6 mr-1 flex-shrink-0 fill-current"}),
+          removeButtonClass: "bg-red-500 hover:bg-red-700 text-white font-normal py-2 px-4 rounded ml-2",
+          tableTextInputClass: standardFieldClasses ~ " my-2",
+          tableSelectInputClass: selectFieldClasses,
+          tableCheckboxInputClass: checkboxFieldClasses ~ " m-1",
+          tableLabelsClass: standardLabelsClasses
+        }) }}
+      
+      {% elseif field.type == "cc_details" %}
+        {% include'_includes/_freeform/_default/_fields/field-creditcard.twig' %}
+      
+      {% elseif field.type == "html" %}
+        {{ field.renderInput({
+          class: fieldClass,
+          errorClass: errorClass,
+        }) }}
+      
+      {% else %}
+        {% include'_includes/_freeform/_default/_fields/field-input.twig' %}
+      
+      {% endif %}
+      {# Close a column except when creating Freeform Payments columns #}
+      {% if field.type != 'cc_details' %}
+        </div>
+      {% endif %}
+    
+    {% endfor %}
+  </div>
+{% endfor %}
+
+{{ form.renderClosingTag }}

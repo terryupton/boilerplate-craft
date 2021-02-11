@@ -1,0 +1,6 @@
+<div class="flex justify-between">
+  {% include '_includes/_freeform/_default/_partials/_label.twig' %}
+  <span class="text-xs leading-5 text-current opacity-50 font-light pr-2" id="{{ field.label }}-{{ (field.id ? "-required" : "-optional") }}">
+    {{ (field.required ? "Required" : "Optional") }}
+  </span>
+</div>
