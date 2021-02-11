@@ -1,0 +1,107 @@
+{% apply spaceless %}
+  
+  {# #########################################################################################
+    ###Social Follow
+    
+    @param page               :: {string}    (optional)   (defautl: this page)    (the name to appea next to the share text e.g. this video, this project)
+    @param listClasses        :: {string}    (optional)   (default: mb-2)
+    @param linkClasses        :: {string}    (optional)
+    @param headingClasses     :: {string}    (optional)
+
+    #USAGE:
+    {% include
+      '_includes/components/social-share' with {
+        page: 'this article',
+        listClasses: 'p-12 bg-gray-200'
+        linkClasses: 'text-white'
+      }
+    %}
+  ########################################################################################## #}
+  
+  {% set page               = page|default('this page') %}
+  {% set listClasses        = listClasses|default('mb-2') %}
+  {% set headingClasses     = headingClasses|default('mb-2 text-base') %}
+  {% set showHeading        = showHeading|default(1) %}
+  
+  {% import _self as macro %}
+  {# SETUP THE NETWORKS #}
+  {% set networks = {
+    facebook: {
+      name: "Facebook",
+      shareUrl: "https://www.facebook.com/sharer/sharer.php?u=" ~ craft.app.request.absoluteUrl|url_encode
+    },
+    twitter: {
+      name: "Twitter",
+      shareUrl: "https://twitter.com/intent/tweet?text=" ~ entry.title ~ "&amp;url=" ~ craft.app.request.absoluteUrl|url_encode ~ "&amp;via=" ~ socialMedia.twitterHandle
+    },
+    linkedin: {
+      name: "LinkedIn",
+      shareUrl: "http://www.linkedin.com/shareArticle?mini=true&amp;url=" ~ craft.app.request.absoluteUrl|url_encode ~ "&amp;title=" ~ entry.title
+    },
+    tumblr: {
+      name: "Tumblr",
+      shareUrl: "https://www.tumblr.com/share/link?url=" ~ craft.app.request.absoluteUrl|url_encode ~ "&amp;description=" ~ entry.title
+    },
+    reddit: {
+      name: "Reddit",
+      shareUrl: "https://reddit.com/submit?url=" ~ craft.app.request.absoluteUrl|url_encode ~ "&amp;title=" ~ entry.title
+    },
+    pocket: {
+      name: "Pocket",
+      shareUrl: "https://getpocket.com/edit?url=" ~ craft.app.request.absoluteUrl|url_encode
+    },
+    instapaper: {
+      name: "InstaPaper",
+      shareUrl: "http://www.instapaper.com/edit?url={url}" ~ craft.app.request.absoluteUrl|url_encode ~ "&amp;title=" ~ entry.title
+    },
+    email: {
+      name: "Email",
+      shareUrl: "mailto:?Subject=" ~ entry.title ~ "&amp;Body=I%20saw%20this%20and%20thought%20it%20might%20be%20of%20interest!" ~ craft.app.request.absoluteUrl|url_encode,
+      classes: 'text-gray-400 hover:text-gray-900'
+    },
+  } %}
+  
+  {# BUILD THE MACRO - Manually update the classes for the <li> and <a> tags as required in the macro code #}
+  {% macro socialShare(networks, listClasses) %}
+    <ul {% if listClasses %}class="{{ listClasses }}"{% endif %}>
+      {% for network in networks %}
+        <li class="mr-1 // transform ease-in-out duration-300 hover:scale-125 ">
+          <a
+            href="{{ network.shareUrl }}"
+            target="_blank" rel="noopener noreferrer"
+            title="Share on {{ network.name }}"
+            class="js-social-share // js-track-social-share // block // text-social-{{ network.name|lower }} hover:text-social-{{ network.name|lower }} {{ network.classes|default('') }}"
+            data-url="{{ url(craft.app.request.pathInfo) }}"
+          >
+            {{ svg('@icon/social/share-' ~ network.name|lower ~ '.svg')|attr({ class:"fill-current block w-7 h-7 flex-shrink-0" }) }}
+            <span class="sr-only">Share via {{ network.name }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endmacro %}
+{% endapply %}
+
+
+{# OUTPUT #}
+{% if showHeading == 1 %}
+  <h3 class="{{ headingClasses }}">Share {{ page }}</h3>
+{% endif %}
+{{ macro.socialShare(networks, "flex") }}
+
+
+{# ----------------------------------------------------------------------
+   TAILWIND CSS DYNAMIC CLASES FOR PURGE CSS
+-------------------------------------------------------------------------
+
+  text-social-facebook
+  text-social-twitter
+  text-social-instagram
+  text-social-linkedin
+  text-social-tumblr
+  text-social-reddit
+  text-social-pocket
+  text-social-instapaper
+  text-social-instapaper
+
+------------------------------------------------------------------------- #}

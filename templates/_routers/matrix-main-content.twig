@@ -1,0 +1,28 @@
+{#
+# Matrix Main Content Router Template
+# ----------------------
+#
+# This template gets loaded whenever a Matrix Main Content View is requested in a parent view.
+# An `matrixBlock` variable is expected in this template.
+#}
+
+{% set matrixBlocks = entry.pageContent
+  .with([
+  'galleryStrip:images',
+  'callToActionFull:images',
+  'video:video',
+  'testimonial:testimonial',
+  'relatedContent:relatedContent'
+])
+  .all() %}
+
+
+{% for matrixBlock in matrixBlocks %}
+  {% switch matrixBlock.type|kebab %}
+  {% case matrixBlock.type|kebab %}
+    {%- include [
+      '_includes/matrix-blocks/' ~ matrixBlock.type|kebab,
+      '_includes/matrix-blocks/_default',
+      ] -%}
+  {% endswitch %}
+{% endfor %}

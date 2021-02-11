@@ -1,0 +1,52 @@
+{# FOR FREEFORM PAYMENTS #}
+<div class="flex flex-wrap items-center justify-between mb-4 pt-6 w-full px-3">
+  <h3 class="text-currentColor text-xl font-medium mb-0 mr-6 flex items-center">
+    {{ svg('@icons/bx-solid/bxs-lock.svg')|attr({class: "w-6 h-6 mr-1 flex-shrink-0 fill-current"}) }}
+    Card Details
+  </h3>
+  {% include '_includes/_partials/credit-card-logos.twig' with { style: 'full', size: 'small' } %}
+</div>
+
+{% for layoutRow in field.layoutRows %}
+  {% set columnCount = layoutRow|length %}
+  {% set columnClass = "w-full px-3 mb-4" %}
+  {% set columnClass = columnClass ~ form.customAttributes.columnClass %}
+  {% if columnCount > 1 %}
+    {% set columnClass = columnClass ~ " md:w-1/" ~ columnCount ~ " lg:w-1/" ~ columnCount ~ " xl:w-1/" ~ columnCount %}
+  {% else %}
+    {% set columnClass = columnClass ~ " md:w-full lg:w-full xl:w-full" %}
+  {% endif %}
+  
+  {% for layoutField in layoutRow %}
+    {# {% set fieldClass = "appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" ~ (field.hasErrors ? " border-red-500") %} #}
+    
+    <div class="payments-column-class {{ columnClass }}">
+      <div class="mt-1 relative rounded-md shadow-sm {{ (field.hasErrors ? "focus:border-red-200") }}">
+        {% if columnCount < 2 %}
+          <span class="text-xs leading-5 text-navy-300 pr-2 float-right ml-6">
+                    Required
+                  </span>
+        {% endif %}
+        {{ layoutField.render({
+          class: (loop.parent.loop.last ? fieldClass: fieldClass),
+          instructionsClass: instructionsClass,
+          instructionsBelowField: true,
+          labelClass: labelClass,
+          errorClass: errorClass,
+        }) }}
+      </div>
+      {% if columnCount > 1 %}
+        <span class="text-xs leading-5 text-navy-300 pl-1 mt-1 block">
+          Required
+        </span>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% endfor %}
+
+{{ field.renderInput({
+  instructionsClass: instructionsClass,
+  instructionsBelowField: true,
+  labelClass: labelClass,
+  errorClass: errorClass,
+}) }}

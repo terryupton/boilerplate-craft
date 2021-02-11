@@ -1,0 +1,19 @@
+{#
+# Banner Router Template
+# --------------------
+#
+# This template gets loaded whenever a banner is requested, either because an
+# entry section's Template setting is set to "_routers/page" or using dymanic routes.
+#
+# An `entry` variable will be automatically passed to this template if the URI matches
+# an element URI. Otherwise an `entry` array is created before invoking a view router.
+    -#}
+{% if entry is instance of('craft\\elements\\Entry') %}
+  {%- include [
+    '_includes/_views/banner/' ~ entry.section.handle ~ '/' ~ entry.type.handle,
+    '_includes/_views/banner/' ~ entry.section.handle ~ '/default.twig',
+    '_includes/_views/banner/' ~ entry.section.handle,
+    '_includes/_views/banner/' ~ entry.type.handle,
+    '_includes/_views/banner/default.twig',
+    ] -%}
+{% endif %}

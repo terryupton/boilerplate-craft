@@ -1,0 +1,8 @@
+{% if field.instructions %}
+  <div class="flex items-start mt-2 {{ instructionsClass }}">
+    {{ svg('@icons/bx/bx-info-circle.svg')|attr({class: "w-4 h-4 flex-shrink-0 fill-current mr-1"}) }}
+    <div class="">
+      {{ field.renderInstructions() }}
+    </div>
+  </div>
+{% endif %}

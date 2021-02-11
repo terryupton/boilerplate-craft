@@ -1,0 +1,19 @@
+{#
+# Page Router Template
+# --------------------
+#
+# This template gets loaded whenever a full page is requested, either because an
+# entry section's Template setting is set to "_routers/page" or using dymanic routes.
+#
+# An `entry` variable will be automatically passed to this template if the URI matches
+# an element URI. Otherwise an `entry` array is created before invoking a view router.
+                                          -#}
+{% set type = entry.type %}
+ {% switch type %}
+   {# {% case "topicPage" or "features" or "blog" %} #}
+   {# {% include 'pages/page.twig' %} #}
+
+ {% case type %}
+   {% include 'pages/' ~ type|kebab %}
+
+ {% endswitch %}

@@ -1,0 +1,23 @@
+{% set breadcrumbs = seomatic.jsonLd.get('breadcrumbList').itemListElement %}
+
+{% if entry.uri == "__home__" or breadcrumbs|length > 1 %}
+  <section class="flex items-baseline text-brand py-3">
+    <span class="mr-2 inline-block text-xs text-cool-gray-300 block leading-5">You are in:</span>
+    <nav class="breadcrumb" aria-label="{{ 'breadcrumbs'|t }}">
+      <ul class="flex flex-wrap items-center text-sm text-cool-gray-500">
+        {% for crumb in breadcrumbs %}
+          <li class="mr-3 {{ loop.last ? 'text-sea-500 font-medium' }}" {{ loop.last ? 'aria-current="page"' }}>
+            <a href="{{ crumb.item }}" class="hover:underline">
+              <span itemprop="name">{{ crumb.name }}</span>
+            </a>
+            <meta itemprop="position" content="{{ loop.index }}" />
+          </li>
+          
+          {% if not loop.last %}
+            <li class="mx-3" aria-hidden="true">/</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+  </section>
+{% endif %}

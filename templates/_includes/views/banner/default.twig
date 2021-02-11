@@ -1,0 +1,21 @@
+{% block main_view %}
+  <div class="flex flex-col-reverse lg:flex-row ">
+    <div class="lg:flex-1 bg-pink-500 text-white relative">
+      <div class="px-6 py-10 max-w-2xl mx-auto">
+        <h1 class="font-serif text-3xl md:text-5xl leading-tight mb-6">
+          {{ entry.title }}
+        </h1>
+        
+        <div class="text-white max-w-xl last-child">
+          {% include '_includes/_atoms/banner-text.twig' %}
+        </div>
+      </div>
+      <div class="absolute right-0 top-0 z-20 mr-12 lg:mr-24 -mt-12 text-white text-opacity-20">
+        {{ svg('@icons/logo-chevron.svg')|attr({ class:"w-auto h-36 lg:h-48 flex-shrink-0 fill-current transform rotate-90" }) }}
+      </div>
+    </div>
+    <div class="lg:flex-1 lg:max-w-3xl lg:-ml-16 lg:pl-16">
+      {% include '_includes/_components/gallery-strip-banner.twig' %}
+    </div>
+  </div>
+{% endblock %}

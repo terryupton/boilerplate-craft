@@ -1,0 +1,65 @@
+{% apply spaceless %}
+  {# #########################################################################################
+    ###Pagination (numbers)
+    
+    @param stylesNumber             :: {string}    (optional)   (default: below)
+    @param stylesNumberCurrent      :: {string}    (optional)   (default: below)
+    @param stylesNumberBullet       :: {string}    (optional)   (default: below)
+    @param stylesNumberBox          :: {string}    (optional)   (default: below)
+    @param iconClass                :: {string}    (optional)   (default: below)
+    @param getNextUrls              :: {integer}   (optional)   (default: 4)
+
+    #USAGE:
+    {% include
+      '_includes/components/Pagination' with {
+      
+      }
+    %}
+    
+  ########################################################################################## #}
+  
+  {# Parameters #}
+  {% set stylesNumber           = stylesNumber|default('transition ease-in-out duration-300 bg-gray-100 text-gray-500 hover:bg-pink-500 hover:text-white') %}
+  {% set stylesNumberCurrent    = stylesNumberCurrent|default('transition ease-in-out duration-300 bg-pink-500 text-white font-semibold') %}
+  {% set stylesNumberBullet     = stylesNumberBullet|default('mr-2 text-sm mb-2') %}
+  {% set stylesNumberBox        = stylesNumberBox|default('w-7 h-7 block flex flex-col justify-center items-center flex-shrink-0') %}
+  {% set stylesNextPrev         = stylesNextPrev|default('transition ease-in-out duration-300 hover:text-blue-600') %}
+  {% set iconClass              = iconClass|default('w-4 h-4 flex-shrink-0 fill-current') %}
+  {% set getNextUrls            = getNextUrls|default(4) %}
+{% endapply %}
+
+  {% if pageInfo.totalPages > 1 %}
+    <nav class="mx-auto max-w-4xl // text-center">
+      <ul class="flex flex-wrap items-center justify-center mb-2">
+        {% for page, url in pageInfo.getPrevUrls(4) %}
+          <li class="{{ stylesNumberBullet ~ ' ' ~ stylesNumberBox }}">
+            <a href="{{ url }}" class="{{ stylesNumberBox ~ ' ' ~ stylesNumber }}">
+              {{ page }}
+            </a>
+          </li>
+        {% endfor %}
+      
+        <li class="{{ stylesNumberBullet ~ ' ' ~ stylesNumberBox ~ ' ' ~ stylesNumberCurrent }}">{{ pageInfo.currentPage }}</li>
+      
+        {% for page, url in pageInfo.getNextUrls(4) %}
+          <li class="{{ stylesNumberBullet ~ ' ' ~ stylesNumberBox }}">
+            <a href="{{ url }}" class="{{ stylesNumberBox ~ ' ' ~ stylesNumber }}">
+              {{ page }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    
+      <p class="text-sm pt-2 flex items-center justify-between max-w-sm mx-auto">
+        <a href="{{ pageInfo.firstUrl }}" class="flex items-center {{ stylesNextPrev }}">
+          {{ svg('@icons/bx/line/bx-left-arrow-alt.svg')|attr({ class: iconClass ~ " mr-1" }) }}
+          First Page
+        </a>
+        <span class="mx-2">Page {{ pageInfo.currentPage }} of {{ totalPages|default(pageInfo.totalPages) }}</span>
+        <a href="{{ pageInfo.lastUrl }}" class="flex items-center {{ stylesNextPrev }}">
+          Last Page
+          {{ svg('@icons/bx/line/bx-right-arrow-alt.svg')|attr({ class: iconClass ~ " ml-1" }) }}
+        </a>
+      </p>
+    </nav>
+  {% endif %}

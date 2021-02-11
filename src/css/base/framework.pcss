@@ -1,0 +1,39 @@
+
+html {
+    /*overflow-x: hidden;
+    overflow-y: scroll;*/
+    scroll-behavior: smooth;
+}
+
+/*
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+ */
+
+@layer components {
+    .prose p {
+        @apply mb-6;
+        @apply text-lg;
+    }
+}
+/* ==========================================================================
+   SELECTION STYLING
+========================================================================== */
+/* This is used to change the highlight colour when selecting text.
+ * Nice bespoke touch to websites.
+ * Full article here: http://davidwalsh.name/css-selection
+ */
+
+::-moz-selection {
+    @apply text-white;
+    @apply bg-pink-500;
+    text-shadow: none;
+}
+
+::selection {
+    @apply text-white;
+    @apply bg-pink-500;
+    text-shadow: none;
+}
