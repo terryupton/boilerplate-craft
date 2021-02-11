@@ -5,30 +5,42 @@
  * All of your system's general configuration settings go in here. You can see a
  * list of the available settings in vendor/craftcms/cms/src/config/GeneralConfig.php.
  *
- * @see craft\config\GeneralConfig
+ * @see \craft\config\GeneralConfig
  */
+
+// // use craft\helpers\App;
+// $isDev = App::env('ENVIRONMENT') === 'dev';
+// $isProd = App::env('ENVIRONMENT') === 'production';
 
 return [
 
-  // Craft config settings from .env variables
+  // Setup some useful Aliases
   'aliases'                          => [
-    '@webroot'   => '@root/web',
-    '@siteUrl'   => getenv('DEFAULT_SITE_URL'),
-    '@assetUrl'  => getenv('DEFAULT_SITE_URL') . getenv('ASSETS_PATH'),
-    '@assetPath' => '@webroot' . getenv('ASSETS_PATH'),
-    '@icons'     => '@webroot/assets/svg',
+    '@webroot'     => '@root/web',
+    '@siteUrl'     => getenv('PRIMARY_SITE_URL'),
+    '@assetImgUrl' => '@siteUrl' . '/assets/img',
+    '@uploadUrl'   => '@siteUrl' . getenv('CP_UPLOADS_PATH'),
+    '@uploadPath'  => '@webroot' . getenv('CP_UPLOADS_PATH'),
+    '@svg'         => '@webroot/assets/svg/',
+    '@icon'        => '@webroot/assets/svg/icons',
   ],
+
+  //Base Settings for Environment, Robots and Updates from .env variables
+  'isSystemLive'                     => (bool)getenv('IS_SYSTEM_LIVE'),
   'allowUpdates'                     => (bool)getenv('ALLOW_UPDATES'),
   'allowAdminChanges'                => (bool)getenv('ALLOW_ADMIN_CHANGES'),
   'backupOnUpdate'                   => (bool)getenv('BACKUP_ON_UPDATE'),
   'devMode'                          => (bool)getenv('DEV_MODE'),
-  'enableTemplateCaching'            => (bool)getenv('ENABLE_TEMPLATE_CACHING'),
-  'isSystemLive'                     => (bool)getenv('IS_SYSTEM_LIVE'),
   'runQueueAutomatically'            => (bool)getenv('RUN_QUEUE_AUTOMATICALLY'),
   'securityKey'                      => getenv('SECURITY_KEY'),
   'siteUrl'                          => getenv('SITE_URL'),
+  'maxRevisions'                     => getenv('MAX_REVISIONS'),
 
-  // Craft config settings from constants
+  // Cache and Email Settings
+  'enableTemplateCaching'            => (bool)getenv('ENABLE_TEMPLATE_CACHING'),
+  'testToEmailAddress'               => getenv('TEST_TO_EMAIL_ADDRESS'),
+
+  // Base Settings for Website
   'addTrailingSlashesToUrls'         => true,
   'cacheDuration'                    => false,
   'cpTrigger'                        => 'cms',
@@ -39,14 +51,14 @@ return [
   'defaultTokenDuration'             => 'P2W',
   'defaultWeekStartDay'              => 1,
   'enableCsrfProtection'             => true,
-  'errorTemplatePrefix'              => 'pages/errors/',
+  'errorTemplatePrefix'              => 'errors/',
   'generateTransformsBeforePageLoad' => true,
   'maxUploadFileSize'                => '100M',
-  'maxRevisions'                     => getenv('MAX_REVISIONS'),
   'omitScriptNameInUrls'             => true,
   'pageTrigger'                      => 'page/',
   'timezone'                         => 'Europe/London',
   'useEmailAsUsername'               => true,
   'usePathInfo'                      => true,
   'useProjectConfigFile'             => true,
+
 ];
