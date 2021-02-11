@@ -73,7 +73,7 @@
             class="js-social-share // js-track-social-share // block // text-social-{{ network.name|lower }} hover:text-social-{{ network.name|lower }} {{ network.classes|default('') }}"
             data-url="{{ url(craft.app.request.pathInfo) }}"
           >
-            {{ svg('@webroot/assets/svg/share-' ~ network.name|lower ~ '.svg')|attr({ class:"fill-current block w-7 h-7 flex-shrink-0" }) }}
+            {{ svg('@icon/social/share-' ~ network.name|lower ~ '.svg')|attr({ class:"fill-current block w-7 h-7 flex-shrink-0" }) }}
             <span class="sr-only">Share via {{ network.name }}</span>
           </a>
         </li>
