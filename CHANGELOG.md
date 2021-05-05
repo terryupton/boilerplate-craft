@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.1.1] - 2021-05-05
+
+### Changed
+
+- Fixing include paths for base template files
+
+### Removed
+
+- Some unused files.
+
 ## [4.1.0] - 2021-05-05
 
 ### Changed
