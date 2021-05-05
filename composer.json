@@ -1,21 +1,21 @@
 {
   "name": "terryupton/boilerplate-craft",
   "description": "A starting boilerplate for Craft Projects",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "license": "MIT",
   "type": "project",
   "require": {
     "craftcms/cms": "^3.6",
     "craftcms/redactor": "^2.8.2",
+    "mmikkel/retcon": "^2.2",
     "nystudio107/craft-imageoptimize": "^1.6",
-    "nystudio107/craft-minify": "^1.2.10",
-    "nystudio107/craft-seomatic": "^3.3.21",
-    "nystudio107/craft-twigpack": "^1.2.6",
+    "nystudio107/craft-minify": "^1.2",
+    "nystudio107/craft-seomatic": "^3.3",
+    "nystudio107/craft-twigpack": "^1.2",
     "verbb/field-manager": "^2.2.1",
-    "verbb/image-resizer": "^2.0.10",
-    "verbb/super-table": "^2.6.3",
-    "vlucas/phpdotenv": "^2.6.6",
-    "yiisoft/yii2-redis": "^2.0.13"
+    "verbb/image-resizer": "^2.1",
+    "vlucas/phpdotenv": "^2.6",
+    "yiisoft/yii2-redis": "^2.0"
   },
   "autoload": {
     "psr-4": {
@@ -35,6 +35,7 @@
       "@php -r \"copy('./scripts/example.env.sh', './scripts/.env.sh');\"",
       "@php -r \"unlink('LICENSE.md');\"",
       "@php -r \"unlink('README.md');\"",
+      "@php -r \"unlink('CHANGELOG.md');\"",
       "@php -r \"copy('README.md.default', 'README.md');\"",
       "@php -r \"unlink('README.md.default');\"",
       "@composer dump-autoload -o",

@@ -11,11 +11,12 @@
 {% apply spaceless %}
   {# -- Prefetch & preconnect headers and links -- #}
   {% set prefetchUrls = [
-    alias("@assetUrl"),
+    alias("@uploadUrl"),
+    alias("assetImgUrl"),
     '//fonts.googleapis.com'
   ] %}
   {# -- General global variables -- #}
-  {% set baseUrl = alias('@assetUrl') ~ '/' %}
+  {% set baseUrl = alias('@uploadUrl') ~ '/' %}
   {# {% set gaTrackingId = getenv('GA_TRACKING_ID') %} #}
   
   {# -- Twig output from the render; this must be in a block -- #}
