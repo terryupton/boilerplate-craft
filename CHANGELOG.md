@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.1.0] - 2021-05-05
+
+### Changed
+
+- Tailwind Preset and Config Base Files
+- NPM Package versions bumped
+- Composer Package versions bumped
+- Now uses Laravel Mix 6
+
+### Added
+
+- AlpineJS
+
+### Removed
+
+- .stylelintrc config as not used
+- .yarnclean as not used
+
 ## [4.0.0] - 2021-02-11
 
 ### Changed
