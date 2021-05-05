@@ -3,40 +3,34 @@ Project Name
 
 Icons
 -------
+
 - Icon Package Name and Url
-
-
 
 Further Config and Setup
 ----------
 
+1. Setup website locally in Valet
 
-
-1.  Setup website locally in Valet
-  - valet link domain
-  - valet secure
+- valet link domain
+- valet secure
 
 2. Set up a node_modules symlink
     - create new node_modules folder under /Users/terryupton/node_modules_local/domain.ext
     - add symlink to node_modules folder: ln -s  ~/node_modules_local/domain.ext/node_modules
 
 3. Install Node Modules
-    - run yarn install
+    - run npm install
 
-4.  Set up Git Repository
+4. Set up Git Repository
 
-5. Create tailwind.full.js file for easy reference.
-   -  npx tailwindcss init tailwind.full.js --full
+5. Update settings.json
 
-6. Update settings.json
+6. Proceed with Craft Setup and Config
 
-5. Proceed with Craft Setup and Config
-
-
-
- Craft Setup and Config
- ----------
+Craft Setup and Config
+----------
 Updates to run inside Craft
+
 1. General > System Name
 2. Sites > Name
 3. Users > My Account > Name
