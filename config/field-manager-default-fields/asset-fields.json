@@ -42,7 +42,7 @@
     {
         "name": "Notes",
         "handle": "notes",
-        "instructions": "Use this field to enter any additional notes regarding the image.",
+        "instructions": "Use this field to enter any additional notes regarding the asset.",
         "required": null,
         "searchable": 1,
         "translationMethod": "none",
