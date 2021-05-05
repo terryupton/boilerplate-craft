@@ -35,6 +35,7 @@
       "@php -r \"copy('./scripts/example.env.sh', './scripts/.env.sh');\"",
       "@php -r \"unlink('LICENSE.md');\"",
       "@php -r \"unlink('README.md');\"",
+      "@php -r \"unlink('CHANGELOG.md');\"",
       "@php -r \"copy('README.md.default', 'README.md');\"",
       "@php -r \"unlink('README.md.default');\"",
       "@composer dump-autoload -o",
