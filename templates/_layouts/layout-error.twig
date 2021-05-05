@@ -1,4 +1,4 @@
-{% extends "_layouts/_site.twig" %}
+{% extends "_layouts/layout-default.twig" %}
 
 {% block content %}
   
@@ -12,7 +12,7 @@
       <div class="max-w-3xl">
         <p><strong>{{ exception.subHeading }}</strong></p>
         
-        {#        {% include '_includes/_matrix/blocks/_block_copy.twig' %}#}
+        {# {% include '_includes/_matrix/blocks/_block_copy.twig' %} #}
         {{ content }}
       </div>
       
