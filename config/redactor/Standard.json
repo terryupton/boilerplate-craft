@@ -14,22 +14,31 @@
     "undo"
   ],
   "plugins": [
-    "video",
     "counter",
     "variable"
   ],
   "toolbarFixed": true,
-  "linkNewTab": true,
   "pastePlainText": false,
+  "linkNewTab": true,
   "linkSize": 300,
+  "pasteLinks": false,
+  "pasteImages": false,
+  "pasteBlockTags": [
+    "blockquote",
+    "p"
+  ],
+  "pasteInlineTags": [
+    "a",
+    "br",
+    "code"
+  ],
   "formatting": [
     "p",
     "blockquote",
     "h2",
-    "h3"
+    "h3",
+    "h4"
   ],
-  "paragraphize": true,
-  "useLineBreaks": false,
   "variables": [
     "--Legal Company Name--",
     "--Email--",

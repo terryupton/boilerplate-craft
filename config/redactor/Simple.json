@@ -4,11 +4,30 @@
     "bold",
     "italic",
     "sup",
-    "sub"
+    "sub",
+    "link"
   ],
   "plugins": [
-    "counter"
+    "counter",
+    "variable"
   ],
   "toolbarFixed": true,
-  "pastePlainText": false
+  "pastePlainText": false,
+  "pasteLinks": false,
+  "pasteImages": false,
+  "pasteBlockTags": [
+    "blockquote",
+    "p"
+  ],
+  "pasteInlineTags": [
+    "a",
+    "br",
+    "code"
+  ],
+  "variables": [
+    "--Legal Company Name--",
+    "--Email--",
+    "--Telephone--",
+    "--Site Name--"
+  ]
 }

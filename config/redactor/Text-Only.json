@@ -1,0 +1,21 @@
+{
+  "buttons": [
+    "html",
+    "bold",
+    "italic",
+    "sup",
+    "sub"
+  ],
+  "plugins": [
+    "counter"
+  ],
+  "toolbarFixed": true,
+  "pastePlainText": true,
+  "pasteImages": false,
+  "pasteLinks": false,
+  "pasteInlineTags": [
+    "a",
+    "br",
+    "code"
+  ]
+}
