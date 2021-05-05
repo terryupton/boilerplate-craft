@@ -17,7 +17,7 @@
 │                                  bodyHtml                                   │
 └─────────────────────────────────────────────────────────────────────────────┘
 #}
-{% extends "_boilerplate/_layouts/base-html-layout.twig" %}
+{% extends "_boilerplate/layouts/base-html-layout.twig" %}
 
 {# -- Any <meta> tags that should be included in the <head> #}
 {% block headMeta %}
@@ -31,7 +31,7 @@
 
 {# -- Any CSS that should be included before </head> -- #}
 {% block headCss %}
-  {# {% include "_inline-css/site-fonts.css" %} #}
+{# {% include "_inline-css/site-fonts.css" %} #}
 {% endblock headCss %}
 
 
@@ -39,10 +39,10 @@
 {% block bodyHtml %}
   <div id="page-container">
     {# -- Info header and nav -- #}
-    {% include "_includes/_globals/header.twig" %}
+    {% include "_includes/globals/header.twig" %}
     
     <div class="container">
-{#      {% include '_includes/_globals/breadcrumbs.twig' %}#}
+      {# {% include '_includes/_globals/breadcrumbs.twig' %} #}
     </div>
     
     <main>
@@ -56,7 +56,7 @@
     {% endblock %}
     
     {# -- Info footer -- #}
-    {% include "_includes/_globals/footer.twig" %}
+    {% include "_includes/globals/footer.twig" %}
   
   </div>
 {% endblock bodyHtml %}

@@ -28,8 +28,8 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 #}
 {% extends craft.app.request.isAjax() and not craft.app.request.getIsPreview()
-  ? "_boilerplate/_layouts/base-ajax-layout.twig"
-  : "_boilerplate/_layouts/base-web-layout.twig" %}
+  ? "_boilerplate/layouts/base-ajax-layout.twig"
+  : "_boilerplate/layouts/base-web-layout.twig" %}
 
 {% block htmlTag %}
 <html class="fonts-loaded" lang="{{ craft.app.language |slice(0,2) }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
@@ -46,7 +46,7 @@
   {% endblock headLinks %}
   
   {# -- Inline and polyfill JS #}
-  {% include "_boilerplate/_partials/head-js.twig" %}
+  {% include "_boilerplate/partials/head-js.twig" %}
   
   {# -- Any JavaScript that should be included before </head> -- #}
   {% block headJs %}
@@ -54,19 +54,19 @@
   
   {# -- Inline and critical CSS #}
   <style>
-    [v-cloak] {
-      display: none !important;
-    }
-    
-    [x-cloak] {
-      display: none !important;
-    }
-    
-    {# -- Any CSS that should be included before </head> -- #}
-    {% block headCss %}
-    {% endblock headCss %}
+      [v-cloak] {
+          display: none !important;
+      }
+
+      [x-cloak] {
+          display: none !important;
+      }
+      
+      {# -- Any CSS that should be included before </head> -- #}
+      {% block headCss %}
+      {% endblock headCss %}
   </style>
-  {% include "_boilerplate/_partials/critical-css.twig" %}
+  {% include "_boilerplate/partials/critical-css.twig" %}
 
 {% endblock headContent %}
 
@@ -76,7 +76,7 @@
   {% block bodyHtml %}
   {% endblock bodyHtml %}
   
-  {#-- Site-wide JavaScript --#}
+  {#- - Site-wide JavaScript - -#}
   {{ craft.twigpack.includeJsModule("/js/manifest.js") }}
   {{ craft.twigpack.includeJsModule("/js/vendor.js") }}
   {{ craft.twigpack.includeJsModule("/js/index.js") }}

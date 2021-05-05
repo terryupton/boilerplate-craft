@@ -37,7 +37,7 @@
     {% block headTag %}
   <head>
     {% endblock headTag %}
-    {% include "_boilerplate/_partials/head-meta.twig" %}
+    {% include "_boilerplate/partials/head-meta.twig" %}
     {# -- Page content that should be included in the <head> -- #}
     {% block headContent %}
     {% endblock headContent %}
@@ -48,7 +48,7 @@
     {% endblock bodyTag %}
     
     {# - IE notice for Old browsers - #}
-    {% include '_includes/_globals/outdated-browser-notice.twig' %}
+    {% include '_includes/globals/outdated-browser-notice.twig' %}
     
     {# -- Page content that should be included in the <body> -- #}
     {% block bodyContent %}
